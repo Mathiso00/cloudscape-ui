@@ -1,8 +1,8 @@
 {
   "name": "@koops/csui",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -20,6 +20,7 @@
     "dev": "vite",
     "build:watch": "vite build --watch",
     "lint": "eslint vite-project --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -27,6 +28,9 @@
   "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "dependencies": {
+    "@unocss/reset": "^0.61.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.22.2",
@@ -68,8 +72,5 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  },
-  "dependencies": {
-    "@unocss/reset": "^0.61.3"
   }
 }
