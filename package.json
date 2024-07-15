@@ -1,54 +1,32 @@
 {
-  "name": "@koops/monorepo",
-  "description": "Monorepo for Koops",
+  "name": "vite-project",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.0",
   "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "start": "tsu
+    "dev": "vite",
     "build": "tsc -b && vite build",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "lint": "eslint vite-project --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.6.1",
-    "@storybook/addon-essentials": "^8.2.2",
-    "@storybook/addon-interactions": "^8.2.2",
-    "@storybook/addon-links": "^8.2.2",
-    "@storybook/addon-onboarding": "^8.2.2",
-    "@storybook/blocks": "^8.2.2",
-    "@storybook/react": "^8.2.2",
-    "@storybook/react-vite": "^8.2.2",
-    "@storybook/test": "^8.2.2",
-    "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react": "^4.3.1",
-    "concurrently": "^8.2.2",
-    "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "eslint-plugin-storybook": "^0.8.0",
-    "storybook": "^8.2.2",
-    "tsconfig-paths": "^4.2.0",
-    "tsup": "^8.1.0",
-    "tsx": "^4.16.2",
-    "typescript": "^5.5.3",
-    "vite": "^5.3.3",
-    "vite-plugin-dts": "^3.9.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "typescript": "^5.2.2",
+    "@types/node": "^20.14.10",
+    "vite": "^5.3.1",
+    "vite-plugin-dts": "^3.9.1",
+    "unocss": "^0.61.3",
+    "eslint": "^9.7.0",
+    "@antfu/eslint-config": "^2.22.2"
   }
 }
