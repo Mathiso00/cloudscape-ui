@@ -10,6 +10,7 @@ import * as pkg from './package.json'
 const externals: string[] = [
   ...Object.keys(pkg.peerDependencies || {}),
 ]
+
 export default defineConfig({
   plugins: [
     UnoCSS(),
@@ -24,7 +25,7 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: path.resolve(__dirname, 'src/index.ts.ts'),
       formats: ['es', 'umd'],
       name: '@koops/csui',
       fileName: format => `index.${format}.js`,
