@@ -1,9 +1,9 @@
 function Button() {
-  return <button className="bg-red-800 text-white text-xl">Click me hello</button>
+  return <div className="bg-red-800 text-white text-xl">Click me hello</div>
 }
 
-function AllLogin() {
-  return <button className="bg-blue-800 text-white text-xl">Login with Google</button>
+function MySuperLogin() {
+  return <div className="bg-pink-800 text-white text-xl">Login with Google</div>
 }
 
-export { Button, AllLogin }
+export { Button, MySuperLogin }

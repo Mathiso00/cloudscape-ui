@@ -1,10 +1,10 @@
-import { AllLogin, Button } from '@koops/csui'
+import { Button, MySuperLogin } from '@koops/csui'
 
 function App() {
   return (
     <>
       <Button />
-      <AllLogin />
+      <MySuperLogin />
     </>
   )
 }
