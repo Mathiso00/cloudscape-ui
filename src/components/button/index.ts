@@ -1,1 +1,1 @@
-export { Button, MySuperLogin } from './button'
+export { Button } from './button'
