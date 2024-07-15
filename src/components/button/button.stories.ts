@@ -8,6 +8,19 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    variant: {
+      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
+      control: { type: 'select' },
+    },
+    size: {
+      options: ['default', 'sm', 'lg', 'icon'],
+      control: { type: 'select' },
+    },
+  },
+  args: {
+    children: 'Button',
+  },
   tags: ['autodocs'],
 } satisfies Meta<typeof Button>
 
@@ -16,7 +29,7 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    variant: 'default',
+    size: 'default',
   },
 }
