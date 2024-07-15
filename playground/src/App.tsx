@@ -2,9 +2,11 @@ import { Button } from '@koops/csui'
 
 function App() {
   return (
-    <>
-      <Button />
-    </>
+
+    <Button variant="default" size="sm">
+      hello !
+    </Button>
+
   )
 }
 
