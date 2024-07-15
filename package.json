@@ -1,8 +1,12 @@
 {
-  "name": "cloudscape",
+  "name": "@koops/monorepo",
+  "description": "Monorepo for Koops",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
