@@ -3,6 +3,6 @@
 
 continuousDeployment(
     builder: 'npm',
-    imageForBuild: 'node:22',
+    imageForBuild: 'node:lts-bullseye-slim',
     isLibrary: true,
 )
