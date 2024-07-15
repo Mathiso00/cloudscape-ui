@@ -5,11 +5,11 @@ import { buttonVariants } from '../button/button.tsx'
 
 const AlertDialog = AlertDialogPrimitive.Root
 
-const AlertDialogTrigger = AlertDialogPrimitive.Trigger
+const Trigger = AlertDialogPrimitive.Trigger
 
-const AlertDialogPortal = AlertDialogPrimitive.Portal
+const Portal = AlertDialogPrimitive.Portal
 
-const AlertDialogOverlay = React.forwardRef<
+const Overlay = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
@@ -22,14 +22,14 @@ const AlertDialogOverlay = React.forwardRef<
     ref={ref}
   />
 ))
-AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName
+Overlay.displayName = AlertDialogPrimitive.Overlay.displayName
 
-const AlertDialogContent = React.forwardRef<
+const Content = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
 >(({ className, ...props }, ref) => (
-  <AlertDialogPortal>
-    <AlertDialogOverlay />
+  <Portal>
+    <Overlay />
     <AlertDialogPrimitive.Content
       ref={ref}
       className={cn(
@@ -38,11 +38,11 @@ const AlertDialogContent = React.forwardRef<
       )}
       {...props}
     />
-  </AlertDialogPortal>
+  </Portal>
 ))
-AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName
+Content.displayName = AlertDialogPrimitive.Content.displayName
 
-function AlertDialogHeader({
+function Header({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
@@ -56,9 +56,9 @@ function AlertDialogHeader({
     />
   )
 }
-AlertDialogHeader.displayName = 'AlertDialogHeader'
+Header.displayName = 'AlertDialogHeader'
 
-function AlertDialogFooter({
+function Footer({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
@@ -72,9 +72,9 @@ function AlertDialogFooter({
     />
   )
 }
-AlertDialogFooter.displayName = 'AlertDialogFooter'
+Footer.displayName = 'AlertDialogFooter'
 
-const AlertDialogTitle = React.forwardRef<
+const Title = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>
 >(({ className, ...props }, ref) => (
@@ -84,9 +84,9 @@ const AlertDialogTitle = React.forwardRef<
     {...props}
   />
 ))
-AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
+Title.displayName = AlertDialogPrimitive.Title.displayName
 
-const AlertDialogDescription = React.forwardRef<
+const Description = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>
 >(({ className, ...props }, ref) => (
@@ -96,10 +96,10 @@ const AlertDialogDescription = React.forwardRef<
     {...props}
   />
 ))
-AlertDialogDescription.displayName
+Description.displayName
     = AlertDialogPrimitive.Description.displayName
 
-const AlertDialogAction = React.forwardRef<
+const Action = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Action>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
 >(({ className, ...props }, ref) => (
@@ -109,9 +109,9 @@ const AlertDialogAction = React.forwardRef<
     {...props}
   />
 ))
-AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
+Action.displayName = AlertDialogPrimitive.Action.displayName
 
-const AlertDialogCancel = React.forwardRef<
+const Cancel = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Cancel>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>
 >(({ className, ...props }, ref) => (
@@ -126,18 +126,16 @@ const AlertDialogCancel = React.forwardRef<
   />
 
 ))
-AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName
+Cancel.displayName = AlertDialogPrimitive.Cancel.displayName
 
 export {
   AlertDialog,
-  AlertDialogPortal,
-  AlertDialogOverlay,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogFooter,
-  AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogAction,
-  AlertDialogCancel,
+  Trigger,
+  Content,
+  Header,
+  Footer,
+  Title,
+  Description,
+  Action,
+  Cancel,
 }

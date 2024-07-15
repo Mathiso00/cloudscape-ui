@@ -1,31 +1,23 @@
 import {
   AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
 } from '@koops/csui'
 
 function App() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger>Open</AlertDialogTrigger>
-      <AlertDialogContent>
-        <AlertDialogHeader>
-          <AlertDialogTitle>Supprimer votre compte ?</AlertDialogTitle>
-          <AlertDialogDescription>
+      <AlertDialog.Trigger>Open</AlertDialog.Trigger>
+      <AlertDialog.Content>
+        <AlertDialog.Header>
+          <AlertDialog.Title>Supprimer votre compte ?</AlertDialog.Title>
+          <AlertDialog.Description>
             Cette action est irréversible, êtes-vous sûr de vouloir supprimer votre compte ?
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>Annuler</AlertDialogCancel>
-          <AlertDialogAction>Supprimer</AlertDialogAction>
-        </AlertDialogFooter>
-      </AlertDialogContent>
+          </AlertDialog.Description>
+        </AlertDialog.Header>
+        <AlertDialog.Footer>
+          <AlertDialog.Cancel>Annuler</AlertDialog.Cancel>
+          <AlertDialog.Action>Supprimer</AlertDialog.Action>
+        </AlertDialog.Footer>
+      </AlertDialog.Content>
     </AlertDialog>
 
   )
