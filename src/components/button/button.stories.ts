@@ -18,8 +18,9 @@ const meta = {
     },
   },
   args: {
-    children: 'Button',
+    children: 'Hello World',
   },
+  tags: ['autodocs'],
 } satisfies Meta<typeof Button>
 
 export default meta

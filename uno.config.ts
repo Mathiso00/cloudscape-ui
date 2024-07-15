@@ -10,4 +10,15 @@ export default defineConfig({
     presetShadcn(),
     presetAnimations(),
   ],
+  content: {
+    pipeline: {
+      include: [
+        // the default
+        /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+        // Include Storybook stories
+        'src/**/*.stories.{js,ts}',
+        'stories/**/*',
+      ],
+    },
+  },
 })
