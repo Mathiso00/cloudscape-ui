@@ -1,10 +1,10 @@
-import './App.css'
-import { Button } from '@koops/csui'
+import { AllLogin, Button } from '@koops/csui'
 
 function App() {
   return (
     <>
-      <Button></Button>
+      <Button />
+      <AllLogin />
     </>
   )
 }
