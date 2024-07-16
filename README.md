@@ -9,10 +9,10 @@ pnpm add -D @koops/csui
 ### Usage
 
 ```tsx
-import { Button } from '@koops/csui'
+import { Dialog } from '@koops/csui'
 
 function App() {
-  return <Button>Click me</Button>
+  return <Dialog>Click me</Dialog>
 }
 ```
 
