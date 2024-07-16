@@ -86,3 +86,13 @@ export const WithIcon: Story = {
     children: undefined,
   },
 }
+
+export const SmallLoading: Story = {
+  args: {
+    children: 'Small button loading',
+    isLoading: true,
+    disabled: false,
+    variant: 'default',
+    size: 'sm',
+  },
+}
