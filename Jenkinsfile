@@ -2,7 +2,7 @@
 @Library('koops@feat/jenkins_shared_lib') _
 
 continuousDeployment(
-    builder: 'npm',
-    imageForBuild: 'node:lts-bullseye-slim',
+    builder: 'pnpm',
+    imageForBuild: 'mathiso/pnpm:latest',
     isLibrary: true,
 )
