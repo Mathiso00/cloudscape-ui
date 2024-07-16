@@ -18,7 +18,9 @@ const meta = {
     },
   },
   args: {
-    children: 'Button',
+    children: 'Hello World',
+    isLoading: false,
+    disabled: false,
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Button>
@@ -30,5 +32,67 @@ export const Primary: Story = {
   args: {
     variant: 'default',
     size: 'default',
+  },
+}
+
+export const Destructive: Story = {
+  args: {
+    variant: 'destructive',
+    size: 'default',
+  },
+}
+
+export const DestructiveLoading: Story = {
+  args: {
+    variant: 'destructive',
+    size: 'default',
+    isLoading: true,
+  },
+}
+
+export const Outline: Story = {
+  args: {
+    variant: 'outline',
+    size: 'default',
+  },
+}
+
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary',
+    size: 'default',
+  },
+}
+
+export const Ghost: Story = {
+  args: {
+    variant: 'ghost',
+    size: 'default',
+  },
+}
+
+export const Link: Story = {
+  args: {
+    variant: 'link',
+    size: 'default',
+  },
+}
+
+export const WithIcon: Story = {
+  args: {
+    variant: 'default',
+    size: 'icon',
+    icon: 'i-material-symbols:search',
+    children: undefined,
+  },
+}
+
+export const SmallLoading: Story = {
+  args: {
+    children: 'Small button loading',
+    isLoading: true,
+    disabled: false,
+    variant: 'default',
+    size: 'sm',
   },
 }

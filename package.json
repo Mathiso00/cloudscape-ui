@@ -1,8 +1,8 @@
 {
   "name": "@koops/csui",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -19,7 +19,8 @@
   "scripts": {
     "dev": "vite",
     "build:watch": "vite build --watch",
-    "lint": "eslint vite-project --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -28,10 +29,17 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
+  "dependencies": {
+    "@unocss/reset": "^0.61.3"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.22.2",
     "@chromatic-com/storybook": "^1.6.1",
+    "@iconify/json": "^2.2.228",
+    "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.2",
+    "@storybook/addon-actions": "^8.2.4",
     "@storybook/addon-essentials": "^8.2.2",
     "@storybook/addon-interactions": "^8.2.2",
     "@storybook/addon-links": "^8.2.2",
@@ -68,8 +76,5 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  },
-  "dependencies": {
-    "@unocss/reset": "^0.61.3"
   }
 }
