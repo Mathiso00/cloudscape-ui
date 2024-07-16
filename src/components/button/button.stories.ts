@@ -19,6 +19,8 @@ const meta = {
   },
   args: {
     children: 'Hello World',
+    isLoading: false,
+    disabled: false,
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Button>
@@ -37,6 +39,14 @@ export const Destructive: Story = {
   args: {
     variant: 'destructive',
     size: 'default',
+  },
+}
+
+export const DestructiveLoading: Story = {
+  args: {
+    variant: 'destructive',
+    size: 'default',
+    isLoading: true,
   },
 }
 
@@ -65,5 +75,14 @@ export const Link: Story = {
   args: {
     variant: 'link',
     size: 'default',
+  },
+}
+
+export const WithIcon: Story = {
+  args: {
+    variant: 'default',
+    size: 'icon',
+    icon: 'i-material-symbols:search',
+    children: undefined,
   },
 }

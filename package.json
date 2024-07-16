@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "vite",
     "build:watch": "vite build --watch",
-    "lint": "eslint vite-project --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

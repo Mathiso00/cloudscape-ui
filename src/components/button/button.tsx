@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants'
 import { cn } from '../../utils'
 
 const buttonVariants = tv({
-  base: 'inline-flex select-none items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  base: 'inline-flex select-none disabled:cursor-not-allowed items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
   variants: {
     variant: {
       default: 'bg-black text-white hover:bg-primary/90',
@@ -36,6 +36,8 @@ export interface ButtonProps
   VariantProps<typeof buttonVariants> {
   asChild?: boolean
   leftIcon?: string
+  isLoading?: boolean
+  icon?: string
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -44,20 +46,43 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     variant,
     size,
     leftIcon,
+    isLoading,
     asChild = false,
+    icon,
+    children,
     ...props
   }, ref) => {
     const Comp = asChild ? Slot : 'button'
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={
+          cn(
+            buttonVariants({ variant, size, className }),
+          )
+        }
         ref={ref}
         {...props}
+        disabled={isLoading || props.disabled}
       >
-        {leftIcon && (
-          <div className={`mr-1.5 ${leftIcon}`} />
-        )}
-        {props.children}
+        {
+          isLoading
+            ? (
+                <div className="i-svg-spinners:ring-resize mr-2" />
+              )
+            : (
+                leftIcon && (
+                  <div className={`mr-2 ${leftIcon}`} />
+                )
+              )
+        }
+
+        {
+          icon
+            ? (
+                <div className={`text-xl ${icon}`} />
+              )
+            : children
+        }
       </Comp>
     )
   },
