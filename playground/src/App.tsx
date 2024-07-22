@@ -1,6 +1,6 @@
 import {
   AlertDialog,
-} from '@koops/csui'
+} from '@koopsoperator/csui'
 
 function App() {
   return (

@@ -3,13 +3,13 @@
 ### Installation
 
 ```bash
-pnpm add -D @koops/csui
+pnpm add -D @koopsoperator/csui
 ```
 
 ### Usage
 
 ```tsx
-import { Dialog } from '@koops/csui'
+import { Dialog } from '@koopsoperator/csui'
 
 function App() {
   return <Dialog>Click me</Dialog>
