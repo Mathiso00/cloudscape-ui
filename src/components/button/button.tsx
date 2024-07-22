@@ -38,6 +38,7 @@ export interface ButtonProps
   leftIcon?: string
   isLoading?: boolean
   icon?: string
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -62,7 +63,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         }
         ref={ref}
         {...props}
-        disabled={isLoading || props.disabled}
+        onClick={(e) => {
+          if (isLoading) {
+            e.preventDefault()
+            e.stopPropagation()
+            return
+          }
+          props.onClick?.(e)
+        }}
+        disabled={props.disabled}
       >
         {
           isLoading
