@@ -1,6 +1,7 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import React, { Children } from 'react'
 import { tv } from 'tailwind-variants'
+import { cn } from '../../utils'
 
 type KbdType = 'default' | 'macos' | 'windows'
 
@@ -18,7 +19,7 @@ export interface KbdProps extends ButtonHTMLAttributes<HTMLDivElement> {
 }
 
 const kbdClasses = tv({
-  base: 'select-none px-2 py-1.5 text-xs font-semibold  rounded-md',
+  base: 'select-none tracking-widest op-60 px-2 py-1.5 text-xs rounded-md',
   variants: {
     filled: {
       true: 'bg-zinc-700 border border-zinc-600 text-zinc-50 ',
@@ -31,6 +32,7 @@ const Kbd: React.FC<KbdProps> = ({
   children,
   os = 'default',
   filled = true,
+  className,
 }) => {
   const macOsSymbol: string = '⌘'
 
@@ -44,7 +46,7 @@ const Kbd: React.FC<KbdProps> = ({
 
   const combinations = Children.toArray(children).map((child) => {
     if (typeof child === 'string') {
-      let modifiedChild: string = child.toUpperCase().replace(/ /g, ' + ')
+      let modifiedChild: string = child.toUpperCase()
       if (isAppleDevice()) {
         modifiedChild = modifiedChild.replace('CTRL', macOsSymbol)
       }
@@ -54,7 +56,7 @@ const Kbd: React.FC<KbdProps> = ({
   })
 
   return (
-    <kbd className={kbdClasses({ filled })}>
+    <kbd className={cn(kbdClasses({ filled }), className)}>
       {combinations}
     </kbd>
   )

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as DropdownPrimitive from '@radix-ui/react-dropdown-menu'
 import { cn } from '../../utils'
+import { Kbd } from '../kbd'
 
 const Root = DropdownPrimitive.Root
 
@@ -147,10 +148,9 @@ function Shortcut({
   ...props
 }: React.HTMLAttributes<HTMLSpanElement>) {
   return (
-    <span
-      className={cn('ml-auto text-xs tracking-widest opacity-60', className)}
-      {...props}
-    />
+    <Kbd filled={false} className="ml-auto">
+      {props.children}
+    </Kbd>
   )
 }
 Shortcut.displayName = 'Shortcut'
