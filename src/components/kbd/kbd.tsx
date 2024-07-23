@@ -1,5 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import React, { Children } from 'react'
+import { tv } from 'tailwind-variants'
 
 type KbdType = 'default' | 'macos' | 'windows'
 
@@ -13,9 +14,20 @@ export enum KbdVariant {
 export interface KbdProps extends ButtonHTMLAttributes<HTMLDivElement> {
   children?: ReactNode
   os?: KbdType
+  filled?: boolean
 }
 
-const Kbd: React.FC<KbdProps> = ({ children, os }) => {
+const kbdClasses = tv({
+  base: 'select-none px-2 py-1.5 text-xs font-semibold  rounded-md',
+  variants: {
+    filled: {
+      true: 'bg-zinc-700 border border-zinc-600 text-zinc-50 ',
+      false: 'bg-transparent border-none text-zinc-700',
+    },
+  },
+})
+
+const Kbd: React.FC<KbdProps> = ({ children, os, filled = true }) => {
   const macOsSymbol = '⌘'
 
   const isAppleDevice = (): boolean => {
@@ -38,7 +50,7 @@ const Kbd: React.FC<KbdProps> = ({ children, os }) => {
   })
 
   return (
-    <kbd className="px-2 py-1.5 text-xs font-semibold text-zinc-50 bg-zinc-700 border border-zinc-600 rounded-md">
+    <kbd className={kbdClasses({ filled })}>
       {combinations}
     </kbd>
   )
