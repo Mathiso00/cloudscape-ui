@@ -15,6 +15,7 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
-    children: '⌘ + S',
+    os: 'macos',
+    children: 'CTRL S',
   },
 }

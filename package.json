@@ -63,6 +63,8 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "eslint-plugin-storybook": "^0.8.0",
     "storybook": "^8.2.2",
+    "storybook-dark-mode": "^4.0.2",
+    "storybook-tailwind-dark-mode": "^1.0.22",
     "tailwind-merge": "^2.4.0",
     "tailwind-variants": "^0.2.1",
     "typescript": "^5.2.2",
