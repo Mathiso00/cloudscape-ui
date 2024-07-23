@@ -15,24 +15,14 @@ type Story = StoryObj<typeof meta>
 
 export const MacOS: Story = {
   args: {
-    os: 'macos',
-    children: 'CTRL S',
-    filled: false,
-  },
-}
-
-export const Windows: Story = {
-  args: {
-    os: 'windows',
-    children: 'CTRL S',
+    keys: ['command', 'S'],
     filled: false,
   },
 }
 
 export const Filled: Story = {
   args: {
-    os: 'default',
-    children: 'CTRL S',
+    keys: ['command', 'S'],
     filled: true,
   },
   parameters: {

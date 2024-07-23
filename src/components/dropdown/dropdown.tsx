@@ -148,9 +148,11 @@ function Shortcut({
   ...props
 }: React.HTMLAttributes<HTMLSpanElement>) {
   return (
-    <Kbd filled={false} className="ml-auto">
-      {props.children}
-    </Kbd>
+    <Kbd
+      filled={false}
+      className="ml-auto"
+      keys={props.children?.toString().split('+') || []}
+    />
   )
 }
 Shortcut.displayName = 'Shortcut'
