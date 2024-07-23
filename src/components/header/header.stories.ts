@@ -5,7 +5,6 @@ const meta = {
   title: 'Primitives/Header',
   component: Header,
   parameters: {
-    layout: 'centered',
   },
 
   tags: ['autodocs'],
