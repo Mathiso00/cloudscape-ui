@@ -36,8 +36,6 @@ export const Filled: Story = {
     filled: true,
   },
   parameters: {
-    darkMode: {
-      current: 'dark',
-    },
+    backgrounds: { default: 'dark' },
   },
 }
