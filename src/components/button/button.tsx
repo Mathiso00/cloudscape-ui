@@ -25,10 +25,6 @@ const buttonVariants = tv({
       icon: 'h-10 w-10',
     },
   },
-  defaultVariants: {
-    variant: 'default',
-    size: 'default',
-  },
 })
 
 export interface ButtonProps
@@ -44,15 +40,16 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({
     className,
-    variant,
-    size,
+    variant = 'default',
+    size = 'default',
     leftIcon,
-    isLoading,
+    isLoading = false,
+    disabled = false,
     asChild = false,
     icon,
     children,
     ...props
-  }, ref) => {
+  }: ButtonProps, ref) => {
     const Comp = asChild ? Slot : 'button'
     return (
       <Comp
@@ -71,7 +68,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           }
           props.onClick?.(e)
         }}
-        disabled={props.disabled}
+        disabled={disabled}
       >
         {
           isLoading
