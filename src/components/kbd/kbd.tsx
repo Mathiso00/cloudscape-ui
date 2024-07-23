@@ -25,7 +25,7 @@ const kbdVariants = {
 
 export interface KbdProps extends ButtonHTMLAttributes<HTMLDivElement> {
   children?: ReactNode
-  keys?: string[]
+  keys?: (KbdVariant | string)[]
   filled?: boolean
 }
 
@@ -33,38 +33,27 @@ const kbdClasses = tv({
   base: 'select-none h-5 flex font-sans items-center justify-center px-1.5 py-2 text-xs rounded-md',
   variants: {
     filled: {
-      true: 'bg-zinc-700 border border-zinc-600 text-zinc-50 ',
+      true: 'bg-zinc-700 border border-zinc-600 text-zinc-50',
       false: 'bg-transparent border-none text-zinc-700/60',
     },
   },
 })
 
-const Kbd: React.FC<KbdProps> = ({
-  children,
-  filled = true,
-  keys = [],
-  className,
-}) => {
-  const getVariants = (key: string) => {
-    if (kbdVariants[key as KbdVariant]) {
-      return (
-        <div className={cn('h-3 w-3 mr-.5', kbdVariants[key as KbdVariant])} />
-      )
-    }
-
-    return <span className="mr-.5  capitalize">{key.toLowerCase()}</span>
-  }
-
-  return (
-    <kbd className={cn(kbdClasses({ filled }), className)}>
-      {keys.map((key, index) => (
-        <React.Fragment key={index}>
-          {getVariants(key.toLowerCase())}
-        </React.Fragment>
-      ))}
-      {children}
-    </kbd>
-  )
-}
+const Kbd: React.FC<KbdProps> = ({ children, filled = true, keys = [], className }) => (
+  <kbd className={cn(kbdClasses({ filled }), className)}>
+    {keys.map((key, index) => (
+      <React.Fragment key={index}>
+        {kbdVariants[key.toLowerCase() as KbdVariant]
+          ? (
+              <div className={cn('h-3 w-3 mr-0.5', kbdVariants[key.toLowerCase() as KbdVariant])} />
+            )
+          : (
+              <span className="mr-0.5 capitalize">{key.toLowerCase()}</span>
+            )}
+      </React.Fragment>
+    ))}
+    {children}
+  </kbd>
+)
 
 export { Kbd }

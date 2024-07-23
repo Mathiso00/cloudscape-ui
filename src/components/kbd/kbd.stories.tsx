@@ -6,6 +6,14 @@ const meta = {
   component: Kbd,
   parameters: {
     layout: 'centered',
+    controls: {
+      exclude: ['children'],
+    },
+  },
+  argTypes: {
+    keys: {
+      description: 'Array of keys to display',
+    },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Kbd>
