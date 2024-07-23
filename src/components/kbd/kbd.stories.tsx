@@ -17,5 +17,27 @@ export const Primary: Story = {
   args: {
     os: 'macos',
     children: 'CTRL S',
+    filled: false,
+  },
+}
+
+export const Windows: Story = {
+  args: {
+    os: 'windows',
+    children: 'CTRL S',
+    filled: false,
+  },
+}
+
+export const Filled: Story = {
+  args: {
+    os: 'default',
+    children: 'CTRL S',
+    filled: true,
+  },
+  parameters: {
+    darkMode: {
+      current: 'dark',
+    },
   },
 }

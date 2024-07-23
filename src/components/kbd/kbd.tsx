@@ -27,7 +27,11 @@ const kbdClasses = tv({
   },
 })
 
-const Kbd: React.FC<KbdProps> = ({ children, os, filled = true }) => {
+const Kbd: React.FC<KbdProps> = ({
+  children,
+  os = 'default',
+  filled = true,
+}) => {
   const macOsSymbol = '⌘'
 
   const isAppleDevice = (): boolean => {
@@ -40,7 +44,7 @@ const Kbd: React.FC<KbdProps> = ({ children, os, filled = true }) => {
 
   const combinations = Children.toArray(children).map((child) => {
     if (typeof child === 'string') {
-      let modifiedChild = child.toUpperCase().replace(/ /g, ' + ')
+      let modifiedChild: string = child.toUpperCase().replace(/ /g, ' + ')
       if (isAppleDevice()) {
         modifiedChild = modifiedChild.replace('CTRL', macOsSymbol)
       }
