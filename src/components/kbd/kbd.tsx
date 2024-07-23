@@ -59,7 +59,7 @@ const Kbd: React.FC<KbdProps> = ({
     <kbd className={cn(kbdClasses({ filled }), className)}>
       {keys.map((key, index) => (
         <React.Fragment key={index}>
-          {getVariants(key)}
+          {getVariants(key.toLowerCase())}
         </React.Fragment>
       ))}
       {children}

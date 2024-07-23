@@ -81,7 +81,7 @@ export const Default: Story = {
           <Dropdown.Item>
             <div className="i-mdi-plus mr-2 h-4 w-4" />
             <span>New Team</span>
-            <Dropdown.Shortcut>option+command+T</Dropdown.Shortcut>
+            <Dropdown.Shortcut>Option+Command+T</Dropdown.Shortcut>
           </Dropdown.Item>
         </Dropdown.Group>
         <Dropdown.Separator />
