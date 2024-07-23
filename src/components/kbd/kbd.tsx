@@ -32,7 +32,7 @@ const Kbd: React.FC<KbdProps> = ({
   os = 'default',
   filled = true,
 }) => {
-  const macOsSymbol = '⌘'
+  const macOsSymbol: string = '⌘'
 
   const isAppleDevice = (): boolean => {
     if (os === 'macos')
