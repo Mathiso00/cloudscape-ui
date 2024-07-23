@@ -1,5 +1,5 @@
 #!groovy
-@Library('koops@feat/jenkins_shared_lib') _
+@Library('koops@develop') _
 
 continuousDeployment(
     builder: 'pnpm',
