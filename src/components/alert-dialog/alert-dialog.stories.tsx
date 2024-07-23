@@ -8,7 +8,7 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof AlertDialog>
 
 export default meta
 type Story = StoryObj<typeof meta>
