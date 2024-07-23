@@ -37,6 +37,9 @@ export interface ButtonProps
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
+/**
+ * Button component that can be used to trigger actions. It can be customized with different variants and sizes.
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({
     className,

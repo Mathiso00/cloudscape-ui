@@ -30,6 +30,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+/** Default button */
 export const Primary: Story = {
   args: {
     variant: 'default',
@@ -37,6 +38,17 @@ export const Primary: Story = {
   },
 }
 
+/** Disabled button */
+export const Disabled: Story = {
+  args: {
+    variant: 'default',
+    size: 'default',
+    disabled: true,
+  },
+
+}
+
+/** When a dangerous action is about to be performed */
 export const Destructive: Story = {
   args: {
     variant: 'destructive',
@@ -44,6 +56,7 @@ export const Destructive: Story = {
   },
 }
 
+/** When a dangerous action is pending */
 export const DestructiveLoading: Story = {
   args: {
     variant: 'destructive',
@@ -73,6 +86,7 @@ export const Ghost: Story = {
   },
 }
 
+/** When the button is a link */
 export const Link: Story = {
   args: {
     variant: 'link',
@@ -80,6 +94,7 @@ export const Link: Story = {
   },
 }
 
+/** When the button is a small button */
 export const WithIcon: Story = {
   args: {
     variant: 'default',
