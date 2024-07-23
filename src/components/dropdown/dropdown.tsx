@@ -12,6 +12,11 @@ const Portal = DropdownPrimitive.Portal
 
 const Sub = DropdownPrimitive.Sub
 
+Trigger.displayName = 'Trigger'
+Group.displayName = 'Group'
+Portal.displayName = 'Portal'
+Sub.displayName = 'Sub'
+
 const SubTrigger = React.forwardRef<
   React.ElementRef<typeof DropdownPrimitive.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof DropdownPrimitive.SubTrigger> & {
@@ -31,8 +36,7 @@ const SubTrigger = React.forwardRef<
     <div className="i-mdi-chevron-right ml-auto h-4 w-4" />
   </DropdownPrimitive.SubTrigger>
 ))
-SubTrigger.displayName
-    = DropdownPrimitive.SubTrigger.displayName
+SubTrigger.displayName = 'SubTrigger'
 
 const SubContent = React.forwardRef<
   React.ElementRef<typeof DropdownPrimitive.SubContent>,
@@ -47,8 +51,7 @@ const SubContent = React.forwardRef<
     {...props}
   />
 ))
-SubContent.displayName
-    = DropdownPrimitive.SubContent.displayName
+SubContent.displayName = 'SubContent'
 
 const Content = React.forwardRef<
   React.ElementRef<typeof DropdownPrimitive.Content>,
@@ -66,7 +69,7 @@ const Content = React.forwardRef<
     />
   </DropdownPrimitive.Portal>
 ))
-Content.displayName = DropdownPrimitive.Content.displayName
+Content.displayName = 'Content'
 
 const Item = React.forwardRef<
   React.ElementRef<typeof DropdownPrimitive.Item>,
@@ -84,7 +87,7 @@ const Item = React.forwardRef<
     {...props}
   />
 ))
-Item.displayName = DropdownPrimitive.Item.displayName
+Item.displayName = 'Item'
 
 const CheckboxItem = React.forwardRef<
   React.ElementRef<typeof DropdownPrimitive.CheckboxItem>,
@@ -107,8 +110,7 @@ const CheckboxItem = React.forwardRef<
     {children}
   </DropdownPrimitive.CheckboxItem>
 ))
-CheckboxItem.displayName
-    = DropdownPrimitive.CheckboxItem.displayName
+CheckboxItem.displayName = 'CheckboxItem'
 
 const Label = React.forwardRef<
   React.ElementRef<typeof DropdownPrimitive.Label>,
@@ -126,7 +128,7 @@ const Label = React.forwardRef<
     {...props}
   />
 ))
-Label.displayName = DropdownPrimitive.Label.displayName
+Label.displayName = 'Label'
 
 const Separator = React.forwardRef<
   React.ElementRef<typeof DropdownPrimitive.Separator>,
@@ -138,7 +140,7 @@ const Separator = React.forwardRef<
     {...props}
   />
 ))
-Separator.displayName = DropdownPrimitive.Separator.displayName
+Separator.displayName = 'Separator'
 
 function Shortcut({
   className,
@@ -151,7 +153,7 @@ function Shortcut({
     />
   )
 }
-Shortcut.displayName = 'DropdownMenuShortcut'
+Shortcut.displayName = 'Shortcut'
 
 export {
   Root,

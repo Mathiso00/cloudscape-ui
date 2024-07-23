@@ -1,6 +1,8 @@
-import * as React from 'react'
+import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import React, { Children } from 'react'
 
 type KbdType = 'default' | 'macos' | 'windows'
+
 export enum KbdVariant {
   ARROW_RIGHT = 'arrow-right',
   ARROW_LEFT = 'arrow-left',
@@ -8,32 +10,27 @@ export enum KbdVariant {
   ARROW_DOWN = 'arrow-down',
 }
 
-export interface KbdProps
-  extends React.ButtonHTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode
+export interface KbdProps extends ButtonHTMLAttributes<HTMLDivElement> {
+  children?: ReactNode
   os?: KbdType
 }
 
-function Kbd({ children, os }: KbdProps) {
-  const macOs = '⌘'
+const Kbd: React.FC<KbdProps> = ({ children, os }) => {
+  const macOsSymbol = '⌘'
 
-  function checkIfAppleDevice() {
-    if (os === 'macos') {
+  const isAppleDevice = (): boolean => {
+    if (os === 'macos')
       return true
-    }
-
-    if (os === 'windows') {
+    if (os === 'windows')
       return false
-    }
-
-    return window.navigator.userAgent.match(/Mac/) !== null
+    return /Mac/.test(window.navigator.userAgent)
   }
 
-  const combinations = React.Children.toArray(children).map((child) => {
+  const combinations = Children.toArray(children).map((child) => {
     if (typeof child === 'string') {
       let modifiedChild = child.toUpperCase().replace(/ /g, ' + ')
-      if (checkIfAppleDevice()) {
-        modifiedChild = modifiedChild.replace('CTRL', macOs)
+      if (isAppleDevice()) {
+        modifiedChild = modifiedChild.replace('CTRL', macOsSymbol)
       }
       return modifiedChild
     }
@@ -41,9 +38,7 @@ function Kbd({ children, os }: KbdProps) {
   })
 
   return (
-    <kbd
-      className="px-2 py-1.5 text-xs font-semibold text-zinc-50 bg-zinc-700 border border-zinc-600 rounded-md"
-    >
+    <kbd className="px-2 py-1.5 text-xs font-semibold text-zinc-50 bg-zinc-700 border border-zinc-600 rounded-md">
       {combinations}
     </kbd>
   )
