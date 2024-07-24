@@ -10,7 +10,6 @@ CSUI is a collection of reusable components, guided by clear standards, that can
 <a href="https://www.npmjs.com/package/@koopsoperator/csui" target="__blank"><img src="https://img.shields.io/npm/v/@koopsoperator/csui?style=flat&colorA=002438&colorB=2b67a6" alt="NPM version"></a>
 </p>
 
-
 ## Tech Stack
 - [pnpm](https://pnpm.io/)
 - [React](https://reactjs.org/)
