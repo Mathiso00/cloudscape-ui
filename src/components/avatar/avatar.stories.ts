@@ -17,11 +17,15 @@ export const Primary: Story = {
   args: {
     src: 'https://github.com/shadcn.png',
     alt: 'avatar',
+    size: 'default',
+
   },
 }
 export const FallBack: Story = {
   args: {
     src: '',
     alt: 'avatar',
+    size: 'default',
+
   },
 }
