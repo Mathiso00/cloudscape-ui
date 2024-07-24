@@ -38,6 +38,14 @@ export const Primary: Story = {
   },
 }
 
+export const PrimaryFocused: Story = {
+  args: {
+    variant: 'default',
+    size: 'default',
+  },
+  render: e => (<Button {...e} data-focus />),
+}
+
 /** Disabled button */
 export const Disabled: Story = {
   args: {

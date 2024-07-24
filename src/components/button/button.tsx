@@ -5,24 +5,24 @@ import { tv } from 'tailwind-variants'
 import { cn } from '../../utils'
 
 const buttonVariants = tv({
-  base: 'inline-flex select-none disabled:cursor-not-allowed items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
+  base: 'inline-flex select-none disabled:cursor-not-allowed items-center justify-center whitespace-nowrap  text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none data-[focus]:ring-2 data-[focus]:ring-ring data-[focus]:ring-offset-2  focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
   variants: {
     variant: {
       default: 'bg-black text-white hover:bg-primary/90',
       destructive:
-          'bg-red-700 text-red-50 hover:bg-red-700/90',
+          'bg-red-700 text-red-50 hover:bg-red-700/90 !ring-red-700',
       outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+          'border border-input bg-background hover:bg-accent hover:text-accent-foreground !ring-accent',
       secondary:
           'bg-secondary text-secondary-foreground hover:bg-secondary/50',
       ghost: 'hover:bg-accent bg-transparent hover:text-accent-foreground',
       link: 'text-primary bg-transparent underline-offset-4 hover:underline',
     },
     size: {
-      default: 'h-10 px-4 rounded-md py-2',
-      sm: 'h-9 rounded-md px-3',
-      lg: 'h-11 rounded-md px-8',
-      icon: 'h-10 w-10',
+      default: 'h-10 px-4 rounded-xl py-2',
+      sm: 'h-9 rounded-xl px-3',
+      lg: 'h-11 rounded-xl px-8',
+      icon: 'h-10 w-10 rounded-xl',
     },
   },
   defaultVariants: {
