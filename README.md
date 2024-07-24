@@ -41,7 +41,7 @@ function App() {
 > To install packages, you need to have [pnpm](https://pnpm.io/) installed on your machine, if you need to install packages to create new components please, run the following command: `pnpm add -w -D <package-name>`
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
 ```
 
 ### Build process (while developing)
