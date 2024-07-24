@@ -1,13 +1,13 @@
-import { defineConfig, presetIcons, presetMini, presetUno } from 'unocss'
+import { defineConfig, presetIcons, presetUno } from 'unocss'
 import { presetShadcn } from 'unocss-preset-shadcn'
 import { presetAnimations } from 'unocss-preset-animations'
 
 export default defineConfig({
   presets: [
-    presetMini({
+    presetUno({
       dark: 'media',
+      variablePrefix: 'koops-',
     }),
-    presetUno(),
     presetIcons(),
     presetShadcn(),
     presetAnimations(),
