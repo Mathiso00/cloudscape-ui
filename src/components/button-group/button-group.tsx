@@ -7,7 +7,7 @@ interface ButtonGroupProps extends React.PropsWithChildren {
 
 function ButtonGroup({ children, size }: ButtonGroupProps) {
   return (
-    <div className="flex flex-row ![&>*]:rounded-none ![&>*:first-child]:rounded-l-lg ![&>*:last-child]:rounded-r-lg">
+    <div className="flex flex-row ![&>*]:rounded-none ![&>*:first-child]:rounded-l-xl ![&>*:last-child]:rounded-r-xl">
       {React.Children.map(children, (child) => {
         return React.cloneElement(
           child as React.DetailedReactHTMLElement<any, HTMLElement>,

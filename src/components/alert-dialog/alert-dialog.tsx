@@ -5,11 +5,20 @@ import { buttonVariants } from '../button/button.tsx'
 
 const AlertDialog = AlertDialogPrimitive.Root
 
-const Trigger = AlertDialogPrimitive.Trigger
 const Portal = AlertDialogPrimitive.Portal
-
-Trigger.displayName = 'Trigger'
 Portal.displayName = 'Portal'
+
+const Trigger = React.forwardRef<
+  React.ElementRef<typeof AlertDialogPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Trigger>
+>(({ className, ...props }, ref) => (
+  <AlertDialogPrimitive.Trigger
+    asChild
+    className={cn('cursor-pointer outline-none', className)}
+    {...props}
+    ref={ref}
+  />
+))
 
 const Overlay = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
