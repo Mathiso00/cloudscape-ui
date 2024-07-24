@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import { Button } from '../index.ts'
 
 const meta = {
@@ -21,6 +22,7 @@ const meta = {
     children: 'Hello World',
     isLoading: false,
     disabled: false,
+    onClick: action('onClick'),
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Button>

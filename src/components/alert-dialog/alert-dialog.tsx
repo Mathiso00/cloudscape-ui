@@ -6,8 +6,10 @@ import { buttonVariants } from '../button/button.tsx'
 const AlertDialog = AlertDialogPrimitive.Root
 
 const Trigger = AlertDialogPrimitive.Trigger
-
 const Portal = AlertDialogPrimitive.Portal
+
+Trigger.displayName = 'Trigger'
+Portal.displayName = 'Portal'
 
 const Overlay = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
@@ -22,7 +24,7 @@ const Overlay = React.forwardRef<
     ref={ref}
   />
 ))
-Overlay.displayName = AlertDialogPrimitive.Overlay.displayName
+Overlay.displayName = 'Overlay'
 
 const Content = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Content>,
@@ -40,7 +42,7 @@ const Content = React.forwardRef<
     />
   </Portal>
 ))
-Content.displayName = AlertDialogPrimitive.Content.displayName
+Content.displayName = 'Content'
 
 function Header({
   className,
@@ -56,7 +58,7 @@ function Header({
     />
   )
 }
-Header.displayName = 'AlertDialogHeader'
+Header.displayName = 'Header'
 
 function Footer({
   className,
@@ -72,7 +74,7 @@ function Footer({
     />
   )
 }
-Footer.displayName = 'AlertDialogFooter'
+Footer.displayName = 'Footer'
 
 const Title = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Title>,
@@ -84,7 +86,7 @@ const Title = React.forwardRef<
     {...props}
   />
 ))
-Title.displayName = AlertDialogPrimitive.Title.displayName
+Title.displayName = 'Title'
 
 const Description = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Description>,
@@ -96,8 +98,7 @@ const Description = React.forwardRef<
     {...props}
   />
 ))
-Description.displayName
-    = AlertDialogPrimitive.Description.displayName
+Description.displayName = 'Description'
 
 const Action = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Action>,
@@ -109,7 +110,7 @@ const Action = React.forwardRef<
     {...props}
   />
 ))
-Action.displayName = AlertDialogPrimitive.Action.displayName
+Action.displayName = 'Action'
 
 const Cancel = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Cancel>,
@@ -126,7 +127,7 @@ const Cancel = React.forwardRef<
   />
 
 ))
-Cancel.displayName = AlertDialogPrimitive.Cancel.displayName
+Cancel.displayName = 'Cancel'
 
 export {
   AlertDialog,
