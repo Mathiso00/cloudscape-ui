@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants'
 import { cn } from '../../utils'
 
 const buttonVariants = tv({
-  base: 'inline-flex select-none disabled:cursor-not-allowed items-center justify-center whitespace-nowrap  text-sm font-medium ring-offset-background transition-all focus-visible:outline-none data-[focus]:ring-2 data-[focus]:ring-ring data-[focus]:ring-offset-2  focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
+  base: 'inline-flex select-none disabled:cursor-not-allowed items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-all focus-visible:outline-none data-[focus]:ring-2 data-[focus]:ring-ring data-[focus]:ring-offset-2  focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
   variants: {
     variant: {
       default: 'bg-black text-white hover:bg-primary/90',

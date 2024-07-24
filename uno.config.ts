@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons, presetUno } from 'unocss'
+import { defineConfig, presetIcons, presetUno, presetWebFonts } from 'unocss'
 import { presetShadcn } from 'unocss-preset-shadcn'
 import { presetAnimations } from 'unocss-preset-animations'
 
@@ -9,6 +9,12 @@ export default defineConfig({
       variablePrefix: 'koops-',
     }),
     presetIcons(),
+    presetWebFonts({
+      provider: 'google',
+      fonts: {
+        inter: 'Inter:300,400,500,600,700',
+      },
+    }),
     presetShadcn(),
     presetAnimations(),
   ],
