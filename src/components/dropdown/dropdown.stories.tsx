@@ -24,7 +24,7 @@ export const Default: Story = {
           Actions
         </Button>
       </Dropdown.Trigger>
-      <Dropdown.Content>
+      <Dropdown.Content align="start">
         <Dropdown.Label>My Account</Dropdown.Label>
         <Dropdown.Separator />
         <Dropdown.Group>
