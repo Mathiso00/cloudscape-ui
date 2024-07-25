@@ -33,7 +33,4 @@ export const Filled: Story = {
     keys: ['command', 'S'],
     filled: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
-  },
 }

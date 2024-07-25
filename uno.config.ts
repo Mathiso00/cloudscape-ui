@@ -5,8 +5,8 @@ import { presetAnimations } from 'unocss-preset-animations'
 export default defineConfig({
   presets: [
     presetUno({
-      dark: 'media',
-      variablePrefix: 'koops-',
+      dark: 'class',
+      // variablePrefix: 'koops-',
     }),
     presetIcons(),
     presetWebFonts({
@@ -15,7 +15,10 @@ export default defineConfig({
         inter: 'Inter:300,400,500,600,700',
       },
     }),
-    presetShadcn(),
+    presetShadcn({
+      color: 'neutral',
+      darkSelector: '.dark',
+    }),
     presetAnimations(),
   ],
   content: {
