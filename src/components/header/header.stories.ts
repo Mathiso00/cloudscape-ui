@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Header } from './header.tsx'
 
 const meta = {
-  title: 'Primitives/Header',
+  title: 'Components/Header',
   component: Header,
   parameters: {
   },

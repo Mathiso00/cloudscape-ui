@@ -82,7 +82,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
           {/*  <span>VPN connected</span> */}
           {/*  <WifiIcon className="h-4 w-4" /> */}
           {/* </Badge> */}
-          <Button variant="secondary" size="default">
+          <Button variant="secondary" size="default" leftIcon="i-heroicons:wifi-20-solid w-1em h-1em">
             VPN
           </Button>
           <Avatar alt="DP" size="default">
