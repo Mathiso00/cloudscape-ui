@@ -16,9 +16,9 @@ type Weight = 'light' | 'regular' | 'medium' | 'bold'
 const headingClasses = tv({
   variants: {
     color: {
-      primary: '!text-white',
-      secondary: '!text-neutral-300',
-      destructive: '!text-red-500',
+      primary: 'text-white',
+      secondary: 'text-neutral-300',
+      destructive: 'text-red-500',
     },
     size: {
       1: 'text-12px leading-16px tracking-0.0025em',
@@ -44,9 +44,9 @@ const headingClasses = tv({
 })
 
 /**
- * The Heading component is used to render headings like Titles, Subtitles, etc.
+ * The Heading component is used to render headings like **Titles**, **Subtitles**, etc.
  */
-function Heading({
+function Text({
   size = 6,
   as = 'h4',
   color = 'primary',
@@ -72,6 +72,6 @@ function Heading({
   )
 }
 
-Heading.displayName = 'Heading'
-export { Heading }
+Text.displayName = 'Heading'
+export { Text }
 export type { Size, Weight }
