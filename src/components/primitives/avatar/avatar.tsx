@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
-import { cn } from '../../utils'
+import { cn } from '../../../utils'
 
 const avatarVariants = tv({
   base: 'relative flex shrink-0 overflow-hidden rounded-full',

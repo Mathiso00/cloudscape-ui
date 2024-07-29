@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import React from 'react'
 import { tv } from 'tailwind-variants'
-import { cn } from '../../utils'
+import { cn } from '../../../utils'
 
 export enum KbdVariant {
   ARROW_RIGHT = 'arrow-right',
