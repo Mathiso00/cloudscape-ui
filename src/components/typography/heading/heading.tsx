@@ -15,6 +15,11 @@ type Weight = 'light' | 'regular' | 'medium' | 'bold'
 
 const headingClasses = tv({
   variants: {
+    color: {
+      primary: 'text-white',
+      secondary: 'text-neutral-300',
+      destructive: 'text-red-500',
+    },
     size: {
       1: 'text-12px leading-16px tracking-0.0025em',
       2: 'text-14px leading-20px',
@@ -34,11 +39,6 @@ const headingClasses = tv({
     },
     truncate: {
       true: 'truncate',
-    },
-    color: {
-      primary: 'text-white',
-      secondary: 'text-neutral-300',
-      destructive: 'text-red-500',
     },
   },
 })
