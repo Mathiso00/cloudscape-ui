@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { Button } from '../index.ts'
+import { Button } from './button.tsx'
 
 const meta = {
   title: 'Primitives/Button',
