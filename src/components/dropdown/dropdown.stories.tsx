@@ -18,35 +18,35 @@ export const Default: Story = {
     <Dropdown {...e}>
       <Dropdown.Trigger asChild>
         <Button
-          variant="default"
+          variant="destructive"
           leftIcon="i-mdi-caret-down"
         >
           Actions
         </Button>
       </Dropdown.Trigger>
-      <Dropdown.Content>
+      <Dropdown.Content align="start">
         <Dropdown.Label>My Account</Dropdown.Label>
         <Dropdown.Separator />
         <Dropdown.Group>
           <Dropdown.Item>
             <div className="i-mdi-user mr-2 h-4 w-4" />
             <span>Profile</span>
-            <Dropdown.Shortcut>⇧⌘P</Dropdown.Shortcut>
+            <Dropdown.Shortcut>shift+command+P</Dropdown.Shortcut>
           </Dropdown.Item>
           <Dropdown.Item>
             <div className="i-mdi-credit-card mr-2 h-4 w-4" />
             <span>Billing</span>
-            <Dropdown.Shortcut>⌘B</Dropdown.Shortcut>
+            <Dropdown.Shortcut>command+B</Dropdown.Shortcut>
           </Dropdown.Item>
           <Dropdown.Item>
             <div className="i-mdi-cog mr-2 h-4 w-4" />
             <span>Settings</span>
-            <Dropdown.Shortcut>⌘S</Dropdown.Shortcut>
+            <Dropdown.Shortcut>command+S</Dropdown.Shortcut>
           </Dropdown.Item>
           <Dropdown.Item>
             <div className="i-mdi-keyboard mr-2 h-4 w-4" />
             <span>Keyboard shortcuts</span>
-            <Dropdown.Shortcut>⌘K</Dropdown.Shortcut>
+            <Dropdown.Shortcut>command+K</Dropdown.Shortcut>
           </Dropdown.Item>
         </Dropdown.Group>
         <Dropdown.Separator />
@@ -81,7 +81,7 @@ export const Default: Story = {
           <Dropdown.Item>
             <div className="i-mdi-plus mr-2 h-4 w-4" />
             <span>New Team</span>
-            <Dropdown.Shortcut>⌘+T</Dropdown.Shortcut>
+            <Dropdown.Shortcut>option+command+T</Dropdown.Shortcut>
           </Dropdown.Item>
         </Dropdown.Group>
         <Dropdown.Separator />
@@ -101,7 +101,7 @@ export const Default: Story = {
         <Dropdown.Item>
           <div className="i-mdi-logout mr-2 h-4 w-4" />
           <span>Log out</span>
-          <Dropdown.Shortcut>⇧⌘Q</Dropdown.Shortcut>
+          <Dropdown.Shortcut>CTRL+Q</Dropdown.Shortcut>
         </Dropdown.Item>
       </Dropdown.Content>
     </Dropdown>

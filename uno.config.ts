@@ -1,15 +1,24 @@
-import { defineConfig, presetIcons, presetMini, presetUno } from 'unocss'
+import { defineConfig, presetIcons, presetUno, presetWebFonts } from 'unocss'
 import { presetShadcn } from 'unocss-preset-shadcn'
 import { presetAnimations } from 'unocss-preset-animations'
 
 export default defineConfig({
   presets: [
-    presetMini({
-      dark: 'media',
+    presetUno({
+      dark: 'class',
+      // variablePrefix: 'koops-',
     }),
-    presetUno(),
     presetIcons(),
-    presetShadcn(),
+    presetWebFonts({
+      provider: 'google',
+      fonts: {
+        inter: 'Inter:300,400,500,600,700',
+      },
+    }),
+    presetShadcn({
+      color: 'neutral',
+      darkSelector: '.dark',
+    }),
     presetAnimations(),
   ],
   content: {
