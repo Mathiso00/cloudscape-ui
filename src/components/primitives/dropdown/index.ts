@@ -1,5 +1,4 @@
-import { attachSubComponents } from '../../utils/exports.ts'
-
+import { attachSubComponents } from '../../../utils/exports.ts'
 import {
   CheckboxItem,
   Content,
