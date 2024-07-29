@@ -18,7 +18,7 @@ export const Default: Story = {
     <Dropdown {...e}>
       <Dropdown.Trigger asChild>
         <Button
-          variant="default"
+          variant="destructive"
           leftIcon="i-mdi-caret-down"
         >
           Actions

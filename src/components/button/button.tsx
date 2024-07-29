@@ -5,14 +5,14 @@ import { tv } from 'tailwind-variants'
 import { cn } from '../../utils'
 
 const buttonVariants = tv({
-  base: 'inline-flex select-none disabled:cursor-not-allowed items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-all focus-visible:outline-none data-[focus]:ring-2 data-[focus]:ring-ring data-[focus]:ring-offset-2  focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
+  base: 'inline-flex select-none disabled:cursor-not-allowed items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-neutral-800 transition-all focus-visible:outline-none data-[focus]:ring-2 data-[focus]:ring-ring data-[focus]:ring-offset-2  focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
   variants: {
     variant: {
-      default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+      default: 'bg-white text-primary-foreground hover:bg-primary/90',
       destructive:
           'bg-red-700 text-red-50 hover:bg-red-700/90 !ring-red-700',
       outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground !ring-accent',
+          'border border-neutral-700 hover:bg-neutral-700 focus-visible:ring-neutral-700 bg-transparent hover:text-accent-foreground',
       secondary:
           'bg-secondary text-secondary-foreground hover:bg-secondary/50 !ring-secondary',
       ghost: 'hover:bg-accent bg-transparent hover:text-accent-foreground !ring-accent',

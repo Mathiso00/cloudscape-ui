@@ -34,7 +34,7 @@ const kbdClasses = tv({
   variants: {
     filled: {
       true: 'bg-zinc-700 border border-zinc-600 text-zinc-50',
-      false: 'bg-transparent border-none text-zinc-700/60',
+      false: 'bg-transparent border-none text-accent-foreground/50',
     },
   },
 })

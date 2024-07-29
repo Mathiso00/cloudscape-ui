@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react'
 import { withThemeByClassName } from '@storybook/addon-themes'
 import 'virtual:uno.css'
-import '@unocss/reset/tailwind.css'
+import '@unocss/reset/tailwind-compat.css'
 
 const preview: Preview = {
   decorators: [
