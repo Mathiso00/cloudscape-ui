@@ -31,6 +31,7 @@ export interface HeaderProps
   leftIcon?: string
   isLoading?: boolean
   icon?: string
+  avatarSrc?: string
   onClick?: (e: React.MouseEvent<HTMLElement>) => void
 }
 
@@ -43,6 +44,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
     isLoading,
     asChild = false,
     icon,
+    avatarSrc,
     children,
     ...props
   }, ref) => {
@@ -85,7 +87,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
           <Button variant="secondary" size="default" leftIcon="i-heroicons:wifi-20-solid w-1em h-1em">
             VPN
           </Button>
-          <Avatar alt="DP" size="default">
+          <Avatar alt="DP" size="default" src={avatarSrc}>
           </Avatar>
         </div>
       </Comp>

@@ -17,5 +17,7 @@ export const Primary: Story = {
   args: {
     variant: 'default',
     size: 'default',
+    avatarSrc: 'https://github.com/shadcn.png',
+
   },
 }
