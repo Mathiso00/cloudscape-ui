@@ -1,8 +1,7 @@
 {
   "name": "@koopsoperator/csui",
   "type": "module",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
