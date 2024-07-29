@@ -2,10 +2,15 @@ import * as React from 'react'
 import { tv } from 'tailwind-variants'
 
 interface HeadingProps extends React.ComponentPropsWithoutRef<'h1'> {
-  size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-  weight?: 'light' | 'regular' | 'medium' | 'bold'
-  // type: 'text' | 'code' | 'emphasis' | 'strong'
+  size?: Size
+  as?: As
+  weight?: Weight
+  truncate?: boolean
 }
+
+type As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+type Size = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+type Weight = 'light' | 'regular' | 'medium' | 'bold'
 
 const headingClasses = tv({
   variants: {
@@ -26,19 +31,27 @@ const headingClasses = tv({
       medium: 'font-500',
       bold: 'font-700',
     },
+    truncate: {
+      true: 'truncate',
+    },
   },
 })
 
-const headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h6', 'h6', 'h6'] as const
-
-function Heading({ size = 6, weight = 'regular', children }: HeadingProps) {
-  const Tag = Array.from(headings).reverse()[size - 1]
+function Heading({
+  size = 6,
+  as = 'h4',
+  weight = 'regular',
+  truncate = false,
+  children,
+}: HeadingProps) {
+  const Tag: As = as || `h${size}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
   return (
     <Tag
       className={headingClasses({
         size,
         weight,
+        truncate,
       })}
     >
       {children}
@@ -48,3 +61,4 @@ function Heading({ size = 6, weight = 'regular', children }: HeadingProps) {
 
 Heading.displayName = 'Heading'
 export { Heading }
+export type { Size, Weight }
