@@ -6,6 +6,7 @@ interface HeadingProps extends React.ComponentPropsWithoutRef<'h1'> {
   as?: As
   weight?: Weight
   truncate?: boolean
+  color?: 'primary' | 'secondary' | 'destructive'
 }
 
 type As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -34,12 +35,21 @@ const headingClasses = tv({
     truncate: {
       true: 'truncate',
     },
+    color: {
+      primary: 'text-white',
+      secondary: 'text-neutral-300',
+      destructive: 'text-red-500',
+    },
   },
 })
 
+/**
+ * The Heading component is used to render headings like Titles, Subtitles, etc.
+ */
 function Heading({
   size = 6,
   as = 'h4',
+  color = 'primary',
   weight = 'regular',
   truncate = false,
   children,
@@ -48,11 +58,14 @@ function Heading({
 
   return (
     <Tag
-      className={headingClasses({
-        size,
-        weight,
-        truncate,
-      })}
+      className={
+        headingClasses({
+          size,
+          weight,
+          truncate,
+          color,
+        })
+      }
     >
       {children}
     </Tag>
