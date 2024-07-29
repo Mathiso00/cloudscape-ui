@@ -3,6 +3,6 @@
 
 continuousDeployment(
     builder: 'pnpm',
-    imageForBuild: 'mathiso/pnpm:1.0.0',
+    imageForBuild: 'koopsoperator/pnpm:1.0.0',
     isLibrary: true,
 )
