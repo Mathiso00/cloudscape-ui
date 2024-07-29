@@ -6,7 +6,7 @@ import { Avatar } from '../avatar'
 import { Button } from '../button'
 
 const headerVariant = tv({
-  base: 'flex items-center justify-between h-16 px-4 bg-black text-white w-full',
+  base: 'flex items-center justify-between h-16 px-4 bg-neutral-600 text-white w-full',
   variants: {
     variant: {
       default: '',
@@ -58,22 +58,22 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
         <nav>
           <ul className="flex space-x-6">
             <li>
-              <a href="#" className="text-white hover:text-gray-300">
+              <a href="#">
                 Dashboard
               </a>
             </li>
             <li>
-              <a href="#" className="text-white hover:text-gray-300">
+              <a href="#">
                 Quests
               </a>
             </li>
             <li>
-              <a href="#" className="text-white hover:text-gray-300">
+              <a href="#">
                 Challenges
               </a>
             </li>
             <li>
-              <a href="#" className="text-white hover:text-gray-300">
+              <a href="#">
                 Lessons
               </a>
             </li>
