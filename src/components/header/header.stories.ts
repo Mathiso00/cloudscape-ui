@@ -6,8 +6,13 @@ const meta = {
   component: Header,
   parameters: {
   },
-
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      control: { type: 'select' },
+      options: ['default', 'sm', 'lg', 'xl'],
+    },
+  },
 } satisfies Meta<typeof Header>
 
 export default meta

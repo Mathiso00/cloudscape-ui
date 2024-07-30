@@ -15,6 +15,7 @@ const headerVariant = tv({
       default: 'w-full',
       sm: 'h-12 px-2',
       lg: 'h-20 px-6',
+      xl: 'h-24 px-8',
     },
   },
   defaultVariants: {
@@ -29,8 +30,8 @@ export interface HeaderProps
   asChild?: boolean
   leftIcon?: string
   isLoading?: boolean
-  icon?: string
   avatarSrc?: string
+  size?: 'default' | 'sm' | 'lg' | 'xl'
   onClick?: (e: React.MouseEvent<HTMLElement>) => void
 }
 
