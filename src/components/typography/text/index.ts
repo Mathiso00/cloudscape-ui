@@ -1,1 +1,1 @@
-export { Text } from './text.tsx'
+export { Text } from '@radix-ui/themes'
