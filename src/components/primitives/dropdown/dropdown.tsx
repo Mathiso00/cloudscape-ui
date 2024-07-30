@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as DropdownPrimitive from '@radix-ui/react-dropdown-menu'
-import { cn } from '../../../utils'
 import { Kbd } from '../../typography/kbd'
+import { cn } from '@/utils'
 
 const Root = DropdownPrimitive.Root
 
