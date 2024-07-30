@@ -1,7 +1,9 @@
 import type { Preview } from '@storybook/react'
 import { withThemeByClassName } from '@storybook/addon-themes'
+import '@radix-ui/themes/styles.css'
 import 'virtual:uno.css'
 import '@unocss/reset/tailwind-compat.css'
+import { CSUIThemeProvider } from '../src'
 
 const preview: Preview = {
   decorators: [
@@ -12,15 +14,21 @@ const preview: Preview = {
       },
       defaultTheme: 'dark',
     }),
+    Story => (
+      <CSUIThemeProvider
+        data-is-root-theme={false}
+        appearance="dark"
+        hasBackground={false}
+      >
+        <Story />
+      </CSUIThemeProvider>
+    ),
   ],
+
   parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+    backgrounds: {
+      default: 'dark',
     },
-    backgrounds: { default: 'dark' },
   },
 }
 

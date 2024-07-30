@@ -5,7 +5,6 @@ const meta = {
   title: 'Typography/Kbd',
   component: Kbd,
   parameters: {
-    layout: 'centered',
     controls: {
       exclude: ['children'],
     },
