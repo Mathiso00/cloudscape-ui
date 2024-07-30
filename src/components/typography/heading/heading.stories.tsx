@@ -18,12 +18,15 @@ export const Default: Story = {
     children: 'The quick brown fox jumps over the lazy dog.',
     truncate: false,
     trim: 'normal',
+    align: 'left',
+    highContrast: false,
   },
   argTypes: {
     trim: { control: 'select', type: { name: 'enum', value: ['normal', 'start', 'end', 'both'] } },
     weight: { control: 'select', type: { name: 'enum', value: ['light', 'regular', 'medium', 'bold'] } },
     as: { control: 'select', type: { name: 'enum', value: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] } },
     size: { control: 'select', type: { name: 'enum', value: ['1', '2', '3', '4', '5', '6', '7', '8', '9'] } },
+    align: { control: 'select', type: { name: 'enum', value: ['left', 'center', 'right'] } },
   },
 }
 
@@ -113,4 +116,17 @@ export const Truncate: Story = {
       <Heading {...e} />
     </div>
   ),
+}
+
+export const Color: Story = {
+  render: (_) => {
+    return (
+      <>
+        <Heading color="indigo">The quick brown fox jumps over the lazy dog</Heading>
+        <Heading color="cyan">The quick brown fox jumps over the lazy dog</Heading>
+        <Heading color="orange">The quick brown fox jumps over the lazy dog</Heading>
+        <Heading color="crimson">The quick brown fox jumps over the lazy dog</Heading>
+      </>
+    )
+  },
 }

@@ -30,7 +30,7 @@ export interface KbdProps extends ButtonHTMLAttributes<HTMLDivElement> {
 }
 
 const kbdClasses = tv({
-  base: 'select-none h-5 flex font-sans items-center justify-center px-1.5 py-2 text-xs rounded-md',
+  base: 'select-none w-fit h-5 flex font-sans items-center justify-center px-1.5 py-2 text-xs rounded-md',
   variants: {
     filled: {
       true: 'bg-zinc-700 border border-zinc-600 text-zinc-50',
