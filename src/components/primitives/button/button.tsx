@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
-import { cn } from '../../../utils'
+import { cn } from '@/utils'
 
 const buttonVariants = tv({
   base: 'inline-flex select-none disabled:cursor-not-allowed items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-neutral-800 transition-all focus-visible:outline-none data-[focus]:ring-2 data-[focus]:ring-ring data-[focus]:ring-offset-2  focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
@@ -19,9 +19,9 @@ const buttonVariants = tv({
       link: 'text-primary bg-transparent underline-offset-4 hover:underline',
     },
     size: {
-      default: 'h-10 px-4 rounded-xl py-2',
-      sm: 'h-9 rounded-xl px-3',
-      lg: 'h-11 rounded-xl px-8',
+      default: 'h-10 px-4 rounded py-2',
+      sm: 'h-9 rounded px-3',
+      lg: 'h-11 rounded px-8',
       icon: 'h-10 w-10 rounded-xl',
     },
   },

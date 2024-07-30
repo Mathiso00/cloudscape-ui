@@ -15,6 +15,7 @@ export default defineConfig({
       provider: 'google',
       fonts: {
         inter: 'Inter:300,400,500,600,700',
+        lexend: 'Lexend Deca:300,400,500,600,700',
       },
     }),
     presetShadcn({

@@ -14,13 +14,11 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: {
-  },
   render: _ => (
     <div className="flex flex-row gap-2">
-      <Quest />
-      <Quest />
-      <Quest />
+      <Quest name="Docker" icon="i-mdi-docker" />
+      <Quest name="Kubernetes" icon="i-mdi-kubernetes" />
+      <Quest name="Terraform" icon="i-mdi-terraform" />
     </div>
   ),
 }
