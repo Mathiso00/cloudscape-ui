@@ -2,13 +2,13 @@ import { useState } from 'react'
 import { cn } from '@/utils'
 
 interface QuestProps {
-  name: string
-  icon: string
+  name?: string
+  icon?: string
 
 }
 
 function Quest({ name, icon }: QuestProps) {
-  const [hovered, setHovered] = useState<boolean>(false)
+  const [_, setHovered] = useState<boolean>(false)
 
   return (
     <div
@@ -35,7 +35,7 @@ function Quest({ name, icon }: QuestProps) {
   )
 }
 
-function QuestHeader({ name }: { name: string }) {
+function QuestHeader({ name }: { name?: string }) {
   return (
     <div className="w-full h-1/5 relative">
 
