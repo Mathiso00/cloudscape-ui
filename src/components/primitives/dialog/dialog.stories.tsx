@@ -50,18 +50,20 @@ export const Default: Story = {
         <Dialog.Footer>
           <Dialog.Close asChild>
             <Button
+              variant="outline"
+            >
+              Fermer
+            </Button>
+          </Dialog.Close>
+
+          <Dialog.Close asChild>
+            <Button
               variant="default"
             >
               Valider
             </Button>
           </Dialog.Close>
-          <Dialog.Close asChild>
-            <Button
-              variant="destructive"
-            >
-              Fermer
-            </Button>
-          </Dialog.Close>
+
         </Dialog.Footer>
       </Dialog.Content>
     </Dialog>
