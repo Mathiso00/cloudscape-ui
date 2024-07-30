@@ -1,12 +1,26 @@
-export {
-  Dialog,
-  Portal,
-  Overlay,
+import { attachSubComponents } from '../../../utils/exports.ts'
+
+import {
   Close,
-  Trigger,
   Content,
+  Description,
   DialogHeader,
+  Dialog as DialogPrimitive,
   Footer,
   Title,
-  Description,
+  Trigger,
 } from './dialog.tsx'
+
+export const Dialog = attachSubComponents(
+  'Dialog',
+  DialogPrimitive,
+  {
+    Close,
+    Content,
+    Description,
+    DialogHeader,
+    Footer,
+    Title,
+    Trigger,
+  },
+)

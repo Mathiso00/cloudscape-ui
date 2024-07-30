@@ -43,13 +43,19 @@ export const Default: Story = {
           <label className="Label" htmlFor="name">
             Name
           </label>
-          <Input className="Input" id="name" defaultValue="Pedro Duarte" />
+          <Input className="Input mt-1" id="name" defaultValue="Pedro Duarte" />
         </fieldset>
         <fieldset className="Fieldset">
           <label className="Label" htmlFor="username">
             Username
           </label>
-          <Input className="Input" id="username" defaultValue="@peduarte" />
+          <Input className="Input mt-1 " id="username" defaultValue="@peduarte" />
+        </fieldset>
+        <fieldset className="Fieldset">
+          <label className="Label" htmlFor="bio">
+            Bio
+          </label>
+          <Input className="Input mt-1" id="bio" defaultValue="Software Engineer" />
         </fieldset>
         <Footer>
           <Close asChild>
