@@ -9,7 +9,7 @@ interface HeadingProps extends React.ComponentPropsWithoutRef<'h1'> {
   color?: 'primary' | 'secondary' | 'destructive'
 }
 
-type As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+type As = 'span' | 'div' | 'label' | 'p'
 type Size = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 type Weight = 'light' | 'regular' | 'medium' | 'bold'
 
@@ -48,7 +48,7 @@ const headingClasses = tv({
  */
 function Text({
   size = 6,
-  as = 'h4',
+  as = 'span',
   color = 'primary',
   weight = 'regular',
   truncate = false,

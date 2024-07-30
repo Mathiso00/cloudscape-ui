@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Kbd } from '../index.ts'
+import { Kbd } from './kbd.tsx'
 
 const meta = {
-  title: 'Primitives/Kbd',
+  title: 'Typography/Kbd',
   component: Kbd,
   parameters: {
     layout: 'centered',
