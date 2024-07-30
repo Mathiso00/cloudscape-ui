@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as DropdownPrimitive from '@radix-ui/react-dropdown-menu'
 import { cn } from '../../../utils'
-import { Kbd } from '../kbd'
+import { Kbd } from '../../typography/kbd'
 
 const Root = DropdownPrimitive.Root
 
@@ -150,7 +150,7 @@ const Separator = React.forwardRef<
   <DropdownPrimitive.Separator
     ref={ref}
     className={
-      cn('-mx-1 my-1 h-px bg-muted', className)
+      cn('-mx-1 my-1 h-px bg-neutral-700', className)
     }
     {...props}
   />
