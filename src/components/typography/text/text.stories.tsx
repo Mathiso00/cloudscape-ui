@@ -5,9 +5,7 @@ import { Text } from './text.tsx'
 const meta = {
   title: 'Typography/Text',
   component: Text,
-  parameters: {
-    layout: 'centered',
-  },
+
   tags: ['autodocs'],
 } satisfies Meta<typeof Text>
 

@@ -4,9 +4,7 @@ import { Avatar } from './avatar.tsx'
 const meta = {
   title: 'Primitives/Avatar',
   component: Avatar,
-  parameters: {
-    layout: 'centered',
-  },
+
   tags: ['autodocs'],
 } satisfies Meta<typeof Avatar>
 

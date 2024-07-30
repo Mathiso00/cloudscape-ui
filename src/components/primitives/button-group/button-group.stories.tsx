@@ -6,9 +6,6 @@ import { ButtonGroup } from './button-group.tsx'
 const meta = {
   title: 'Primitives/Button Group',
   component: ButtonGroup,
-  parameters: {
-    layout: 'centered',
-  },
 
   tags: ['autodocs'],
 } satisfies Meta<typeof ButtonGroup>

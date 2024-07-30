@@ -5,9 +5,6 @@ import { Heading } from './heading.tsx'
 const meta = {
   title: 'Typography/Heading',
   component: Heading,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof Heading>
 
