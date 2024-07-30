@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { AlertDialog, Button } from '../index.ts'
 
 const meta = {
-  title: 'Primitives/Alert Dialog',
+  title: 'Primitives/Alert Input',
   component: AlertDialog,
 
   tags: ['autodocs'],
