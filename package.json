@@ -20,7 +20,7 @@
     "build:watch": "vite build --watch",
     "build": "vite build",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint --fix .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
