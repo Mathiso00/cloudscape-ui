@@ -12,10 +12,9 @@ const headerVariant = tv({
       default: '',
     },
     size: {
-      default: '',
-      sm: '',
-      lg: '',
-      icon: '',
+      default: 'w-full',
+      sm: 'h-12 px-2',
+      lg: 'h-20 px-6',
     },
   },
   defaultVariants: {
@@ -41,9 +40,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
     variant,
     size,
     leftIcon,
-    isLoading,
     asChild = false,
-    icon,
     avatarSrc,
     children,
     ...props
@@ -56,7 +53,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
         {...props}
       >
         <nav>
-          <ul className="flex space-x-6">
+          <ul className="flex space-x-6 ">
             <li>
               <a href="#">
                 Dashboard
@@ -84,7 +81,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
           {/*  <span>VPN connected</span> */}
           {/*  <WifiIcon className="h-4 w-4" /> */}
           {/* </Badge> */}
-          <Button variant="secondary" size="default" leftIcon="i-heroicons:wifi-20-solid w-1em h-1em">
+          <Button variant="secondary" size="default" leftIcon={leftIcon}>
             VPN
           </Button>
           <Avatar alt="DP" size="default" src={avatarSrc}>

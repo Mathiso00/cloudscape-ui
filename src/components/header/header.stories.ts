@@ -18,6 +18,6 @@ export const Primary: Story = {
     variant: 'default',
     size: 'default',
     avatarSrc: 'https://github.com/shadcn.png',
-
+    leftIcon: 'i-heroicons:wifi-20-solid w-1em h-1em',
   },
 }
