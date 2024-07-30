@@ -1,6 +1,7 @@
 import { defineConfig, presetIcons, presetUno, presetWebFonts } from 'unocss'
 import { presetShadcn } from 'unocss-preset-shadcn'
 import { presetAnimations } from 'unocss-preset-animations'
+import { presetHeroPatterns } from '@julr/unocss-preset-heropatterns'
 
 export default defineConfig({
   presets: [
@@ -8,6 +9,7 @@ export default defineConfig({
       dark: 'class',
       // variablePrefix: 'koops-',
     }),
+    presetHeroPatterns(),
     presetIcons(),
     presetWebFonts({
       provider: 'google',

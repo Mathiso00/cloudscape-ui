@@ -30,6 +30,9 @@ importers:
       '@iconify/json':
         specifier: ^2.2.228
         version: 2.2.228
+      '@julr/unocss-preset-heropatterns':
+        specifier: ^1.0.2
+        version: 1.0.2(unocss@0.61.4(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.10)))
       '@radix-ui/react-alert-dialog':
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1232,6 +1235,12 @@ packages:
   '@jsdevtools/ez-spawn@3.0.4':
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
+
+  '@julr/unocss-preset-heropatterns@1.0.2':
+    resolution: {integrity: sha512-70HqVl23auu7Qrkkk9ULszxW5BXx3pF9H1209Vc1R0fmEitBYP6zwRdj92vGgUerS9/yCtHBpA58gYroDC9OHQ==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      unocss: '>= 0.31.13 < 1'
 
   '@mdx-js/react@3.0.1':
     resolution: {integrity: sha512-9ZrPIU4MGf6et1m1ov3zKf+q9+deetI51zprKB1D/z3NOb+rUxxtEl3mCjW5wTGh6VhRdwPueh1oRzi6ezkA8A==}
@@ -2593,8 +2602,14 @@ packages:
     resolution: {integrity: sha512-QUyod6oDpOA0ZRc8oieHSfmglAiAIAnKPX4NtIoIrrr+ptcho/o8sPCOXx94nnjE3CGKQjyvrkvMn1aUhs6YWA==}
     engines: {node: '>=14'}
 
+  '@unocss/core@0.52.7':
+    resolution: {integrity: sha512-dZonrlfu33SkUMsZXlsyYSM79tr2nLer/hBEU2ZaemRik2KchxIUNlZV6kX1f1k3m+gEtVQOyx1MImpgLS8PWg==}
+
   '@unocss/core@0.61.4':
     resolution: {integrity: sha512-239uKXaCaMA7BCIRB2OkMVhK6Q4jlYc/DUP1sYjPUnkoZoBfBMj1LDtAU9L9Y0utwqKaH3OuG3mRswZ5gGvJFg==}
+
+  '@unocss/extractor-arbitrary-variants@0.52.7':
+    resolution: {integrity: sha512-nJ4iE7nIRpoOIQfD8S58yG4qJd6AhVPEfEOf7ksX1u8xLf71rrBIojwraRXvv7aPqNdZiWvXdh/znpA/QC5b9w==}
 
   '@unocss/extractor-arbitrary-variants@0.61.4':
     resolution: {integrity: sha512-cL2zNJ+D83vhkdI+hfdIqS+g11+naymoaTCsdTacTLI5tIB2YqxHBdY5rHhivizORFlBaPgJfprDZu8cOO0LJg==}
@@ -2613,6 +2628,9 @@ packages:
 
   '@unocss/preset-icons@0.61.4':
     resolution: {integrity: sha512-+CGp1AwelOIpD2ZXdPhLe8mMz3h3AScm4h2F1IC1uh/mudLKOJDoHP6VaLwPF0Uwmsg7g7cVNjzcVX54cBYfdg==}
+
+  '@unocss/preset-mini@0.52.7':
+    resolution: {integrity: sha512-c5VRzPwyAmIBWwz2ufEboYwHGiheG+V9SCmJJLHlu/gcW5KndFsxoeJPE6nOfXVmbx4AGq/rkzV35ZXtH8Iecw==}
 
   '@unocss/preset-mini@0.61.4':
     resolution: {integrity: sha512-rNM7UdyRmcIr/VnYssxDMW56YdePW3qLBBWSHafJvrvIgJ9pDqndDqYE8gDbC23KBP8/xGy1wHnVqISHnV/2mQ==}
@@ -6680,6 +6698,11 @@ snapshots:
       string-argv: 0.3.2
       type-detect: 4.0.8
 
+  '@julr/unocss-preset-heropatterns@1.0.2(unocss@0.61.4(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.10)))':
+    dependencies:
+      '@unocss/preset-mini': 0.52.7
+      unocss: 0.61.4(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.10))
+
   '@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1)':
     dependencies:
       '@types/mdx': 2.0.13
@@ -8454,7 +8477,13 @@ snapshots:
       '@unocss/core': 0.61.4
       unconfig: 0.3.13
 
+  '@unocss/core@0.52.7': {}
+
   '@unocss/core@0.61.4': {}
+
+  '@unocss/extractor-arbitrary-variants@0.52.7':
+    dependencies:
+      '@unocss/core': 0.52.7
 
   '@unocss/extractor-arbitrary-variants@0.61.4':
     dependencies:
@@ -8488,6 +8517,11 @@ snapshots:
       ofetch: 1.3.4
     transitivePeerDependencies:
       - supports-color
+
+  '@unocss/preset-mini@0.52.7':
+    dependencies:
+      '@unocss/core': 0.52.7
+      '@unocss/extractor-arbitrary-variants': 0.52.7
 
   '@unocss/preset-mini@0.61.4':
     dependencies:

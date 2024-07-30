@@ -38,6 +38,7 @@
     "@antfu/eslint-config": "^2.22.2",
     "@chromatic-com/storybook": "^1.6.1",
     "@iconify/json": "^2.2.228",
+    "@julr/unocss-preset-heropatterns": "^1.0.2",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-avatar": "^1.1.0",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
