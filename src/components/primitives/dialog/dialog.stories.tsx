@@ -1,20 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
 import { Button } from '../button'
 import { Input } from '../input'
-import {
-  Close,
-  Content,
-  Description,
-  Dialog,
-  DialogHeader,
-  Footer,
-  Title,
-  Trigger,
-} from './dialog.tsx'
+import { Dialog } from '.'
 
 const meta = {
-  title: 'Components/DialogDemo',
+  title: 'Components/Dialog',
   component: Dialog,
   tags: ['autodocs'],
 } satisfies Meta<typeof Dialog>
@@ -23,22 +13,22 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  render: () => (
-    <Dialog>
-      <Trigger asChild>
+  render: e => (
+    <Dialog {...e}>
+      <Dialog.Trigger asChild>
         <Button
           variant="default"
         >
           OpenModal
         </Button>
-      </Trigger>
-      <Content>
-        <DialogHeader>
-          <Title>Edit profile</Title>
-        </DialogHeader>
-        <Description>
+      </Dialog.Trigger>
+      <Dialog.Content>
+        <Dialog.Header>
+          <Dialog.Title>Edit profile</Dialog.Title>
+        </Dialog.Header>
+        <Dialog.Description>
           Make changes to your profile here. Click save when you're done.
-        </Description>
+        </Dialog.Description>
         <fieldset className="Fieldset">
           <label className="Label" htmlFor="name">
             Name
@@ -57,32 +47,23 @@ export const Default: Story = {
           </label>
           <Input className="Input mt-1" id="bio" defaultValue="Software Engineer" />
         </fieldset>
-        <Footer>
-          <Close asChild>
+        <Dialog.Footer>
+          <Dialog.Close asChild>
             <Button
               variant="default"
             >
               Valider
             </Button>
-          </Close>
-          <Close asChild>
+          </Dialog.Close>
+          <Dialog.Close asChild>
             <Button
               variant="destructive"
             >
               Fermer
             </Button>
-          </Close>
-        </Footer>
-      </Content>
+          </Dialog.Close>
+        </Dialog.Footer>
+      </Dialog.Content>
     </Dialog>
   ),
-}
-
-export const OpenDialog: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const button = await canvas.getByText('Edit profile')
-    await userEvent.click(button)
-  },
 }

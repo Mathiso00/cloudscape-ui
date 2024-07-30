@@ -5,11 +5,11 @@ import { cn } from '../../../utils'
 const Dialog = DialogPrimitive.Root
 
 const Trigger = DialogPrimitive.Trigger
-
+Trigger.displayName = 'Trigger'
 const Portal = DialogPrimitive.Portal
-
+Portal.displayName = 'Portal'
 const Close = DialogPrimitive.Close
-
+Close.displayName = 'Close'
 const Overlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
@@ -49,7 +49,7 @@ const Content = React.forwardRef<
 ))
 Content.displayName = DialogPrimitive.Content.displayName
 
-function DialogHeader({
+function Header({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
@@ -63,7 +63,7 @@ function DialogHeader({
     />
   )
 }
-DialogHeader.displayName = 'DialogHeader'
+Header.displayName = 'Header'
 
 function Footer({
   className,
@@ -115,7 +115,7 @@ export {
   Close,
   Trigger,
   Content,
-  DialogHeader,
+  Header,
   Footer,
   Title,
   Description,
