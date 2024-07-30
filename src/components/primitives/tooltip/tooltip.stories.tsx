@@ -4,9 +4,7 @@ import { Button, Tooltip } from '../index.ts'
 const meta = {
   title: 'Primitives/Tooltip',
   component: Tooltip,
-  parameters: {
-    layout: 'centered',
-  },
+
   tags: ['autodocs'],
 } satisfies Meta<typeof Tooltip>
 

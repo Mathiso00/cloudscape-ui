@@ -4,9 +4,7 @@ import { Button, Dropdown } from '../index.ts'
 const meta = {
   title: 'Primitives/Dropdown',
   component: Dropdown,
-  parameters: {
-    layout: 'centered',
-  },
+
   tags: ['autodocs'],
 } satisfies Meta<typeof Dropdown>
 

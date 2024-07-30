@@ -4,9 +4,7 @@ import { AlertDialog, Button } from '../index.ts'
 const meta = {
   title: 'Primitives/Alert Dialog',
   component: AlertDialog,
-  parameters: {
-    layout: 'centered',
-  },
+
   tags: ['autodocs'],
 } satisfies Meta<typeof AlertDialog>
 
