@@ -10,11 +10,11 @@ const buttonVariants = tv({
     variant: {
       default: 'bg-white text-primary-foreground hover:bg-primary/90',
       destructive:
-          'bg-red-700 text-red-50 hover:bg-red-700/90 !ring-red-700',
+                'bg-red-700 text-red-50 hover:bg-red-700/90 !ring-red-700',
       outline:
-          'border border-neutral-700 hover:bg-neutral-700 focus-visible:ring-neutral-700 bg-transparent hover:text-accent-foreground',
+                'border border-neutral-700 hover:bg-neutral-700 focus-visible:ring-neutral-700 bg-transparent hover:text-accent-foreground',
       secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary/50 !ring-secondary',
+                'bg-secondary text-secondary-foreground hover:bg-secondary/50 !ring-secondary',
       ghost: 'hover:bg-accent bg-transparent hover:text-accent-foreground !ring-accent',
       link: 'text-primary bg-transparent underline-offset-4 hover:underline',
     },
