@@ -3,14 +3,14 @@ import { userEvent, within } from '@storybook/test'
 import { Button } from '../button'
 import { Input } from '../input'
 import {
+  Close,
+  Content,
+  Description,
   Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+  Footer,
+  Title,
+  Trigger,
 } from './dialog.tsx'
 
 const meta = {
@@ -25,20 +25,20 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: () => (
     <Dialog>
-      <DialogTrigger asChild>
+      <Trigger asChild>
         <Button
           variant="default"
         >
           OpenModal
         </Button>
-      </DialogTrigger>
-      <DialogContent>
+      </Trigger>
+      <Content>
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
+          <Title>Edit profile</Title>
         </DialogHeader>
-        <DialogDescription>
+        <Description>
           Make changes to your profile here. Click save when you're done.
-        </DialogDescription>
+        </Description>
         <fieldset className="Fieldset">
           <label className="Label" htmlFor="name">
             Name
@@ -46,21 +46,28 @@ export const Default: Story = {
           <Input className="Input" id="name" defaultValue="Pedro Duarte" />
         </fieldset>
         <fieldset className="Fieldset">
-          <label className="Label mb-40" htmlFor="username">
+          <label className="Label" htmlFor="username">
             Username
           </label>
           <Input className="Input" id="username" defaultValue="@peduarte" />
         </fieldset>
-        <DialogFooter>
-          <DialogClose asChild>
+        <Footer>
+          <Close asChild>
+            <Button
+              variant="default"
+            >
+              Valider
+            </Button>
+          </Close>
+          <Close asChild>
             <Button
               variant="destructive"
             >
               Fermer
             </Button>
-          </DialogClose>
-        </DialogFooter>
-      </DialogContent>
+          </Close>
+        </Footer>
+      </Content>
     </Dialog>
   ),
 }

@@ -4,13 +4,13 @@ import { cn } from '../../../utils'
 
 const Dialog = DialogPrimitive.Root
 
-const DialogTrigger = DialogPrimitive.Trigger
+const Trigger = DialogPrimitive.Trigger
 
-const DialogPortal = DialogPrimitive.Portal
+const Portal = DialogPrimitive.Portal
 
-const DialogClose = DialogPrimitive.Close
+const Close = DialogPrimitive.Close
 
-const DialogOverlay = React.forwardRef<
+const Overlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
@@ -23,14 +23,14 @@ const DialogOverlay = React.forwardRef<
     {...props}
   />
 ))
-DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
+Overlay.displayName = DialogPrimitive.Overlay.displayName
 
-const DialogContent = React.forwardRef<
+const Content = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
-  <DialogPortal>
-    <DialogOverlay />
+  <Portal>
+    <Overlay />
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
@@ -41,13 +41,13 @@ const DialogContent = React.forwardRef<
     >
       {children}
       <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm  ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent ">
-        <div className="i-mdi-close h-4 w-4 text-red" />
+        <div className="i-mdi-close h-4 w-4 text-black" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
-  </DialogPortal>
+  </Portal>
 ))
-DialogContent.displayName = DialogPrimitive.Content.displayName
+Content.displayName = DialogPrimitive.Content.displayName
 
 function DialogHeader({
   className,
@@ -65,7 +65,7 @@ function DialogHeader({
 }
 DialogHeader.displayName = 'DialogHeader'
 
-function DialogFooter({
+function Footer({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
@@ -79,9 +79,9 @@ function DialogFooter({
     />
   )
 }
-DialogFooter.displayName = 'DialogFooter'
+Footer.displayName = 'DialogFooter'
 
-const DialogTitle = React.forwardRef<
+const Title = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
 >(({ className, ...props }, ref) => (
@@ -94,9 +94,9 @@ const DialogTitle = React.forwardRef<
     {...props}
   />
 ))
-DialogTitle.displayName = DialogPrimitive.Title.displayName
+Title.displayName = DialogPrimitive.Title.displayName
 
-const DialogDescription = React.forwardRef<
+const Description = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
 >(({ className, ...props }, ref) => (
@@ -106,17 +106,17 @@ const DialogDescription = React.forwardRef<
     {...props}
   />
 ))
-DialogDescription.displayName = DialogPrimitive.Description.displayName
+Description.displayName = DialogPrimitive.Description.displayName
 
 export {
   Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogClose,
-  DialogTrigger,
-  DialogContent,
+  Portal,
+  Overlay,
+  Close,
+  Trigger,
+  Content,
   DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
+  Footer,
+  Title,
+  Description,
 }
