@@ -5,16 +5,25 @@ import { Dialog } from '.'
 
 const meta = {
   title: 'Components/Dialog',
-  component: Dialog,
+  component: Dialog.Content,
   tags: ['autodocs'],
-} satisfies Meta<typeof Dialog>
+} satisfies Meta<typeof Dialog.Content>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+  args: {
+    size: 'default',
+  },
+  argTypes: {
+    size: {
+      options: ['default', 'sm', 'lg'],
+      control: { type: 'select' },
+    },
+  },
   render: e => (
-    <Dialog {...e}>
+    <Dialog>
       <Dialog.Trigger asChild>
         <Button
           variant="default"
@@ -22,7 +31,7 @@ export const Default: Story = {
           OpenModal
         </Button>
       </Dialog.Trigger>
-      <Dialog.Content>
+      <Dialog.Content {...e}>
         <Dialog.Header>
           <Dialog.Title>Edit profile</Dialog.Title>
         </Dialog.Header>

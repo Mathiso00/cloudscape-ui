@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
+import { tv } from 'tailwind-variants'
 import { cn } from '../../../utils'
 
 const Dialog = DialogPrimitive.Root
@@ -25,16 +26,34 @@ const Overlay = React.forwardRef<
 ))
 Overlay.displayName = DialogPrimitive.Overlay.displayName
 
+const contentVariants = tv({
+  base: 'fixed left-[50%] top-[50%] z-50 grid  translate-x-[-50%] translate-y-[-50%] gap-4 border bg-neutral-800 border-neutral-700 p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-48% data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-48% sm:rounded-lg',
+  variants: {
+    size: {
+      default: 'w-full max-w-lg ',
+      sm: 'w-full max-w-sm',
+      lg: 'w-full max-w-2xl',
+    },
+  },
+  defaultVariants: {
+    size: 'default',
+  },
+},
+)
+
 const Content = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
+    size?: 'default' | 'sm' | 'lg'
+  }
+
 >(({ className, children, ...props }, ref) => (
   <Portal>
     <Overlay />
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-neutral-800 border-neutral-700 p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-48% data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-48% sm:rounded-lg',
+        contentVariants({ size: props.size }),
       )}
       {...props}
     >
