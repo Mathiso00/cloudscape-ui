@@ -1,4 +1,3 @@
-import { attachSubComponents } from '../../../utils/exports.ts'
 import {
   Action,
   AlertDialog as AlertDialogPrimitive,
@@ -10,6 +9,7 @@ import {
   Title,
   Trigger,
 } from './alert-dialog'
+import { attachSubComponents } from '@/utils/exports.ts'
 
 export const AlertDialog = attachSubComponents(
   'AlertDialog',

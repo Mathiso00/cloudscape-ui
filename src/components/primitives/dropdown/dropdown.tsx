@@ -5,7 +5,7 @@ import { cn } from '@/utils'
 
 const Root = DropdownPrimitive.Root
 
-const Trigger = DropdownPrimitive.Trigger
+const TriggerRoot = DropdownPrimitive.Trigger
 
 const Group = DropdownPrimitive.Group
 
@@ -13,7 +13,28 @@ const Portal = DropdownPrimitive.Portal
 
 const Sub = DropdownPrimitive.Sub
 
+const Trigger = React.forwardRef<
+  React.ElementRef<typeof DropdownPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof DropdownPrimitive.Trigger> & {
+    inset?: boolean
+  }
+>(({ className, inset, children, ...props }, ref) => (
+  <TriggerRoot
+    ref={ref}
+    className={
+      cn(
+        'focus:outline-none select-none bg-transparent',
+        inset,
+        className,
+      )
+    }
+    {...props}
+  >
+    {children}
+  </TriggerRoot>
+))
 Trigger.displayName = 'Trigger'
+
 Group.displayName = 'Group'
 Portal.displayName = 'Portal'
 Sub.displayName = 'Sub'

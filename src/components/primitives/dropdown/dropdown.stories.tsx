@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Dropdown } from '../index.ts'
+import { Avatar, Dropdown } from '../index.ts'
 
 const meta = {
   title: 'Primitives/Dropdown',
@@ -14,13 +14,12 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: e => (
     <Dropdown {...e}>
-      <Dropdown.Trigger asChild>
-        <Button
-          variant="destructive"
-          leftIcon="i-mdi-caret-down"
-        >
-          Actions
-        </Button>
+      <Dropdown.Trigger >
+        <Avatar
+          src="https://github.com/shadcn.png"
+          alt="avatar"
+          size="default"
+        />
       </Dropdown.Trigger>
       <Dropdown.Content align="start">
         <Dropdown.Label>My Account</Dropdown.Label>
