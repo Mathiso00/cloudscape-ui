@@ -12,7 +12,7 @@ const buttonVariants = tv({
       destructive:
                 'bg-red-700 text-red-50 hover:bg-red-700/90 ',
       outline:
-                'border border-white hover:bg-white  bg-transparent hover:text-neutral-900',
+                'border border-white text-white hover:bg-white bg-transparent hover:text-neutral-900',
       secondary:
                 'bg-neutral-800 text-white hover:bg-neutral-700',
       ghost: 'hover:bg-neutral-800/10 bg-transparent hover:text-white/60',
