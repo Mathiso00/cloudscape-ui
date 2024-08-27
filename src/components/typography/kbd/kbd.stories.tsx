@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Kbd } from './kbd.tsx'
 import { action } from '@storybook/addon-actions'
-
+import { Kbd } from './kbd.tsx'
 
 const meta = {
   title: 'Typography/Kbd',
