@@ -103,20 +103,42 @@ const Item = React.forwardRef<
   React.ElementRef<typeof DropdownPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof DropdownPrimitive.Item> & {
     inset?: boolean
+    icon?: string
+    text?: string
+    shortcut?: string[]
+    onKeyCombination?: () => void
   }
->(({ className, inset, ...props }, ref) => (
-  <DropdownPrimitive.Item
-    ref={ref}
-    className={
-      cn(
-        'relative flex cursor-pointer select-none items-center rounded-lg px-2 py-1.5 text-sm outline-none transition-colors text-white focus:bg-neutral-700 focus:text-white/80 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-        inset && 'pl-8',
-        className,
-      )
-    }
-    {...props}
-  />
-))
+>(({ className, inset, children, icon, text, shortcut, onKeyCombination }, ref) => (
+        <DropdownPrimitive.Item
+          ref={ref}
+          className={
+            cn(
+              'relative flex cursor-pointer select-none items-center rounded-lg px-2 py-1.5 text-sm outline-none transition-colors text-white focus:bg-neutral-700 focus:text-white/80 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+              inset && 'pl-8',
+              className,
+            )
+          }
+        >
+          {icon && text
+            ? (
+                <>
+                  <div className={cn(icon, 'mr-2 h-4 w-4')} />
+                  <span>{text}</span>
+                </>
+              )
+            : (children)}
+
+          {shortcut && (
+            <Shortcut
+              className="ml-auto"
+              onKeyCombination={() => onKeyCombination?.()}
+            >
+              {shortcut.toString().replace(/,/g, '+')}
+            </Shortcut>
+          )}
+
+        </DropdownPrimitive.Item>
+      ))
 Item.displayName = 'Item'
 
 const CheckboxItem = React.forwardRef<
@@ -192,6 +214,7 @@ function Shortcut({
     />
   )
 }
+
 Shortcut.displayName = 'Shortcut'
 
 export {

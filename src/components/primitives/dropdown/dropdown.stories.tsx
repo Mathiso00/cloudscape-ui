@@ -31,11 +31,11 @@ export const Default: Story = {
             <span>Profile</span>
             <Dropdown.Shortcut>shift+command+P</Dropdown.Shortcut>
           </Dropdown.Item>
-          <Dropdown.Item>
-            <div className="i-mdi-credit-card mr-2 h-4 w-4" />
-            <span>Billing</span>
-            <Dropdown.Shortcut>command+B</Dropdown.Shortcut>
-          </Dropdown.Item>
+          <Dropdown.Item
+            icon="i-mdi-credit-card"
+            text="Billing"
+            shortcut={['command', 'B']}
+          />
           <Dropdown.Item>
             <div className="i-mdi-cog mr-2 h-4 w-4" />
             <span>Settings</span>
