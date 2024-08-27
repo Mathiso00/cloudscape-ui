@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Kbd } from './kbd.tsx'
+import { action } from '@storybook/addon-actions'
+
 
 const meta = {
   title: 'Typography/Kbd',
@@ -13,6 +15,9 @@ const meta = {
     keys: {
       description: 'Array of keys to display',
     },
+    onKeyCombination: {
+      description: 'Function to call when all keys are pressed',
+    },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Kbd>
@@ -23,6 +28,7 @@ type Story = StoryObj<typeof meta>
 export const MacOS: Story = {
   args: {
     keys: ['command', 'S'],
+    onKeyCombination: action('Command + S pressed'),
     filled: false,
   },
 }
@@ -30,6 +36,7 @@ export const MacOS: Story = {
 export const Filled: Story = {
   args: {
     keys: ['command', 'S'],
+    onKeyCombination: action('Command + S pressed'),
     filled: true,
   },
 }
