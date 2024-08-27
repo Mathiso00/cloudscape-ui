@@ -5,5 +5,3 @@ export * from './tooltip/index'
 export * from './dropdown/index'
 export * from './skeleton/index'
 export * from './avatar/index'
-
-
