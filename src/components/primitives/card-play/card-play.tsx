@@ -6,7 +6,7 @@ const variantCardContent = tv({
   base: 'icon',
   variants: {
     icon: {
-      default: 'i-mdi-chevron-down w-30px h-30px',
+      default: 'i-mdi-chevron-down w-100px h-100px',
 
     },
     scndcontent: {
@@ -45,9 +45,8 @@ const CardContent = React.forwardRef<
     className={cn('flex flex-row justify-between', className)}
     {...props}
   >
-    <div className="flex flex-row gap-10 items-center">
-
-      <div style={{ width: '5px', height: '100%', marginLeft: '10px', backgroundColor: color, minHeight: '100px' }} />
+    <div className="flex flex-row gap-5 items-center">
+      <div style={{ width: '5px', height: '100%', marginLeft: '15px', backgroundColor: color, minHeight: '100px' }} />
       <div className={variantCardContent({ icon })} />
     </div>
     <div className="flex break-all p-4 items-center">
@@ -56,9 +55,9 @@ const CardContent = React.forwardRef<
     <div className="flex items-center mr-5">
       <div className={variantCardContent({ scndcontent })} />
     </div>
-
   </div>
 ))
+
 CardContent.displayName = 'CardContent'
 
 interface CardPlayProps {
