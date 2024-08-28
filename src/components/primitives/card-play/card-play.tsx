@@ -52,7 +52,7 @@ const CardContent = React.forwardRef<
     <div className="flex break-all p-4 items-center">
       {content}
     </div>
-    <div className="flex items-center mr-5">
+    <div className="flex items-center mr-10">
       <div className={variantCardContent({ scndcontent })} />
     </div>
   </div>
