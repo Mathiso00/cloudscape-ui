@@ -50,12 +50,13 @@ const CardContent = React.forwardRef<
       <div style={{ width: '5px', height: '100%', marginLeft: '10px', backgroundColor: color, minHeight: '100px' }} />
       <div className={variantCardContent({ icon })} />
     </div>
-    <div className="flex items-center mr-10">
+    <div className="flex break-all p-4 items-center">
       {content}
     </div>
     <div className="flex items-center mr-5">
       <div className={variantCardContent({ scndcontent })} />
     </div>
+
   </div>
 ))
 CardContent.displayName = 'CardContent'
@@ -66,6 +67,7 @@ interface CardPlayProps {
   icon: 'default'
   scndcontent: 'default' | 'secondary'
 }
+
 function Card({ color, content, scndcontent, icon }: CardPlayProps) {
   return (
     <CardRoot style={{ borderColor: color }}>
