@@ -13,6 +13,13 @@ const meta = {
       options: ['left', 'center', 'right'],
       control: { type: 'select' },
     },
+    dinoPosition: {
+      options: ['left', 'center', 'right'],
+      control: { type: 'select' },
+    },
+    inverseDino: {
+      control: { type: 'boolean' },
+    },
     title: {
       control: { type: 'text' },
     },
@@ -30,6 +37,8 @@ export const Primary: Story = {
   args: {
     variant: 'default',
     trianglePosition: 'center',
+    dinoPosition: 'center',
+    inverseDino: false,
     title: 'Default Alert',
     content: 'This is a default alert',
   },

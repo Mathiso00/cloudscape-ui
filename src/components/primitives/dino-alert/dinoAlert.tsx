@@ -1,6 +1,7 @@
 import * as React from 'react'
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
+import dinoSvg from '../../../asset/dino.svg'
 import { cn } from '@/utils'
 
 const alertVariants = tv({
@@ -20,25 +21,42 @@ const alertVariants = tv({
 
 const DinoAlert = React.forwardRef<
   HTMLDivElement,
-    React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants> & { trianglePosition?: 'left' | 'center' | 'right' }
->(({ className, variant = 'default', trianglePosition = 'center', ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
+  & { trianglePosition?: 'left' | 'center' | 'right' }
+  & { dinoPosition?: 'left' | 'center' | 'right' }
+  & { inverseDino?: boolean }
+>(({ className, variant = 'default', trianglePosition = 'center', dinoPosition = 'center', inverseDino = false, ...props }, ref) => {
   const triangleStyles = {
     left: 'left-4 transform translate-x-0',
     center: 'left-1/2 transform -translate-x-1/2',
     right: 'right-4 transform translate-x-0',
   }[trianglePosition]
+  const dinoStyles = {
+    right: 'items-end',
+    center: 'items-center',
+    left: 'right-4',
+  }[dinoPosition]
 
   const triangleColorClass = variant === 'destructive' ? 'border-t-destructive' : 'border-t-inherit'
 
   return (
-    <div className="relative w-full">
-      <div
-        ref={ref}
-        role="alert"
-        className={cn(alertVariants({ variant }), className)}
-        {...props}
+    <div className={`flex flex-col justify-center ${dinoStyles} `}>
+      <div className="relative w-full">
+        <div
+          ref={ref}
+          role="alert"
+          className={cn(alertVariants({ variant }), className)}
+          {...props}
+        />
+        <div
+          className={`absolute bottom-[-10px] ${triangleStyles} w-0 h-0 border-x-[10px] border-x-transparent border-t-[10px] ${triangleColorClass}`}
+        />
+      </div>
+      <img
+        src={dinoSvg}
+        alt="Icone"
+        className={`w-40 h-40 ${inverseDino ? 'transform scale-x-[-1]' : ''}`}
       />
-      <div className={`absolute bottom-[-10px] ${triangleStyles} w-0 h-0 border-x-[10px] border-x-transparent border-t-[10px] ${triangleColorClass}`}></div>
     </div>
   )
 })
