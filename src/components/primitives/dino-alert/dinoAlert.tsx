@@ -1,7 +1,7 @@
 import * as React from 'react'
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
-import dinoSvg from '../../../asset/dino.svg'
+import dino from '@/asset/dino.svg'
 import { cn } from '@/utils'
 
 const alertVariants = tv({
@@ -53,10 +53,11 @@ const DinoAlert = React.forwardRef<
         />
       </div>
       <img
-        src={dinoSvg}
-        alt="Icone"
+        src={dino}
+        alt="Dino"
         className={`w-40 h-40 ${inverseDino ? 'transform scale-x-[-1]' : ''}`}
       />
+
     </div>
   )
 })
@@ -80,7 +81,7 @@ const DinoAlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('text-sm [&_p]:leading-relaxed', className)}
+    className={cn('text-sm [&_p]:leading-relaxed ', className)}
     {...props}
   />
 ))
