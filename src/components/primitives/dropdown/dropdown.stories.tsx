@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button, Dropdown } from '../index.ts'
+import { action } from '@storybook/addon-actions'
+import { Avatar, Dropdown } from '../index.ts'
 
 const meta = {
   title: 'Primitives/Dropdown',
@@ -14,13 +15,12 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: e => (
     <Dropdown {...e}>
-      <Dropdown.Trigger asChild>
-        <Button
-          variant="destructive"
-          leftIcon="i-mdi-caret-down"
-        >
-          Actions
-        </Button>
+      <Dropdown.Trigger>
+        <Avatar
+          src="https://github.com/shadcn.png"
+          alt="avatar"
+          size="default"
+        />
       </Dropdown.Trigger>
       <Dropdown.Content align="start">
         <Dropdown.Label>My Account</Dropdown.Label>
@@ -31,11 +31,11 @@ export const Default: Story = {
             <span>Profile</span>
             <Dropdown.Shortcut>shift+command+P</Dropdown.Shortcut>
           </Dropdown.Item>
-          <Dropdown.Item>
-            <div className="i-mdi-credit-card mr-2 h-4 w-4" />
-            <span>Billing</span>
-            <Dropdown.Shortcut>command+B</Dropdown.Shortcut>
-          </Dropdown.Item>
+          <Dropdown.Item
+            icon="i-mdi-credit-card"
+            text="Billing"
+            shortcut={['command', 'B']}
+          />
           <Dropdown.Item>
             <div className="i-mdi-cog mr-2 h-4 w-4" />
             <span>Settings</span>
@@ -44,7 +44,11 @@ export const Default: Story = {
           <Dropdown.Item>
             <div className="i-mdi-keyboard mr-2 h-4 w-4" />
             <span>Keyboard shortcuts</span>
-            <Dropdown.Shortcut>command+K</Dropdown.Shortcut>
+            <Dropdown.Shortcut
+              onKeyCombination={() => action('Keyboard shortcuts pressed')}
+            >
+              command+K
+            </Dropdown.Shortcut>
           </Dropdown.Item>
         </Dropdown.Group>
         <Dropdown.Separator />
