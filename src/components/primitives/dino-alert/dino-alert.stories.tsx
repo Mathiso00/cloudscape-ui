@@ -14,7 +14,7 @@ const meta = {
       control: { type: 'select' },
     },
     dinoPosition: {
-      options: ['left', 'center', 'right'],
+      options: ['left', 'center', 'right', 'other'],
       control: { type: 'select' },
     },
     inverseDino: {
