@@ -1,3 +1,4 @@
+'use client'
 import 'virtual:uno.css'
 import '@radix-ui/themes/styles.css'
 import '@unocss/reset/tailwind-compat.css'
