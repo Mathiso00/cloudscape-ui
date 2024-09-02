@@ -49,7 +49,7 @@ const SubTrigger = React.forwardRef<
     ref={ref}
     className={
       cn(
-        'flex cursor-default select-none  items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-neutral-700 text-white data-[state=open]:bg-neutral-700',
+        'flex cursor-default select-none  items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-neutral-700 focus:text-white text-white/90 data-[state=open]:bg-neutral-700',
         inset && 'pl-8',
         className,
       )
@@ -113,7 +113,7 @@ const Item = React.forwardRef<
           ref={ref}
           className={
             cn(
-              'relative flex cursor-pointer select-none items-center rounded-lg px-2 py-1.5 text-sm outline-none transition-colors focus:bg-neutral-700 focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+              'relative flex cursor-pointer select-none items-center rounded-lg px-2 py-1.5 text-sm outline-none transition-colors focus:bg-neutral-700 focus:text-white text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
               inset && 'pl-8',
               className,
             )
@@ -158,7 +158,7 @@ const Label = React.forwardRef<
     ref={ref}
     className={
       cn(
-        'px-2 py-1.5 text-sm font-semibold',
+        'px-2 py-1.5 text-sm text-white font-semibold',
         inset && 'pl-8',
         className,
       )
