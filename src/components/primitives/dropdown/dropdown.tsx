@@ -14,7 +14,6 @@ const Group = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <DropdownPrimitive.Group
     ref={ref}
-    className={cn('py-.5', className)}
     {...props}
   >
     {children}
@@ -61,7 +60,7 @@ const SubTrigger = React.forwardRef<
     ref={ref}
     className={
       cn(
-        'relative flex cursor-pointer select-none items-center rounded-md px-1.5 py-1.5 text-sm outline-none transition-colors text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[state=open]:bg-white/5',
+        'relative flex cursor-pointer select-none items-center rounded-md px-1.5 py-1.5 text-sm outline-none transition-colors text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[highlighted]:bg-white/5 data-[state=open]:bg-white/5',
         inset && 'pl-8',
         className,
       )
@@ -82,7 +81,7 @@ const SubContent = React.forwardRef<
     ref={ref}
     className={
       cn(
-        'z-50 min-w-[8rem] overflow-hidden rounded-lg border bg-secondary border-white/10 p-1 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-98 data-[state=open]:zoom-in-98 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+        'z-50 min-w-[10rem] overflow-hidden rounded-lg border bg-secondary border-white/10 p-.75 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-98 data-[state=open]:zoom-in-98 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
         className,
       )
     }
@@ -101,7 +100,7 @@ const Content = React.forwardRef<
       sideOffset={sideOffset}
       className={
         cn(
-          'z-50 min-w-[8rem] overflow-hidden rounded-lg border bg-secondary border-white/10 p-1  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-98 data-[state=open]:zoom-in-98 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+          'z-50 min-w-[12rem] overflow-hidden rounded-lg border bg-secondary border-white/10 p-.75 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-98 data-[state=open]:zoom-in-98 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
           className,
         )
       }
@@ -125,7 +124,7 @@ const Item = React.forwardRef<
           ref={ref}
           className={
             cn(
-              'relative flex cursor-pointer select-none items-center rounded-md px-1.5 py-1.5 text-sm outline-none transition-colors focus:bg-white/5 text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+              'relative flex cursor-pointer select-none items-center rounded-md px-1.5 py-1.25 text-sm outline-none transition-colors focus:bg-white/5 text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
               inset && 'pl-8',
               className,
             )
