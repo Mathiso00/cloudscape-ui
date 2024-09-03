@@ -19,34 +19,35 @@ const alertVariants = tv({
 },
 )
 
-const DinoAlert = React.forwardRef<
+const DialogSystem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
   & { trianglePosition?: 'left' | 'center' | 'right' }
-  & { dinoPosition?: 'left' | 'center' | 'right' | 'other' }
-  & { inverseDino?: boolean }
->(({ className, variant = 'default', trianglePosition = 'center', dinoPosition = 'center', inverseDino = false, ...props }, ref) => {
+  & { SvgPosition?: 'left' | 'center' | 'right' | 'otherLeft' | 'otherRight' }
+  & { inverseSvg?: boolean }
+>(({ className, variant = 'default', trianglePosition = 'center', SvgPosition = 'center', inverseSvg = false, ...props }, ref) => {
   const triangleStyles = {
     left: 'left-4 transform translate-x-0',
     center: 'left-1/2 transform -translate-x-1/2',
     right: 'right-4 transform translate-x-0',
   }[trianglePosition]
 
-  const dinoStyles = {
+  const SvgStyles = {
     right: 'items-end',
     center: 'items-center',
     left: 'right-4',
-    other: 'flex-row items-start',
-  }[dinoPosition]
+    otherLeft: 'flex-row items-start',
+    otherRight: 'flex-row-reverse items-start',
+  }[SvgPosition]
 
   const triangleColorClass = variant === 'destructive' ? 'border-t-destructive' : 'border-t-inherit'
 
   return (
-    <div className={`flex ${dinoPosition === 'other' ? 'flex-row' : 'flex-col-reverse'} justify-center ${dinoStyles} `}>
+    <div className={`flex ${SvgPosition === 'otherLeft' ? SvgPosition : SvgPosition === 'otherRight' ? 'flex-row-reverse' : 'flex-col-reverse'} justify-center ${SvgStyles}`}>
       <img
         src={dino}
         alt="Dino"
-        className={`w-40 h-40 ${inverseDino ? 'transform scale-x-[-1]' : ''}`}
+        className={`w-40 h-40 ${inverseSvg ? 'transform scale-x-[-1]' : ''}`}
       />
       <div className="relative w-full">
         <div
@@ -62,9 +63,9 @@ const DinoAlert = React.forwardRef<
     </div>
   )
 })
-DinoAlert.displayName = 'Alert'
+DialogSystem.displayName = 'Alert'
 
-const DinoAlertTitle = React.forwardRef<
+const DialogSystemTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
@@ -74,9 +75,9 @@ const DinoAlertTitle = React.forwardRef<
     {...props}
   />
 ))
-DinoAlertTitle.displayName = 'AlertTitle'
+DialogSystemTitle.displayName = 'AlertTitle'
 
-const DinoAlertDescription = React.forwardRef<
+const DialogSystemDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
@@ -86,6 +87,6 @@ const DinoAlertDescription = React.forwardRef<
     {...props}
   />
 ))
-DinoAlertDescription.displayName = 'AlertDescription'
+DialogSystemDescription.displayName = 'AlertDescription'
 
-export { DinoAlert, DinoAlertTitle, DinoAlertDescription }
+export { DialogSystem, DialogSystemTitle, DialogSystemDescription }

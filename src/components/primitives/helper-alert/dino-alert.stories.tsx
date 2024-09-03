@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { DinoAlert, DinoAlertDescription, DinoAlertTitle } from '@/components/primitives/dino-alert/dinoAlert.tsx'
+import { DialogSystem, DialogSystemDescription, DialogSystemTitle } from '@/components/primitives/helper-alert/dialogSystem.tsx'
 
 const meta = {
-  title: 'Primitives/Dino-Alert',
-  component: DinoAlert,
+  title: 'Primitives/Dialog-System',
+  component: DialogSystem,
   argTypes: {
     variant: {
       options: ['default', 'destructive'],
@@ -13,11 +13,11 @@ const meta = {
       options: ['left', 'center', 'right'],
       control: { type: 'select' },
     },
-    dinoPosition: {
-      options: ['left', 'center', 'right', 'other'],
+    SvgPosition: {
+      options: ['left', 'center', 'right', 'otherLeft', 'otherRight'],
       control: { type: 'select' },
     },
-    inverseDino: {
+    inverseSvg: {
       control: { type: 'boolean' },
     },
     title: {
@@ -28,7 +28,7 @@ const meta = {
     },
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof DinoAlert>
+} satisfies Meta<typeof DialogSystem>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -37,15 +37,15 @@ export const Primary: Story = {
   args: {
     variant: 'default',
     trianglePosition: 'center',
-    dinoPosition: 'center',
-    inverseDino: false,
+    SvgPosition: 'center',
+    inverseSvg: false,
     title: 'Default Alert',
     content: 'This is a default alert',
   },
   render: e => (
-    <DinoAlert {...e}>
-      <DinoAlertTitle>{e.title}</DinoAlertTitle>
-      <DinoAlertDescription>{e.content}</DinoAlertDescription>
-    </DinoAlert>
+    <DialogSystem {...e}>
+      <DialogSystemTitle>{e.title}</DialogSystemTitle>
+      <DialogSystemDescription>{e.content}</DialogSystemDescription>
+    </DialogSystem>
   ),
 }
