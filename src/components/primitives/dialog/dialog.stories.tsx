@@ -4,7 +4,7 @@ import { Input } from '../input'
 import { Dialog } from '.'
 
 const meta = {
-  title: 'Components/Dialog',
+  title: 'Primitives/Dialog',
   component: Dialog.Content,
   tags: ['autodocs'],
 } satisfies Meta<typeof Dialog.Content>
