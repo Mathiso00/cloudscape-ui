@@ -8,7 +8,18 @@ const Root = DropdownPrimitive.Root
 
 const TriggerRoot = DropdownPrimitive.Trigger
 
-const Group = DropdownPrimitive.Group
+const Group = React.forwardRef<
+  React.ElementRef<typeof DropdownPrimitive.Group>,
+  React.ComponentPropsWithoutRef<typeof DropdownPrimitive.Group>
+>(({ className, children, ...props }, ref) => (
+  <DropdownPrimitive.Group
+    ref={ref}
+    className={cn('py-.5', className)}
+    {...props}
+  >
+    {children}
+  </DropdownPrimitive.Group>
+))
 
 const Portal = DropdownPrimitive.Portal
 
@@ -50,7 +61,7 @@ const SubTrigger = React.forwardRef<
     ref={ref}
     className={
       cn(
-        'flex cursor-default select-none  items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-neutral-700 focus:text-white text-white/90 data-[state=open]:bg-neutral-700',
+        'relative flex cursor-pointer select-none items-center rounded-md px-1.5 py-1.5 text-sm outline-none transition-colors text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[state=open]:bg-white/5',
         inset && 'pl-8',
         className,
       )
@@ -71,7 +82,7 @@ const SubContent = React.forwardRef<
     ref={ref}
     className={
       cn(
-        'z-50 min-w-[8rem] overflow-hidden rounded border bg-neutral-800 border-neutral-700 p-1 text-white font-inter data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+        'z-50 min-w-[8rem] overflow-hidden rounded-lg border bg-secondary border-white/10 p-1 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-98 data-[state=open]:zoom-in-98 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
         className,
       )
     }
@@ -90,7 +101,7 @@ const Content = React.forwardRef<
       sideOffset={sideOffset}
       className={
         cn(
-          'z-50 min-w-[8rem] overflow-hidden rounded-xl border bg-neutral-800 border-neutral-700 p-1 text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+          'z-50 min-w-[8rem] overflow-hidden rounded-lg border bg-secondary border-white/10 p-1  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-98 data-[state=open]:zoom-in-98 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
           className,
         )
       }
@@ -114,7 +125,7 @@ const Item = React.forwardRef<
           ref={ref}
           className={
             cn(
-              'relative flex cursor-pointer select-none items-center rounded-lg px-2 py-1.5 text-sm outline-none transition-colors focus:bg-neutral-700 focus:text-white text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+              'relative flex cursor-pointer select-none items-center rounded-md px-1.5 py-1.5 text-sm outline-none transition-colors focus:bg-white/5 text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
               inset && 'pl-8',
               className,
             )
@@ -122,7 +133,7 @@ const Item = React.forwardRef<
         >
           { icon && text && (
             <>
-              <div className={cn('mr-2 h-4 w-4', icon)} />
+              <div className={cn('op-50 mr-2 h-4 w-4', icon)} />
               <span>{ text }</span>
             </>
           )}
@@ -188,7 +199,7 @@ const Separator = React.forwardRef<
   <DropdownPrimitive.Separator
     ref={ref}
     className={
-      cn('-mx-1 my-1 h-px bg-neutral-700', className)
+      cn('-mx-1 my-1 h-px bg-white/10', className)
     }
     {...props}
   />
