@@ -37,6 +37,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
     "@chromatic-com/storybook": "^1.8.0",
+    "@floating-ui/react-dom": "^2.1.1",
     "@iconify/json": "^2.2.243",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-avatar": "^1.1.0",
