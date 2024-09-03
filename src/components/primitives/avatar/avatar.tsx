@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants'
 import { cn } from '@/utils'
 
 const avatarVariants = tv({
-  base: 'relative flex shrink-0 overflow-hidden rounded-full',
+  base: 'relative  flex shrink-0 overflow-hidden rounded-full',
   variants: {
     size: {
       default: 'h-10 w-10',
@@ -52,7 +52,7 @@ const AvatarFallback = React.forwardRef<
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cn(
-      'flex h-full w-full items-center justify-center rounded-full bg-muted uppercase',
+      'flex h-full w-full items-center justify-center rounded-full bg-secondary uppercase',
       className,
     )}
     {...props}

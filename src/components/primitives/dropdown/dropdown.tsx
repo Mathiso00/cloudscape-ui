@@ -54,8 +54,10 @@ const SubTrigger = React.forwardRef<
   React.ElementRef<typeof DropdownPrimitive.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof DropdownPrimitive.SubTrigger> & {
     inset?: boolean
+    icon?: string
+    text?: string
   }
->(({ className, inset, children, ...props }, ref) => (
+>(({ className, inset, icon, text, children }, ref) => (
   <DropdownPrimitive.SubTrigger
     ref={ref}
     className={
@@ -65,8 +67,14 @@ const SubTrigger = React.forwardRef<
         className,
       )
     }
-    {...props}
   >
+    { icon && text && (
+      <>
+        <div className={cn('op-50 mr-2 h-4 w-4', icon)} />
+        <span>{ text }</span>
+      </>
+    )}
+
     {children}
     <div className="i-mdi-chevron-right ml-auto h-4 w-4" />
   </DropdownPrimitive.SubTrigger>

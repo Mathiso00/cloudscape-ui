@@ -16,8 +16,7 @@ export const Default: Story = {
     <Dropdown {...e}>
       <Dropdown.Trigger>
         <Avatar
-          src="https://github.com/shadcn.png"
-          alt="avatar"
+          alt="John Doe"
           size="default"
         />
       </Dropdown.Trigger>
@@ -44,60 +43,47 @@ export const Default: Story = {
         </Dropdown.Group>
         <Dropdown.Separator />
         <Dropdown.Group>
-          <Dropdown.Item>
-            <div className="i-mdi-users mr-2 h-4 w-4" />
-            <span>Team</span>
-          </Dropdown.Item>
+
+          <Dropdown.Item
+            icon="i-ph:users"
+            text="Team"
+          />
+
           <Dropdown.Sub>
-            <Dropdown.SubTrigger>
-              <div className="i-mdi-user-add mr-2 h-4 w-4" />
-              <span>Invite users</span>
-            </Dropdown.SubTrigger>
+            <Dropdown.SubTrigger
+              icon="i-ph:user-plus"
+              text="Invite users"
+            />
             <Dropdown.Portal>
               <Dropdown.SubContent>
-                <Dropdown.Item>
-                  <div className="i-mdi-email mr-2 h-4 w-4" />
-                  <span>Email</span>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <div className="i-mdi-message mr-2 h-4 w-4" />
-                  <span>Message</span>
-                </Dropdown.Item>
+                <Dropdown.Item
+                  icon="i-ph:envelope"
+                  text="Email"
+                />
+                <Dropdown.Item
+                  icon="i-ph:chat"
+                  text="Message"
+                />
                 <Dropdown.Separator />
-                <Dropdown.Item>
-                  <div className="i-mdi-plus-circle mr-2 h-4 w-4" />
-                  <span>More...</span>
-                </Dropdown.Item>
+                <Dropdown.Item
+                  icon="i-ph:plus-circle"
+                  text="More..."
+                />
               </Dropdown.SubContent>
             </Dropdown.Portal>
           </Dropdown.Sub>
-          <Dropdown.Item>
-            <div className="i-mdi-plus mr-2 h-4 w-4" />
-            <span>New Team</span>
-            <Dropdown.Shortcut>option+command+T</Dropdown.Shortcut>
-          </Dropdown.Item>
+
+          <Dropdown.Item
+            icon="i-ph:plus"
+            text="New Team"
+            shortcut={['option', 'command', 'T']}
+          />
         </Dropdown.Group>
         <Dropdown.Separator />
-          <Dropdown.Item>
-            <div className="i-mdi-github mr-2 h-4 w-4" />
-            <span>GitHub</span>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <div className="i-mdi-safe mr-2 h-4 w-4" />
-            <span>Support</span>
-          </Dropdown.Item>
-          <Dropdown.Item disabled>
-            <div className="i-mdi-cloud mr-2 h-4 w-4" />
-            <span>API</span>
-          </Dropdown.Item>
-        <Dropdown.Separator />
-        <Dropdown.Group>
-          <Dropdown.Item>
-            <div className="i-mdi-logout mr-2 h-4 w-4" />
-            <span>Log out</span>
-            <Dropdown.Shortcut>CTRL+Q</Dropdown.Shortcut>
-          </Dropdown.Item>
-        </Dropdown.Group>
+        <Dropdown.Item
+          icon="i-ph:sign-out"
+          text="Log out"
+        />
       </Dropdown.Content>
     </Dropdown>
   ),
