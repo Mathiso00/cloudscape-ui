@@ -78,24 +78,26 @@ export const Default: Story = {
           </Dropdown.Item>
         </Dropdown.Group>
         <Dropdown.Separator />
-        <Dropdown.Item>
-          <div className="i-mdi-github mr-2 h-4 w-4" />
-          <span>GitHub</span>
-        </Dropdown.Item>
-        <Dropdown.Item>
-          <div className="i-mdi-safe mr-2 h-4 w-4" />
-          <span>Support</span>
-        </Dropdown.Item>
-        <Dropdown.Item disabled>
-          <div className="i-mdi-cloud mr-2 h-4 w-4" />
-          <span>API</span>
-        </Dropdown.Item>
+          <Dropdown.Item>
+            <div className="i-mdi-github mr-2 h-4 w-4" />
+            <span>GitHub</span>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <div className="i-mdi-safe mr-2 h-4 w-4" />
+            <span>Support</span>
+          </Dropdown.Item>
+          <Dropdown.Item disabled>
+            <div className="i-mdi-cloud mr-2 h-4 w-4" />
+            <span>API</span>
+          </Dropdown.Item>
         <Dropdown.Separator />
-        <Dropdown.Item>
-          <div className="i-mdi-logout mr-2 h-4 w-4" />
-          <span>Log out</span>
-          <Dropdown.Shortcut>CTRL+Q</Dropdown.Shortcut>
-        </Dropdown.Item>
+        <Dropdown.Group>
+          <Dropdown.Item>
+            <div className="i-mdi-logout mr-2 h-4 w-4" />
+            <span>Log out</span>
+            <Dropdown.Shortcut>CTRL+Q</Dropdown.Shortcut>
+          </Dropdown.Item>
+        </Dropdown.Group>
       </Dropdown.Content>
     </Dropdown>
   ),
