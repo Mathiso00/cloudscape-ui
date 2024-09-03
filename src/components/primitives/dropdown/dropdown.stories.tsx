@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 import { Avatar, Dropdown } from '../index.ts'
 
 const meta = {
@@ -22,34 +21,26 @@ export const Default: Story = {
           size="default"
         />
       </Dropdown.Trigger>
-      <Dropdown.Content align="start">
-        <Dropdown.Label>My Account</Dropdown.Label>
-        <Dropdown.Separator />
+      <Dropdown.Content className="w-200px" align="start">
         <Dropdown.Group>
-          <Dropdown.Item>
-            <div className="i-mdi-user mr-2 h-4 w-4" />
-            <span>Profile</span>
-            <Dropdown.Shortcut>shift+command+P</Dropdown.Shortcut>
-          </Dropdown.Item>
           <Dropdown.Item
-            icon="i-mdi-credit-card"
-            text="Billing"
-            shortcut={['command', 'B']}
+            icon="i-ph:user"
+            text="Profile"
+            shortcut={['command', 'P']}
           />
-          <Dropdown.Item>
-            <div className="i-mdi-cog mr-2 h-4 w-4" />
-            <span>Settings</span>
-            <Dropdown.Shortcut>command+S</Dropdown.Shortcut>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <div className="i-mdi-keyboard mr-2 h-4 w-4" />
-            <span>Keyboard shortcuts</span>
-            <Dropdown.Shortcut
-              onKeyCombination={() => action('Keyboard shortcuts pressed')}
-            >
-              command+K
-            </Dropdown.Shortcut>
-          </Dropdown.Item>
+          <Dropdown.Item
+            icon="i-ph:credit-card"
+            text="Billing"
+          />
+          <Dropdown.Item
+            icon="i-ph:gear"
+            text="Settings"
+          />
+          <Dropdown.Item
+            icon="i-ph:keyboard"
+            text="Keyboard shortcuts"
+          />
+
         </Dropdown.Group>
         <Dropdown.Separator />
         <Dropdown.Group>
