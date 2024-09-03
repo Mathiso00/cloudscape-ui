@@ -32,4 +32,10 @@ export default defineConfig({
       ],
     },
   },
+  theme: {
+    colors: {
+      primary: '#222831',
+      secondary: '#31363F',
+    },
+  },
 })

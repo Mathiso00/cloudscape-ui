@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as DropdownPrimitive from '@radix-ui/react-dropdown-menu'
 import { Kbd } from '../../typography/kbd'
 import { cn } from '@/utils'
+import { Dropdown } from '@/components/primitives'
 
 const Root = DropdownPrimitive.Root
 
@@ -108,7 +109,7 @@ const Item = React.forwardRef<
     shortcut?: string[]
     onKeyCombination?: () => void
   }
->(({ className, inset, ...props }, ref) => (
+>(({ className, inset, icon, text, shortcut, ...props }, ref) => (
         <DropdownPrimitive.Item
           ref={ref}
           className={
@@ -118,8 +119,20 @@ const Item = React.forwardRef<
               className,
             )
           }
-          {...props}
-        />
+        >
+          { icon && text && (
+            <>
+              <div className={cn('mr-2 h-4 w-4', icon)} />
+              <span>{ text }</span>
+            </>
+          )}
+
+          { props.children }
+
+          { shortcut && (
+            <Dropdown.Shortcut>{ shortcut.join('+') }</Dropdown.Shortcut>
+          )}
+        </DropdownPrimitive.Item>
       ))
 Item.displayName = 'Item'
 
