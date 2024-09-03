@@ -3,9 +3,10 @@ import type { ButtonProps } from '../button/button.tsx'
 
 interface ButtonGroupProps extends React.PropsWithChildren {
   size?: ButtonProps['size']
+  variant?: ButtonProps['variant']
 }
 
-function ButtonGroup({ children, size }: ButtonGroupProps) {
+function ButtonGroup({ children, size, variant }: ButtonGroupProps) {
   return (
     <div className="flex flex-row ![&>*]:rounded-none ![&>*:first-child]:rounded-l-xl ![&>*:last-child]:rounded-r-xl">
       {React.Children.map(children, (child) => {
@@ -13,6 +14,8 @@ function ButtonGroup({ children, size }: ButtonGroupProps) {
           child as React.DetailedReactHTMLElement<any, HTMLElement>,
           {
             size,
+            variant,
+            className: 'not-last:border-r-none',
           },
         )
       })}

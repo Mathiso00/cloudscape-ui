@@ -15,36 +15,21 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: e => (
-    <ButtonGroup {...e}>
+    <ButtonGroup {...e} variant="outline">
       <Button>
-        Button 1
-      </Button>
-      <Button variant="outline">
-        Button 2
-      </Button>
-      <Button size="icon" icon="i-mdi-chevron-down" />
-    </ButtonGroup>
-  ),
-}
-
-export const Small: Story = {
-  render: e => (
-    <ButtonGroup {...e} size="sm">
-      <Button variant="secondary">
         Button 1
       </Button>
       <Button>
         Button 2
       </Button>
       <Button size="icon" icon="i-mdi-chevron-down" />
-
     </ButtonGroup>
   ),
 }
 
 export const WithTooltip: Story = {
   render: e => (
-    <ButtonGroup {...e}>
+    <ButtonGroup {...e} variant="default">
       <Button>
         Button 1
       </Button>
