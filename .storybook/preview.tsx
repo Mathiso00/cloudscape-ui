@@ -26,6 +26,7 @@ const preview: Preview = {
   ],
 
   parameters: {
+    layout: 'centered',
     backgrounds: {
       default: 'koops',
       values: [

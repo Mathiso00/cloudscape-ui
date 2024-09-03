@@ -12,7 +12,7 @@ const meta = {
       control: { type: 'select' },
     },
     size: {
-      options: ['default', 'sm', 'lg', 'icon'],
+      options: ['default', 'lg', 'icon'],
       control: { type: 'select' },
     },
   },
@@ -107,15 +107,5 @@ export const WithIcon: Story = {
     size: 'icon',
     icon: 'i-material-symbols:search',
     children: undefined,
-  },
-}
-
-export const SmallLoading: Story = {
-  args: {
-    children: 'Small button loading',
-    isLoading: true,
-    disabled: false,
-    variant: 'default',
-    size: 'sm',
   },
 }
