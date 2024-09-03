@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { DialogSystem, DialogSystemDescription, DialogSystemTitle } from '@/components/primitives/dialog-system/dialogSystem.tsx'
+import {
+  DialogSystem,
+  DialogSystemDescription,
+  DialogSystemTitle,
+} from '@/components/primitives/dialog-system/dialogSystem.tsx'
 
 const meta = {
   title: 'Primitives/Dialog-System',
