@@ -27,7 +27,13 @@ const preview: Preview = {
 
   parameters: {
     backgrounds: {
-      default: 'dark',
+      default: 'koops',
+      values: [
+        {
+          name: 'koops',
+          value: '#222831',
+        },
+      ],
     },
   },
 }
