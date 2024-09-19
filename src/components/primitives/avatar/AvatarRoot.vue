@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { AvatarVariant } from '@/components/primitives/avatar/avatar.variant.ts'
+import type { AvatarProps } from '@/components/primitives/avatar/avatar.variant'
 import { avatarVariant } from '@/components/primitives/avatar/avatar.variant.ts'
 import { AvatarRoot } from 'radix-vue'
 
-const { size } = defineProps<Pick<AvatarVariant, 'size'>>()
+const { size } = defineProps<Pick<AvatarProps, 'size'>>()
 </script>
 
 <template>

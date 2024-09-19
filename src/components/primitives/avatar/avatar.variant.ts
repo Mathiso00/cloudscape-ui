@@ -1,4 +1,4 @@
-import { tv, type VariantProps } from 'tailwind-variants'
+import { tv } from 'tailwind-variants'
 
 export const avatarVariant = tv({
   base: 'relative flex shrink-0 overflow-hidden rounded-full',
@@ -15,4 +15,9 @@ export const avatarVariant = tv({
   },
 })
 
-export type AvatarVariant = VariantProps<typeof avatarVariant>
+export interface AvatarProps {
+  alt: string
+  src?: string
+  size?: AvatarSize
+}
+export type AvatarSize = 'default' | 'sm' | 'lg' | 'xl'
