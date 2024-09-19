@@ -3,10 +3,7 @@ import { presetAnimations } from 'unocss-preset-animations'
 
 export default defineConfig({
   presets: [
-    presetUno({
-      dark: 'class',
-      // variablePrefix: 'koops-',
-    }),
+    presetUno(),
     presetIcons(),
     presetWebFonts({
       provider: 'google',
@@ -14,14 +11,13 @@ export default defineConfig({
         inter: 'Inter:300,400,500,600,700',
       },
     }),
-
     presetAnimations(),
   ],
   content: {
     pipeline: {
       include: [
         // the default
-        /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+        /\.(vue|ts|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
         // Include Storybook stories
         'src/**/*.stories.{js,ts}',
         'stories/**/*',

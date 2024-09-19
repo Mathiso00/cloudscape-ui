@@ -7,6 +7,11 @@
       "DOM",
       "DOM.Iterable"
     ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "moduleDetection": "force",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -22,5 +27,9 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ]
 }

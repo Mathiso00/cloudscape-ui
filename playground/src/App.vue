@@ -1,7 +1,19 @@
 <script setup lang="ts">
-import { Hello } from '@koopsoperator/csui'
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogTrigger } from '@koopsoperator/csui'
 </script>
 
 <template>
-  <Hello hello="dqsdqs" />
+  <AlertDialog>
+    <AlertDialogTrigger>
+      open me
+    </AlertDialogTrigger>
+    <AlertDialogContent>
+      <AlertDialogAction>
+        cc
+      </AlertDialogAction>
+      <AlertDialogCancel>
+        dd
+      </AlertDialogCancel>
+    </AlertDialogContent>
+  </AlertDialog>
 </template>
