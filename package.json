@@ -14,8 +14,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
-  "peerDependencies": {
-    "vue": "^3.4.37"
+  "dependencies": {
+    "vue": "^3.5.6"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.6.2",
@@ -26,7 +26,9 @@
     "@storybook/addon-links": "^8.3.1",
     "@storybook/addon-onboarding": "^8.3.1",
     "@storybook/blocks": "^8.3.1",
+    "@storybook/core-events": "^8.3.2",
     "@storybook/test": "^8.3.1",
+    "@storybook/types": "^8.3.2",
     "@storybook/vue3": "^8.3.1",
     "@storybook/vue3-vite": "^8.3.1",
     "@unocss/eslint-plugin": "^0.62.4",
@@ -36,7 +38,7 @@
     "eslint": "^9.10.0",
     "radix-vue": "^1.9.6",
     "storybook": "^8.3.1",
-    "storybook-addon-vue-slots": "^0.9.29",
+    "storybook-addon-vue-slots": "^0.9.30-next.2",
     "tailwind-merge": "^2.5.2",
     "tailwind-variants": "^0.2.1",
     "typescript": "^5.6.2",

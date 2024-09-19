@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import type {
+  DropdownMenuContentEmits,
+  DropdownMenuContentProps,
+} from 'radix-vue'
 import { cn } from '@/utils'
 import {
   DropdownMenuContent,
-  type DropdownMenuContentEmits,
-  type DropdownMenuContentProps,
   DropdownMenuPortal,
   useForwardPropsEmits,
 } from 'radix-vue'
