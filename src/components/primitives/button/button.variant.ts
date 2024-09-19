@@ -25,3 +25,13 @@ export const buttonVariant = tv({
     size: 'default',
   },
 })
+
+export interface ButtonProps {
+  variant?: 'default' | 'outline' | 'destructive' | 'secondary' | 'ghost' | 'link'
+  size?: 'default' | 'lg' | 'icon'
+  leftIcon?: string
+  isLoading?: boolean
+  block?: boolean
+  disabled?: boolean
+  icon?: string
+}

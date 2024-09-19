@@ -9,6 +9,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
+  Button,
 } from '@/components'
 
 const meta = {
@@ -23,13 +24,13 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: _ => ({
-    components: { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction },
+    components: { Button, AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction },
     template: `
       <AlertDialog>
-        <AlertDialogTrigger>
-          
+        <AlertDialogTrigger as-child>
+          <Button variant="destructive">
             Delete my account
-        
+          </Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>

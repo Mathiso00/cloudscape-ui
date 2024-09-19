@@ -4,11 +4,16 @@ import '@unocss/reset/tailwind-compat.css'
 
 const preview: Preview = {
   parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+
+    layout: 'centered',
+    backgrounds: {
+      default: 'koops',
+      values: [
+        {
+          name: 'koops',
+          value: '#222831',
+        },
+      ],
     },
   },
   decorators: [
