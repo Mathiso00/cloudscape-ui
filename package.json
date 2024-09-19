@@ -3,6 +3,8 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "play": "vite ./playground",
     "build:watch": "vite build --watch",
@@ -12,8 +14,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "peerDependencies": {
     "vue": "^3.4.37"
   },

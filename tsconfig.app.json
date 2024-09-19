@@ -7,16 +7,16 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
     "moduleDetection": "force",
     "useDefineForClassFields": true,
     "module": "ESNext",
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "allowImportingTsExtensions": true,
     "strict": true,
     /* Linting */
