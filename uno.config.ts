@@ -1,5 +1,4 @@
 import { defineConfig, presetIcons, presetUno, presetWebFonts } from 'unocss'
-import { presetShadcn } from 'unocss-preset-shadcn'
 import { presetAnimations } from 'unocss-preset-animations'
 
 export default defineConfig({
@@ -15,10 +14,7 @@ export default defineConfig({
         inter: 'Inter:300,400,500,600,700',
       },
     }),
-    presetShadcn({
-      color: 'neutral',
-      darkSelector: '.dark',
-    }),
+
     presetAnimations(),
   ],
   content: {
