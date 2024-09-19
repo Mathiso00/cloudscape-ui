@@ -1,49 +1,55 @@
-import path, { resolve } from 'node:path'
+import { resolve } from 'node:path'
+import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
-
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
-import React from '@vitejs/plugin-react'
+import VueMacros from 'unplugin-vue-macros/vite'
 import { defineConfig } from 'vite'
-import dtsPlugin from 'vite-plugin-dts'
+import dts from 'vite-plugin-dts'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
-import * as pkg from './package.json'
-
-const externals: string[] = [
-  ...Object.keys(pkg.peerDependencies || {}),
-]
-
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     UnoCSS(),
-    libInjectCss(),
-    dtsPlugin({
-      rollupTypes: true,
-      insertTypesEntry: true,
+    dts({
+      tsconfigPath: 'tsconfig.build.json',
+      cleanVueFileName: true,
+      exclude: ['src/test/**', 'src/**/story/**', 'src/**/*.story.vue'],
     }),
-    React(),
+    libInjectCss(),
+    VueMacros({
+      plugins: {
+        vue: Vue({
+          include: [/\.vue$/, /\.md$/],
+        }),
+      },
+    }),
   ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
     },
+    dedupe: [
+      'vue',
+      '@vue/runtime-core',
+    ],
   },
   build: {
-    cssCodeSplit: true,
-    sourcemap: true,
-    minify: true,
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
-      formats: ['es', 'cjs'],
       name: '@koopsoperator/csui',
-      fileName: format => `index.${format}.js`,
+      fileName: (format, name) => {
+        return `${name}.${format === 'es' ? 'js' : 'umd.cjs'}`
+      },
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+      },
+
     },
     rollupOptions: {
-      external: externals,
+      external: ['vue'],
       output: {
-        preserveModules: false,
+        dir: 'dist',
         globals: {
-          'react': 'React',
-          'react-dom': 'ReactDOM',
+          vue: 'Vue',
         },
       },
     },
