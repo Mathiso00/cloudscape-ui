@@ -21,3 +21,11 @@ export interface AvatarProps {
   size?: AvatarSize
 }
 export type AvatarSize = 'default' | 'sm' | 'lg' | 'xl'
+export function getAvatarText(text: string) {
+  const initials = text
+    .split(' ')
+    .map(word => word.charAt(0))
+    .join('')
+
+  return initials.length > 2 ? initials.slice(0, 2) : initials
+}
