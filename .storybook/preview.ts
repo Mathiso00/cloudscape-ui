@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/vue3'
+import { ConfigProvider } from 'radix-vue'
+
 import 'virtual:uno.css'
 import '@unocss/reset/tailwind-compat.css'
 
@@ -18,11 +20,14 @@ const preview: Preview = {
   },
   decorators: [
     story => ({
-      components: { story },
+      components: { story, ConfigProvider },
       template: `
-        <div class="font-inter">
-          <story/>
-        </div>`,
+              <ConfigProvider>
+                <div class="font-inter">
+                  <story/>
+                </div>
+              </ConfigProvider>
+            `,
     }),
   ],
 }
