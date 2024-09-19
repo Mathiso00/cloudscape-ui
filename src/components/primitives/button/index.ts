@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants'
 
 export const buttonVariants = tv({
-  base: 'inline-flex text-center shadow select-none gap-2.5 border border-transparent disabled:cursor-not-allowed items-center outline-transparent justify-center whitespace-nowrap font-medium transition-all ring-offset-2 ring-offset-inherit ring-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
+  base: 'inline-flex text-center shadow select-none gap-2.5 border border-transparent disabled:cursor-not-allowed items-center outline-transparent justify-center whitespace-nowrap transition-all ring-offset-2 ring-offset-inherit ring-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50',
   variants: {
     variant: {
       default: 'bg-white !text-secondary focus-visible:ring-white/10 focus-visible:ring-offset-transparent',
@@ -15,7 +15,7 @@ export const buttonVariants = tv({
       true: 'w-full',
     },
     size: {
-      default: 'h-37px px-3 rounded-lg text-1rem',
+      default: 'h-37px px-3 rounded-lg !text-14px',
       lg: 'h-45px px-4 rounded-lg text-1.25rem',
       icon: 'h-37px w-37px rounded-lg',
     },
