@@ -1,5 +1,15 @@
 <script setup lang="ts">
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogTrigger } from '@koopsoperator/csui'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@koopsoperator/csui'
 </script>
 
 <template>
@@ -8,12 +18,23 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
       open me
     </AlertDialogTrigger>
     <AlertDialogContent>
-      <AlertDialogAction>
-        cc
-      </AlertDialogAction>
-      <AlertDialogCancel>
-        dd
-      </AlertDialogCancel>
+      <AlertDialogHeader>
+        <AlertDialogTitle>
+          Supprimer l'élément
+        </AlertDialogTitle>
+        <AlertDialogDescription>
+          Êtes-vous sûr de vouloir supprimer cet élément ?
+        </AlertDialogDescription>
+      </AlertDialogHeader>
+
+      <AlertDialogFooter>
+        <AlertDialogCancel>
+          Annuler
+        </AlertDialogCancel>
+        <AlertDialogAction>
+          Oui, supprimer
+        </AlertDialogAction>
+      </AlertDialogFooter>
     </AlertDialogContent>
   </AlertDialog>
 </template>
