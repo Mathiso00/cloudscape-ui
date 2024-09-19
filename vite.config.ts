@@ -1,7 +1,6 @@
 import { resolve } from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
-import VueMacros from 'unplugin-vue-macros/vite'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
@@ -16,13 +15,7 @@ export default defineConfig({
       exclude: ['src/test/**', 'src/**/story/**', 'src/**/*.story.vue'],
     }),
     libInjectCss(),
-    VueMacros({
-      plugins: {
-        vue: Vue({
-          include: [/\.vue$/, /\.md$/],
-        }),
-      },
-    }),
+    Vue(),
   ],
   resolve: {
     alias: {

@@ -1,4 +1,1 @@
-export {
-  default as Hello,
-  type HelloProps,
-} from './Hello.vue'
+export * from './alert-dialog'
