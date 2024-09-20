@@ -32,7 +32,9 @@ import { Button } from '@koopsoperator/csui'
 </script>
 
 <template>
-  <Button variant="destructive">Destructive Button</Button>
+  <Button variant="destructive">
+    Destructive Button
+  </Button>
 </template>
 ```
 
