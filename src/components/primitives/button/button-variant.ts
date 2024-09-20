@@ -31,6 +31,7 @@ export interface ButtonProps {
   variant?: 'default' | 'outline' | 'destructive' | 'secondary' | 'ghost' | 'link'
   size?: 'default' | 'lg' | 'icon'
   leftIcon?: string
+  rightIcon?: string
   isLoading?: boolean
   block?: boolean
   disabled?: boolean
