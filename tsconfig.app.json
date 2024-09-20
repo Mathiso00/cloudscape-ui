@@ -14,7 +14,7 @@
     "moduleResolution": "bundler",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     },
     "allowImportingTsExtensions": true,
