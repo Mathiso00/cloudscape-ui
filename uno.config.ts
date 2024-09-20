@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons, presetUno, presetWebFonts } from 'unocss'
+import { defineConfig, presetIcons, presetUno, presetWebFonts, transformerDirectives } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
 
 export default defineConfig({
@@ -12,6 +12,10 @@ export default defineConfig({
       },
     }),
     presetAnimations(),
+
+  ],
+  transformers: [
+    transformerDirectives(),
   ],
   content: {
     pipeline: {
