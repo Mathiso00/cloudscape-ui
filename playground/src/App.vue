@@ -1,94 +1,70 @@
 <script setup lang="ts">
-import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from '@koopsoperator/csui'
+import { Avatar, DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from '@koopsoperator/csui'
 </script>
 
 <template>
-  <DropdownMenu open>
-    <DropdownMenuTrigger as-child>
-      <Button variant="outline">
-        Open
-      </Button>
+  <DropdownMenu>
+    <DropdownMenuTrigger>
+      <Avatar alt="John Doe" />
     </DropdownMenuTrigger>
-    <DropdownMenuContent class="w-56">
-      <DropdownMenuLabel>My Account</DropdownMenuLabel>
-      <DropdownMenuSeparator />
+    <DropdownMenuContent align="start" class="w-2OOpx">
       <DropdownMenuGroup>
-        <DropdownMenuItem>
-          <div class="i-mdi-user mr-2 h-4 w-4" />
-          <span>Profile</span>
-          <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div class="i-mdi:account-credit-card mr-2 h-4 w-4" />
-          <span>Billing</span>
-          <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div class="i-mdi-cog mr-2 h-4 w-4" />
-          <span>Settings</span>
-          <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div class="i-mdi-keyboard mr-2 h-4 w-4" />
-          <span>Keyboard shortcuts</span>
-          <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-        </DropdownMenuItem>
+        <DropdownMenuItem
+          icon="i-ph:user"
+          text="Profile"
+          :shortcut="['command', 'P']"
+        />
+        <DropdownMenuItem
+          icon="i-ph:credit-card"
+          text="Billing"
+        />
+        <DropdownMenuItem
+          icon="i-ph:gear"
+          text="Settings"
+        />
+        <DropdownMenuItem
+          icon="i-ph:keyboard"
+          text="Keyboard shortcuts"
+        />
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
       <DropdownMenuGroup>
-        ²
-        <DropdownMenuItem>
-          <div class="i-mdi-users mr-2 h-4 w-4" />
-          <span>Team</span>
-        </DropdownMenuItem>
+        <DropdownMenuItem
+          icon="i-ph:users"
+          text="Team"
+        />
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger>
-            <div class="i-mdi-user-add mr-2 h-4 w-4" />
-            <span>Invite users</span>
-          </DropdownMenuSubTrigger>
-          <DropdownMenuPortal>
-            <DropdownMenuSubContent>
-              <DropdownMenuItem>
-                <div class="i-mdi-mail mr-2 h-4 w-4" />
-                <span>Email</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <div class="i-mdi-square mr-2 h-4 w-4" />
-                <span>Message</span>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <div class="i-mdi-plus mr-2 h-4 w-4" />
-                <span>More...</span>
-              </DropdownMenuItem>
-            </DropdownMenuSubContent>
-          </DropdownMenuPortal>
+          <DropdownMenuSubTrigger
+            icon="i-ph:user-plus"
+            text="Invite users"
+          />
+          <DropdownMenuSubContent>
+            <DropdownMenuItem
+              icon="i-ph:envelope"
+              text="Email"
+            />
+            <DropdownMenuItem
+              icon="i-ph:chat"
+              text="Message"
+            />
+            <DropdownMenuSeparator />
+            <DropdownMenuItem
+              icon="i-ph:plus-circle"
+              text="More..."
+            />
+          </DropdownMenuSubContent>
         </DropdownMenuSub>
-        <DropdownMenuItem>
-          <div class="i-mdi-plus mr-2 h-4 w-4" />
-          <span>New Team</span>
-          <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-        </DropdownMenuItem>
+        <DropdownMenuItem
+          icon="i-ph:plus"
+          :shortcut="['option', 'command', 'T']"
+          text="New Team"
+        />
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
-      <DropdownMenuItem>
-        <div class="i-mdi-github mr-2 h-4 w-4" />
-        <span>GitHub</span>
-      </DropdownMenuItem>
-      <DropdownMenuItem>
-        <div class="i-mdi-buoy mr-2 h-4 w-4" />
-        <span>Support</span>
-      </DropdownMenuItem>
-      <DropdownMenuItem disabled>
-        <div class="i-mdi-cloud mr-2 h-4 w-4" />
-        <span>API</span>
-      </DropdownMenuItem>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem>
-        <div class="i-mdi-logout mr-2 h-4 w-4" />
-        <span>Log out</span>
-        <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-      </DropdownMenuItem>
+      <DropdownMenuItem
+        icon="i-ph:sign-out"
+        text="Log out"
+      />
     </DropdownMenuContent>
   </DropdownMenu>
 </template>
