@@ -46,7 +46,7 @@ watch([() => code, () => lang], async ([code, lang]) => {
       <div
         v-if="isMouseOver"
         title="Copy Code"
-        class="absolute right-4 top-4 h-10 w-10 flex cursor-pointer items-center justify-center border border-white/10 rounded-md bg-primary text-lg text-white transition-all hover:bg-secondary"
+        class="absolute right-4 top-4 h-10 w-10 flex cursor-pointer items-center justify-center overflow-hidden border border-white/10 rounded-md bg-primary text-lg text-white transition-all hover:bg-secondary"
         :class="{
           'w-10': !isCopied,
           'w-24 px-2': isCopied,
@@ -54,13 +54,13 @@ watch([() => code, () => lang], async ([code, lang]) => {
         @click="copyCode"
       >
         <template v-if="!isCopied">
-          <div class="i-mdi:clipboard-outline w-5" />
+          <div class="i-mdi:clipboard-outline min-w-5" />
         </template>
         <template v-else>
           <p class="mr-2 text-xs">
             Copied!
           </p>
-          <div class="i-mdi:clipboard-check-outline w-5" />
+          <div class="i-mdi:clipboard-check-outline min-w-5" />
         </template>
       </div>
     </Transition>
