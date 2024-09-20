@@ -3,7 +3,15 @@ import { cn } from '@/utils'
 import { DropdownMenuItem, type DropdownMenuItemProps, useForwardProps } from 'radix-vue'
 import { computed, type HTMLAttributes } from 'vue'
 
-const props = defineProps<DropdownMenuItemProps & { class?: HTMLAttributes['class'], inset?: boolean }>()
+export interface KoopsDropdownMenuItemProps {
+  text?: string
+  icon?: string
+}
+
+const props = defineProps<KoopsDropdownMenuItemProps & DropdownMenuItemProps & {
+  class?: HTMLAttributes['class']
+  inset?: boolean
+}>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -18,11 +26,17 @@ const forwardedProps = useForwardProps(delegatedProps)
   <DropdownMenuItem
     v-bind="forwardedProps"
     :class="cn(
-      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex cursor-pointer select-none items-center rounded-md px-1.5 py-1.25 text-sm outline-none transition-colors focus:bg-white/5 text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       inset && 'pl-8',
       props.class,
     )"
   >
-    <slot />
+    <template v-if="icon && text">
+      <div
+        :class="cn('op-50 w-4 mr-2 h-4', icon)"
+      />
+      <span>{{ text }}</span>
+    </template>
+    <slot v-else />
   </DropdownMenuItem>
 </template>
