@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { ButtonProps } from '@/components/primitives/button/button.variant.ts'
-import { buttonVariant } from '@/components/primitives/button/button.variant.ts'
+import type { ButtonProps } from '@/components/primitives/button/button.variant'
+import { buttonVariant } from '@/components/primitives/button/button.variant'
 import { cn } from '@/utils'
 
 const {
