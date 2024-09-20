@@ -2,29 +2,27 @@ import { resolve } from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import Dts from 'vite-plugin-dts'
+// import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     UnoCSS(),
-    dts({
+    Dts({
       tsconfigPath: 'tsconfig.build.json',
       cleanVueFileName: true,
-      exclude: ['src/test/**', 'src/**/story/**', 'src/**/*.story.vue'],
+      exclude: ['src/test/**', 'src/**/stories/**', 'src/**/*.stories.ts'],
     }),
-    libInjectCss(),
+    // libInjectCss({
+    //
+    // }),
     Vue(),
   ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
     },
-    dedupe: [
-      'vue',
-      '@vue/runtime-core',
-    ],
   },
   build: {
     lib: {

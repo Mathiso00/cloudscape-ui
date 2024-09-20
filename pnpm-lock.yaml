@@ -13,8 +13,8 @@ importers:
         version: 3.5.6(typescript@5.6.2)
     devDependencies:
       '@antfu/eslint-config':
-        specifier: ^3.6.2
-        version: 3.6.2(@typescript-eslint/utils@8.6.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@unocss/eslint-plugin@0.62.4(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@vue/compiler-sfc@3.5.6)(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
+        specifier: ^3.7.0
+        version: 3.7.0(@typescript-eslint/utils@8.6.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@unocss/eslint-plugin@0.62.4(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@vue/compiler-sfc@3.5.6)(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
       '@iconify/json':
         specifier: ^2.2.250
         version: 2.2.250
@@ -22,34 +22,22 @@ importers:
         specifier: ^8.3.2
         version: 8.3.2(storybook@8.3.2)
       '@storybook/addon-essentials':
-        specifier: ^8.3.1
+        specifier: ^8.3.2
         version: 8.3.2(storybook@8.3.2)
       '@storybook/addon-interactions':
-        specifier: ^8.3.1
+        specifier: ^8.3.2
         version: 8.3.2(storybook@8.3.2)
       '@storybook/addon-links':
-        specifier: ^8.3.1
+        specifier: ^8.3.2
         version: 8.3.2(react@18.3.1)(storybook@8.3.2)
-      '@storybook/addon-onboarding':
-        specifier: ^8.3.1
-        version: 8.3.2(react@18.3.1)(storybook@8.3.2)
-      '@storybook/blocks':
-        specifier: ^8.3.1
-        version: 8.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.2)
       '@storybook/core-events':
         specifier: ^8.3.2
         version: 8.3.2(storybook@8.3.2)
-      '@storybook/test':
-        specifier: ^8.3.1
-        version: 8.3.2(storybook@8.3.2)
-      '@storybook/types':
-        specifier: ^8.3.2
-        version: 8.3.2(storybook@8.3.2)
       '@storybook/vue3':
-        specifier: ^8.3.1
+        specifier: ^8.3.2
         version: 8.3.2(storybook@8.3.2)(vue@3.5.6(typescript@5.6.2))
       '@storybook/vue3-vite':
-        specifier: ^8.3.1
+        specifier: ^8.3.2
         version: 8.3.2(storybook@8.3.2)(vite@5.4.6(@types/node@22.5.5))(vue@3.5.6(typescript@5.6.2))
       '@unocss/eslint-plugin':
         specifier: ^0.62.4
@@ -70,10 +58,10 @@ importers:
         specifier: ^1.9.6
         version: 1.9.6(vue@3.5.6(typescript@5.6.2))
       storybook:
-        specifier: ^8.3.1
+        specifier: ^8.3.2
         version: 8.3.2
       storybook-addon-vue-slots:
-        specifier: ^0.9.30-next.2
+        specifier: 0.9.30-next.2
         version: 0.9.30-next.2(@storybook/blocks@8.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.3.2))(@storybook/core-events@8.3.2(storybook@8.3.2))(@storybook/preview-api@8.3.2(storybook@8.3.2))(@storybook/types@8.3.2(storybook@8.3.2))(@storybook/vue3@8.3.2(storybook@8.3.2)(vue@3.5.6(typescript@5.6.2)))(vue@3.5.6(typescript@5.6.2))
       tailwind-merge:
         specifier: ^2.5.2
@@ -138,8 +126,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@antfu/eslint-config@3.6.2':
-    resolution: {integrity: sha512-cewFaIEuSSOjbIsNts8gjeMLQrrMDhZjZJHMWk+OyVGJLHRE09JiF5Yg5+XjMVYlG/7fPqeuwEehLrer+8zMfA==}
+  '@antfu/eslint-config@3.7.0':
+    resolution: {integrity: sha512-jfpcdlwqEsLXXBs2JGht7ByISbZzdSfv0zeo9ZfOzT62XNgJln9WYNQ5lrFCOYbUQ6luXOJSztEM5cbiRt/lWA==}
     hasBin: true
     peerDependencies:
       '@eslint-react/eslint-plugin': ^1.5.8
@@ -867,11 +855,6 @@ packages:
 
   '@storybook/addon-measure@8.3.2':
     resolution: {integrity: sha512-5RPF2oEw5XnTmz2cvjqz2WGnqOrJ1NxXIuJc6QeO6EXQqqjPnj/9rV/MBmzMd9cjk8Ud8c4AA5+jJbl4IgcwhQ==}
-    peerDependencies:
-      storybook: ^8.3.2
-
-  '@storybook/addon-onboarding@8.3.2':
-    resolution: {integrity: sha512-IuxietU0i+8L6CgFJNSEi9XyPR96P3oQE1Dp2GYDO6PucmEgZEUCgEJ2w7YxTnI5eGJ7+SpHKkPRHVWfqDjvgA==}
     peerDependencies:
       storybook: ^8.3.2
 
@@ -3182,12 +3165,6 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  react-confetti@6.1.0:
-    resolution: {integrity: sha512-7Ypx4vz0+g8ECVxr88W9zhcQpbeujJAVqL14ZnXJ3I23mOI9/oBVTQ3dkJhUmB0D6XOtCZEM6N0Gm9PMngkORw==}
-    engines: {node: '>=10.18'}
-    peerDependencies:
-      react: ^16.3.0 || ^17.0.1 || ^18.0.0
-
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
@@ -3558,9 +3535,6 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  tween-functions@1.2.0:
-    resolution: {integrity: sha512-PZBtLYcCLtEcjL14Fzb1gSxPBeL7nWvGhO5ZFPGqziCcr8uvHp0NDmdjBchp6KHL+tExcg0m3NISmKxhU394dA==}
-
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -3910,7 +3884,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@antfu/eslint-config@3.6.2(@typescript-eslint/utils@8.6.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@unocss/eslint-plugin@0.62.4(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@vue/compiler-sfc@3.5.6)(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)':
+  '@antfu/eslint-config@3.7.0(@typescript-eslint/utils@8.6.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@unocss/eslint-plugin@0.62.4(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2))(@vue/compiler-sfc@3.5.6)(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)':
     dependencies:
       '@antfu/install-pkg': 0.4.1
       '@clack/prompts': 0.7.0
@@ -4555,13 +4529,6 @@ snapshots:
       '@storybook/global': 5.0.0
       storybook: 8.3.2
       tiny-invariant: 1.3.3
-
-  '@storybook/addon-onboarding@8.3.2(react@18.3.1)(storybook@8.3.2)':
-    dependencies:
-      react-confetti: 6.1.0(react@18.3.1)
-      storybook: 8.3.2
-    transitivePeerDependencies:
-      - react
 
   '@storybook/addon-outline@8.3.2(storybook@8.3.2)':
     dependencies:
@@ -7446,11 +7413,6 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  react-confetti@6.1.0(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      tween-functions: 1.2.0
-
   react-dom@18.3.1(react@18.3.1):
     dependencies:
       loose-envify: 1.4.0
@@ -7868,8 +7830,6 @@ snapshots:
       get-tsconfig: 4.8.1
     optionalDependencies:
       fsevents: 2.3.3
-
-  tween-functions@1.2.0: {}
 
   type-check@0.4.0:
     dependencies:
