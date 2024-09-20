@@ -7,7 +7,6 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
@@ -34,7 +33,6 @@ export const Default: Story = {
       DropdownMenuItem,
       DropdownMenuLabel,
       DropdownMenuSeparator,
-      DropdownMenuShortcut,
       DropdownMenuSub,
       DropdownMenuTrigger,
       DropdownMenuSubContent,
@@ -48,24 +46,25 @@ export const Default: Story = {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" class="w-2OOpx">
               <DropdownMenuGroup>
-              <DropdownMenuItem
-                  icon="i-ph:user"
-                  text="Profile"
-              />
-              <DropdownMenuItem
-                  icon="i-ph:credit-card"
-                  text="Billing"
-              />
-              <DropdownMenuItem
-                  icon="i-ph:gear"
-                  text="Settings"
-              />
-              <DropdownMenuItem
-                  icon="i-ph:keyboard"
-                  text="Keyboard shortcuts"
-              />
+                <DropdownMenuItem
+                    icon="i-ph:user"
+                    text="Profile"
+                    :shortcut="['command', 'P']"
+                />
+                <DropdownMenuItem
+                    icon="i-ph:credit-card"
+                    text="Billing"
+                />
+                <DropdownMenuItem
+                    icon="i-ph:gear"
+                    text="Settings"
+                />
+                <DropdownMenuItem
+                    icon="i-ph:keyboard"
+                    text="Keyboard shortcuts"
+                />
               </DropdownMenuGroup>
-              <DropdownMenuSeparator />
+              <DropdownMenuSeparator/>
               <DropdownMenuGroup>
                 <DropdownMenuItem
                     icon="i-ph:users"
@@ -76,28 +75,29 @@ export const Default: Story = {
                       icon="i-ph:user-plus"
                       text="Invite users"
                   />
-                    <DropdownMenuSubContent>
-                      <DropdownMenuItem
-                          icon="i-ph:envelope"
-                          text="Email"
-                      />
-                      <DropdownMenuItem
-                          icon="i-ph:chat"
-                          text="Message"
-                      />
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem
-                          icon="i-ph:plus-circle"
-                          text="More..."
-                      />
-                    </DropdownMenuSubContent>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem
+                        icon="i-ph:envelope"
+                        text="Email"
+                    />
+                    <DropdownMenuItem
+                        icon="i-ph:chat"
+                        text="Message"
+                    />
+                    <DropdownMenuSeparator/>
+                    <DropdownMenuItem
+                        icon="i-ph:plus-circle"
+                        text="More..."
+                    />
+                  </DropdownMenuSubContent>
                 </DropdownMenuSub>
                 <DropdownMenuItem
                     icon="i-ph:plus"
-                text="New Team"
+                    :shortcut="['option', 'command', 'T']"
+                    text="New Team"
                 />
               </DropdownMenuGroup>
-              <DropdownMenuSeparator />
+              <DropdownMenuSeparator/>
               <DropdownMenuItem
                   icon="i-ph:sign-out"
                   text="Log out"

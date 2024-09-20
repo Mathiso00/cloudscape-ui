@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Kbd } from '@/components'
 import { cn } from '@/utils'
 import { DropdownMenuItem, type DropdownMenuItemProps, useForwardProps } from 'radix-vue'
 import { computed, type HTMLAttributes } from 'vue'
@@ -6,11 +7,16 @@ import { computed, type HTMLAttributes } from 'vue'
 export interface KoopsDropdownMenuItemProps {
   text?: string
   icon?: string
+  shortcut?: string[]
 }
 
 const props = defineProps<KoopsDropdownMenuItemProps & DropdownMenuItemProps & {
   class?: HTMLAttributes['class']
   inset?: boolean
+}>()
+
+const emit = defineEmits<{
+  (e: 'keyPressed'): void
 }>()
 
 const delegatedProps = computed(() => {
@@ -26,7 +32,7 @@ const forwardedProps = useForwardProps(delegatedProps)
   <DropdownMenuItem
     v-bind="forwardedProps"
     :class="cn(
-      'relative flex cursor-pointer select-none items-center rounded-md px-1.5 py-1.25 text-sm outline-none transition-colors focus:bg-white/5 text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative w-full flex cursor-pointer select-none items-center rounded-md px-1.5 py-1.25 text-sm outline-none transition-colors focus:bg-white/5 text-white/90 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       inset && 'pl-8',
       props.class,
     )"
@@ -38,5 +44,13 @@ const forwardedProps = useForwardProps(delegatedProps)
       <span>{{ text }}</span>
     </template>
     <slot v-else />
+
+    <template v-if="shortcut">
+      <Kbd
+        class="ml-auto"
+        :keys="shortcut"
+        @key-pressed="() => emit('keyPressed')"
+      />
+    </template>
   </DropdownMenuItem>
 </template>
