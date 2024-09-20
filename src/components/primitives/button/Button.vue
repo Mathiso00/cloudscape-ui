@@ -11,6 +11,7 @@ const {
   isLoading,
   disabled,
   block,
+  class: buttonClass,
 } = defineProps<ButtonProps>()
 
 const emit = defineEmits<{
@@ -23,7 +24,7 @@ const LOADING_ICON: string = 'i-svg-spinners:ring-resize'
 <template>
   <button
     :disabled="disabled || isLoading"
-    :class="buttonVariant({ variant, size, block })"
+    :class="cn(buttonVariant({ variant, size, block }), buttonClass)"
     @click="(e) => isLoading ? e.preventDefault() : emit('click', e)"
   >
     <!-- If the button is loading, show the loading icon -->

@@ -1,3 +1,4 @@
+import type { HTMLAttributes } from 'vue'
 import { tv } from 'tailwind-variants'
 
 export const buttonVariant = tv({
@@ -34,4 +35,5 @@ export interface ButtonProps {
   block?: boolean
   disabled?: boolean
   icon?: string
+  class?: HTMLAttributes['class']
 }
