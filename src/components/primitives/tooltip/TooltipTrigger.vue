@@ -3,7 +3,7 @@ import { TooltipTrigger } from 'radix-vue'
 </script>
 
 <template>
-  <TooltipTrigger>
+  <TooltipTrigger as-child>
     <slot />
   </TooltipTrigger>
 </template>

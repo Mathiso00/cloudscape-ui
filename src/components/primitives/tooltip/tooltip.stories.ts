@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { Tooltip } from '@/components'
+import { Button, Tooltip } from '@/components'
 
 const meta = {
   title: 'Primitives/Tooltip',
@@ -14,6 +14,7 @@ export const Default: Story = {
   render: _ => ({
     components: {
       Tooltip,
+      Button,
     },
     template: `
       <Tooltip content="Hello, here is the info!">
@@ -29,6 +30,7 @@ export const WithSlot: Story = {
   render: _ => ({
     components: {
       Tooltip,
+      Button,
     },
     template: `
       <Tooltip>
