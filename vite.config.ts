@@ -38,7 +38,7 @@ export default defineConfig({
 
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', '@vue/runtime-core'],
       output: {
         dir: 'dist',
         globals: {

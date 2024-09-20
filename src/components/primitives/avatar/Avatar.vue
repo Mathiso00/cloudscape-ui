@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { AvatarProps } from '@/components/primitives/avatar/avatar.variant'
-import { getAvatarText } from '@/components/primitives/avatar/avatar.variant'
+import type { AvatarProps } from '@/components/primitives/avatar/avatar-variant.ts'
+import { getAvatarText } from '@/components/primitives/avatar/avatar-variant.ts'
 import AvatarFallback from '@/components/primitives/avatar/AvatarFallback.vue'
 import AvatarImage from '@/components/primitives/avatar/AvatarImage.vue'
 import AvatarRoot from '@/components/primitives/avatar/AvatarRoot.vue'
