@@ -5,6 +5,7 @@ import { cn } from '@/utils'
 
 const {
   leftIcon,
+  rightIcon,
   icon,
   size,
   variant,
@@ -42,6 +43,7 @@ const LOADING_ICON: string = 'i-svg-spinners:ring-resize'
     <template v-else>
       <div v-if="leftIcon" :class="cn(leftIcon)" />
       <slot />
+      <div v-if="rightIcon" :class="cn(rightIcon)" />
     </template>
   </button>
 </template>
