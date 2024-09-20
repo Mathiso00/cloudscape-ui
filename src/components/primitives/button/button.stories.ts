@@ -2,12 +2,10 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import {
   Button,
 } from '@/components'
-import { fn } from '@storybook/test'
 
 const meta = {
   title: 'Primitives/Button',
   component: Button,
-  args: { onClick: fn() },
   argTypes: {
     variant: {
       options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],

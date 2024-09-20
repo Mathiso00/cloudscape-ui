@@ -35,11 +35,11 @@ const kbdVariants: Record<string, string> = {
 }
 
 // Define the props interface with proper types
-interface KbdProps {
+export interface KbdProps {
   keys?: (KbdVariant | string)[]
   filled?: boolean
-  className?: string
   preventDefault?: boolean
+  class?: string
 }
 
 // Reactive reference for tracking pressed keys
@@ -80,7 +80,7 @@ onBeforeUnmount(() => {
 })
 
 // Compute the classes for the component based on the filled prop
-const computedClasses = computed(() => cn(kbdClasses({ filled: props.filled }), props.className))
+const computedClasses = computed(() => cn(kbdClasses({ filled: props.filled }), props.class))
 
 // Watch for changes in the pressed keys and emit the 'keyPressed' event when a key combination is pressed
 watch(
