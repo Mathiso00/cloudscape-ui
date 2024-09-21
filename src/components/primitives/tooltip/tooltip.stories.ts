@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { Button, Tooltip } from '@/components'
+import { Button, ButtonGroup, Tooltip } from '@/components'
 
 const meta = {
   title: 'Primitives/Tooltip',
@@ -43,6 +43,35 @@ export const WithSlot: Story = {
           Content of the tooltip
         </template>
       </Tooltip>
+        `,
+  }),
+}
+
+export const Multiple: Story = {
+  render: _ => ({
+    components: {
+      Tooltip,
+      Button,
+      ButtonGroup,
+    },
+    template: `
+      <ButtonGroup>
+        <Tooltip content="Hello, here is the info!">
+          <Button variant="destructive">
+            First Tooltip
+          </Button>
+        </Tooltip>
+        <Tooltip content="Hello, here is the info!">
+          <Button variant="destructive">
+            Second Tooltip
+          </Button>
+        </Tooltip>
+        <Tooltip content="Hello, here is the info!">
+          <Button variant="destructive">
+            Third Tooltip
+          </Button>
+        </Tooltip>
+      </ButtonGroup>
         `,
   }),
 }
