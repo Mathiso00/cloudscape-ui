@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ButtonProps } from '@/components/primitives/button/button-variant.ts'
+import type { ButtonProps } from '@/components/primitives/button/button-variant'
 
 export interface ButtonGroupProps {
   /** The size of the progress bar. */
