@@ -63,11 +63,11 @@ export const Default: Story = {
                         variant="secondary-outline"
                         right-icon="i-ic:baseline-arrow-right"
                     >
-                        Advanced
+                      Advanced
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start" class="min-w-230px">
-                    <DropdownMenuItem 
+                    <DropdownMenuItem
                         text="More detailed metrics"
                         icon="i-ic:round-insert-chart"
                         :shortcut="['Ctrl', 'I', 'S']"
