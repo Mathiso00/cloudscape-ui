@@ -4,7 +4,7 @@ import {
 } from '@/components'
 
 const meta = {
-  title: 'Primitives/Avatar',
+  title: 'Primitives/Avatar/Avatar',
   component: Avatar,
   argTypes: {
 

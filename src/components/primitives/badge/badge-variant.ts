@@ -13,10 +13,14 @@ export interface KoopsBadgeProps {
    * Whether the badge is outlined
    */
   outlined?: boolean
+  /**
+   * The default slot
+   */
+  content?: string
 }
 
 export const badgeVariant = tv({
-  base: 'inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  base: 'inline-flex items-center justify-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
   variants: {
     variant: {
       primary: 'bg-secondary text-white border-white/10',
@@ -26,10 +30,9 @@ export const badgeVariant = tv({
       info: 'bg-sky-600 text-white border-sky-400/40',
     },
     size: {
-      xs: 'px-1.5 py-0.5 text-xs',
-      sm: 'px-2 py-1 text-sm',
-      md: ' px-2.5 py-0.5 text-sm',
-
+      xs: 'px-1.5 py-0.5 text-xs h-6',
+      sm: 'px-2 py-1 text-sm h-7',
+      md: ' px-2.5 py-1.5 text-sm h-8',
     },
     outlined: {
       true: 'border',

@@ -8,12 +8,16 @@ const props = withDefaults(
     variant: 'primary',
     size: 'md',
     outlined: false,
+    content: undefined,
   },
 )
 </script>
 
 <template>
   <div :class="badgeVariant(props)">
-    <slot />
+    <slot v-if="!props.content" />
+    <template v-else>
+      {{ props.content }}
+    </template>
   </div>
 </template>
