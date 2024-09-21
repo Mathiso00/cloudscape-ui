@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import type { ButtonProps } from '@/components/primitives/button/button-variant'
+import type { ButtonProps } from '@/components/primitives/button/button-variant.ts'
 
-const { size } = defineProps<Pick<ButtonProps, 'size'>>()
+export interface ButtonGroupProps {
+  /** The size of the progress bar. */
+  size?: ButtonProps['size']
+}
+
+const { size } = withDefaults(defineProps<ButtonGroupProps>(), {
+  size: 'default',
+})
 </script>
 
 <template>
