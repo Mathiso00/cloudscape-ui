@@ -22,6 +22,10 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+/**
+ * Hello
+ * world
+ */
 export const Default: Story = {
   args: {
     variant: 'primary',
