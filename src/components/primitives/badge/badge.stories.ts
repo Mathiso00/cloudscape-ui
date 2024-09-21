@@ -97,6 +97,7 @@ export const Outlined: Story = {
               <div class="flex flex-col gap-2">
                 <Badge size="xs" outlined :variant="variant" content="Outlined"/>
                 <Badge size="xs" :variant="variant" content="Filled"/>
+              </div>
             </template>
           </div>
 
