@@ -6,13 +6,13 @@ export interface ButtonGroupProps {
   size?: ButtonProps['size']
 }
 
-const { size } = withDefaults(defineProps<ButtonGroupProps>(), {
+const props = withDefaults(defineProps<ButtonGroupProps>(), {
   size: 'default',
 })
 </script>
 
 <template>
   <div class="w-fit flex flex-row ![&>*]:rounded-none ![&>*:first-child]:rounded-l-md ![&>*:last-child]:rounded-r-md ![&>*:not(:last-child)]:border-r-none">
-    <slot :size="size" />
+    <slot :size="props.size" />
   </div>
 </template>

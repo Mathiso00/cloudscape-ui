@@ -4,7 +4,7 @@ import {
 } from '@/components'
 
 const meta = {
-  title: 'Primitives/Badge',
+  title: 'Primitives/Badges/Badge',
   component: Badge,
   argTypes: {
     variant: {
@@ -27,13 +27,70 @@ export const Default: Story = {
     variant: 'primary',
     size: 'xs',
     outlined: false,
+    content: 'This is a badge',
   },
-  parameters: {
-    slots: {
-      default: {
-        description: 'The default slot',
-        template: 'This a button',
-      },
+}
+
+export const Danger: Story = {
+  args: {
+    variant: 'danger',
+    size: 'xs',
+    outlined: false,
+    content: 'This is a badge',
+  },
+}
+
+export const Warning: Story = {
+  args: {
+    variant: 'warning',
+    size: 'xs',
+    outlined: false,
+    content: 'This is a badge',
+  },
+}
+
+export const Info: Story = {
+  args: {
+    variant: 'info',
+    size: 'xs',
+    outlined: false,
+    content: 'This is a badge',
+  },
+}
+
+export const Sizes: Story = {
+  render: _ => ({
+    components: {
+      Badge,
     },
-  },
+    setup() {
+      return { sizes: ['xs', 'sm', 'md'] }
+    },
+    template: `
+          <div class="flex gap-2 items-center">
+            <Badge v-for="size in sizes" :size="size" :content="'Size: ' + size"/>
+          </div>
+        `,
+  }),
+}
+
+export const Outlined: Story = {
+  render: _ => ({
+    components: {
+      Badge,
+    },
+    setup() {
+      return { variants: ['primary', 'success', 'danger', 'warning', 'info'] }
+    },
+    template: `
+          <div class="flex gap-2 items-center">
+            <template v-for="variant in variants">
+              <div class="flex flex-col gap-2">
+                <Badge size="xs" outlined :variant="variant" content="Outlined"/>
+                <Badge size="xs" :variant="variant" content="Filled"/>
+            </template>
+          </div>
+
+        `,
+  }),
 }

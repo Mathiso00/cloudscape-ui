@@ -4,7 +4,7 @@ import {
 } from '@/components'
 
 const meta = {
-  title: 'Primitives/Button',
+  title: 'Primitives/Buttons/Button',
   component: Button,
   argTypes: {
     variant: {

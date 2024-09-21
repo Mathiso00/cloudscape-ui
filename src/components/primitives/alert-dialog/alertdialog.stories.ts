@@ -13,7 +13,7 @@ import {
 } from '@/components'
 
 const meta = {
-  title: 'Primitives/Alert Dialog',
+  title: 'Primitives/Dialogs/Alert Dialog',
   component: AlertDialog,
 
   tags: ['autodocs'],
