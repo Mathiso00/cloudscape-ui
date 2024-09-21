@@ -41,9 +41,9 @@ const LOADING_ICON: string = 'i-svg-spinners:ring-resize'
 
     <!-- If the button has a left icon, show the left icon and else show the slot -->
     <template v-else>
-      <div v-if="leftIcon" :class="cn(leftIcon)" />
+      <div v-if="leftIcon" :class="cn(leftIcon, 'text-xl')" />
       <slot />
-      <div v-if="rightIcon" :class="cn(rightIcon)" />
+      <div v-if="rightIcon" :class="cn(rightIcon, 'text-xl')" />
     </template>
   </button>
 </template>

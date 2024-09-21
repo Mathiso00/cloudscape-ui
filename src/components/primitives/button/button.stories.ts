@@ -8,7 +8,7 @@ const meta = {
   component: Button,
   argTypes: {
     variant: {
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
+      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link', 'secondary-outline'],
       control: { type: 'select' },
     },
     size: {
