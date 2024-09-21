@@ -4,7 +4,7 @@ export interface KoopsBadgeProps {
   /**
    * The variant of the badge
    */
-  variant: 'primary' | 'success' | 'danger' | 'warning' | 'info'
+  variant: 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'white'
   /**
    * Multiple sizes are available for badges
    */
@@ -23,6 +23,7 @@ export const badgeVariant = tv({
   base: 'inline-flex items-center justify-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
   variants: {
     variant: {
+      white: 'bg-white text-black border-white/10',
       primary: 'bg-secondary text-white border-white/10',
       success: 'bg-green-700 text-white border-green-500/40',
       danger: 'bg-red-800 text-white border-red-600/40',
@@ -64,6 +65,11 @@ export const badgeVariant = tv({
       variant: 'info',
       outlined: true,
       class: 'border-sky-600 bg-transparent text-sky-500',
+    },
+    {
+      variant: 'white',
+      outlined: true,
+      class: 'border-white bg-transparent text-white',
     },
   ],
 })

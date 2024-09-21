@@ -5,7 +5,7 @@ import {
 } from '@/components'
 
 const meta = {
-  title: 'Primitives/Buttons/ButtonGroup',
+  title: 'Primitives/Buttons/Button Group',
   component: ButtonGroup,
   argTypes: {
     size: {

@@ -16,6 +16,7 @@ const props = withDefaults(
 <template>
   <div :class="badgeVariant(props)">
     <slot v-if="!props.content" />
+
     <template v-else>
       {{ props.content }}
     </template>
