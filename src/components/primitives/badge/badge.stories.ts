@@ -68,6 +68,12 @@ export const White: Story = {
 }
 
 export const Sizes: Story = {
+  args: {
+    variant: 'white',
+    size: 'xs',
+    outlined: false,
+    content: 'This is a badge',
+  },
   render: _ => ({
     components: {
       Badge,
@@ -84,6 +90,12 @@ export const Sizes: Story = {
 }
 
 export const Outlined: Story = {
+  args: {
+    variant: 'primary',
+    size: 'xs',
+    outlined: true,
+    content: 'This is a badge',
+  },
   render: _ => ({
     components: {
       Badge,
