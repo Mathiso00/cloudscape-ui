@@ -8,6 +8,7 @@ export interface KoopsDropdownMenuItemProps {
   text?: string
   icon?: string
   shortcut?: string[]
+  preventDefault?: boolean
 }
 
 const props = defineProps<KoopsDropdownMenuItemProps & DropdownMenuItemProps & {
@@ -37,7 +38,7 @@ const forwardedProps = useForwardProps(delegatedProps)
       props.class,
     )"
   >
-    <template v-if="icon && text">
+    <template v-if="text">
       <div
         :class="cn('op-50 w-4 mr-2 h-4', icon)"
       />
@@ -48,6 +49,7 @@ const forwardedProps = useForwardProps(delegatedProps)
     <template v-if="shortcut">
       <Kbd
         class="ml-auto"
+        :prevent-default="preventDefault"
         :keys="shortcut"
         @key-pressed="() => emit('keyPressed')"
       />
