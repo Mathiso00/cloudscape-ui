@@ -8,7 +8,7 @@ const meta = {
   component: Badge,
   argTypes: {
     variant: {
-      options: ['primary', 'success', 'danger', 'warning', 'info'],
+      options: ['primary', 'success', 'danger', 'warning', 'info', 'white'],
       control: { type: 'select' },
     },
     size: {
@@ -58,6 +58,15 @@ export const Info: Story = {
   },
 }
 
+export const White: Story = {
+  args: {
+    variant: 'white',
+    size: 'xs',
+    outlined: false,
+    content: 'This is a badge',
+  },
+}
+
 export const Sizes: Story = {
   render: _ => ({
     components: {
@@ -80,7 +89,7 @@ export const Outlined: Story = {
       Badge,
     },
     setup() {
-      return { variants: ['primary', 'success', 'danger', 'warning', 'info'] }
+      return { variants: ['primary', 'success', 'danger', 'warning', 'info', 'white'] }
     },
     template: `
           <div class="flex gap-2 items-center">
