@@ -66,6 +66,9 @@ importers:
       radix-vue:
         specifier: ^1.9.6
         version: 1.9.6(vue@3.5.6(typescript@5.6.2))
+      rollup-plugin-typescript2:
+        specifier: ^0.36.0
+        version: 0.36.0(rollup@4.22.2)(typescript@5.6.2)
       shiki:
         specifier: ^1.18.0
         version: 1.18.0
@@ -785,6 +788,10 @@ packages:
 
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
+
+  '@rollup/pluginutils@4.2.1':
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
+    engines: {node: '>= 8.0.0'}
 
   '@rollup/pluginutils@5.1.0':
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
@@ -2739,6 +2746,10 @@ packages:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
     engines: {node: '>= 0.6'}
 
+  fs-extra@10.1.0:
+    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
+    engines: {node: '>=12'}
+
   fs-extra@11.2.0:
     resolution: {integrity: sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==}
     engines: {node: '>=14.14'}
@@ -3824,6 +3835,12 @@ packages:
 
   robust-predicates@3.0.2:
     resolution: {integrity: sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg==}
+
+  rollup-plugin-typescript2@0.36.0:
+    resolution: {integrity: sha512-NB2CSQDxSe9+Oe2ahZbf+B4bh7pHwjV5L+RSYpCu7Q5ROuN94F9b6ioWwKfz3ueL3KTtmX4o2MUH2cgHDIEUsw==}
+    peerDependencies:
+      rollup: '>=1.26.3'
+      typescript: '>=2.4.0'
 
   rollup@4.22.2:
     resolution: {integrity: sha512-JWWpTrZmqQGQWt16xvNn6KVIUz16VtZwl984TKw0dfqqRpFwtLJYYk1/4BTgplndMQKWUk/yB4uOShYmMzA2Vg==}
@@ -5096,6 +5113,11 @@ snapshots:
   '@pkgr/core@0.1.1': {}
 
   '@polka/url@1.0.0-next.28': {}
+
+  '@rollup/pluginutils@4.2.1':
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
 
   '@rollup/pluginutils@5.1.0(rollup@4.22.2)':
     dependencies:
@@ -7617,6 +7639,12 @@ snapshots:
 
   fresh@0.5.2: {}
 
+  fs-extra@10.1.0:
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.1
+
   fs-extra@11.2.0:
     dependencies:
       graceful-fs: 4.2.11
@@ -8861,6 +8889,16 @@ snapshots:
   reusify@1.0.4: {}
 
   robust-predicates@3.0.2: {}
+
+  rollup-plugin-typescript2@0.36.0(rollup@4.22.2)(typescript@5.6.2):
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      find-cache-dir: 3.3.2
+      fs-extra: 10.1.0
+      rollup: 4.22.2
+      semver: 7.6.3
+      tslib: 2.7.0
+      typescript: 5.6.2
 
   rollup@4.22.2:
     dependencies:

@@ -1,21 +1,33 @@
 import { resolve } from 'node:path'
+import * as path from 'node:path'
 import Vue from '@vitejs/plugin-vue'
+import typescript2 from 'rollup-plugin-typescript2'
 import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
 import Dts from 'vite-plugin-dts'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
-// import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     UnoCSS(),
     Dts({
-      tsconfigPath: 'tsconfig.build.json',
       cleanVueFileName: true,
-      exclude: ['src/test/**', 'src/**/stories/**', 'src/**/*.stories.ts'],
+      insertTypesEntry: true,
     }),
     libInjectCss(),
+    typescript2({
+      check: false,
+      include: ['src/components/**/*.vue'],
+      tsconfigOverride: {
+        compilerOptions: {
+          outDir: 'dist',
+          sourceMap: true,
+          declaration: true,
+          declarationMap: true,
+        },
+      },
+      exclude: ['vite.config.ts'],
+    }),
     Vue(),
   ],
   resolve: {
@@ -24,20 +36,26 @@ export default defineConfig({
     },
   },
   build: {
+    cssCodeSplit: true,
     lib: {
+      // Could also be a dictionary or array of multiple entry points
+      entry: 'src/index.ts',
       name: '@koopsoperator/csui',
-      fileName: (format, name) => {
-        return `${name}.${format === 'es' ? 'js' : 'umd.cjs'}`
-      },
-      entry: {
-        index: resolve(__dirname, 'src/index.ts'),
-      },
-
+      formats: ['es', 'cjs', 'umd'],
+      fileName: format => `koops-csui.${format}.js`,
     },
     rollupOptions: {
-      external: ['vue', '@vue/runtime-core'],
+      input: {
+        main: path.resolve(__dirname, 'src/index.ts'),
+      },
+      external: ['vue'],
       output: {
-        dir: 'dist',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'main.css')
+            return 'my-library-vue-ts.css'
+          return assetInfo.name
+        },
+        exports: 'named',
         globals: {
           vue: 'Vue',
         },
