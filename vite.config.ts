@@ -3,6 +3,7 @@ import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
 import Dts from 'vite-plugin-dts'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 // import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 // https://vitejs.dev/config/
@@ -14,9 +15,7 @@ export default defineConfig({
       cleanVueFileName: true,
       exclude: ['src/test/**', 'src/**/stories/**', 'src/**/*.stories.ts'],
     }),
-    // libInjectCss({
-    //
-    // }),
+    libInjectCss(),
     Vue(),
   ],
   resolve: {
