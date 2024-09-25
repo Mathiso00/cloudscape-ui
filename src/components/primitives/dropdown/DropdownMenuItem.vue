@@ -1,20 +1,20 @@
 <script setup lang="ts">
+import type { HTMLAttributes } from 'vue'
 import { Kbd } from '@/components'
 import { cn } from '@/utils'
 import { DropdownMenuItem, type DropdownMenuItemProps, useForwardProps } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+import { computed } from 'vue'
 
-export interface KoopsDropdownMenuItemProps {
+export interface KoopsDropdownMenuItemProps extends DropdownMenuItemProps {
   text?: string
   icon?: string
   shortcut?: string[]
   preventDefault?: boolean
-}
-
-const props = defineProps<KoopsDropdownMenuItemProps & DropdownMenuItemProps & {
   class?: HTMLAttributes['class']
   inset?: boolean
-}>()
+}
+
+const props = defineProps<KoopsDropdownMenuItemProps>()
 
 const emit = defineEmits<{
   (e: 'keyPressed'): void

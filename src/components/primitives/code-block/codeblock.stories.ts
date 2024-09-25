@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import {
-  CodeBlock,
-} from '@/components'
+import CodeBlock from '@/components/primitives/code-block/CodeBlock.vue'
 
 const meta = {
   title: 'Primitives/Code Block',
