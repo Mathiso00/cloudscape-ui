@@ -20,6 +20,7 @@ enum KbdVariant {
   META = 'meta',
   SHIFT = 'shift',
   OPTION = 'option',
+  CTRL = 'ctrl', // Added Ctrl to the enum for clarity
 }
 
 // Define the key variant class mapping
@@ -32,6 +33,7 @@ const kbdVariants: Record<string, string> = {
   [KbdVariant.OPTION]: 'i-material-symbols:keyboard-option-key',
   [KbdVariant.COMMAND]: 'i-material-symbols:keyboard-command-key',
   [KbdVariant.META]: 'i-material-symbols:keyboard-command-key',
+  [KbdVariant.CTRL]: 'i-material-symbols:keyboard-control-key',
 }
 
 // Define the props interface with proper types
@@ -40,6 +42,18 @@ export interface KbdProps {
   filled?: boolean
   preventDefault?: boolean
   class?: string
+}
+
+function isIOS(): boolean {
+  const iOSDevices = ['iPad', 'iPhone', 'iPod']
+
+  // Check the user agent string for iOS devices
+  const isIOSDevice = iOSDevices.some(device => navigator.userAgent.includes(device))
+
+  // iOS 13+ detection (iPads might identify as Mac)
+  const isMacWithTouch = navigator.userAgent.includes('Mac') && 'ontouchend' in document
+
+  return isIOSDevice || isMacWithTouch
 }
 
 // Reactive reference for tracking pressed keys
@@ -56,17 +70,30 @@ const kbdClasses = tv({
   },
 })
 
+// Helper function to normalize key names for comparison
+function normalizeKey(key: string) {
+  if (key.toLowerCase() === 'command')
+    return 'meta'
+  if (key.toLowerCase() === 'ctrl')
+    return isIOS() ? 'meta' : 'ctrl' // Replace 'ctrl' with 'meta' on iOS
+  return key.toLowerCase()
+}
+
 // Event handler for the 'keydown' event
 function handleKeyDown(event: KeyboardEvent) {
-  if (props.preventDefault) {
-    event.preventDefault() // Prevent default behavior if preventDefault is true
+  const normalizedKey = normalizeKey(event.key)
+
+  // Check if the key is in the `keys` prop before preventing default
+  if (props.preventDefault && props.keys?.map(normalizeKey).includes(normalizedKey)) {
+    event.preventDefault() // Prevent default behavior only for specific keys
   }
-  pressedKeys.value.add(event.key.toLowerCase())
+
+  pressedKeys.value.add(normalizedKey)
 }
 
 // Event handler for the 'keyup' event
 function handleKeyUp(event: KeyboardEvent) {
-  pressedKeys.value.delete(event.key.toLowerCase())
+  pressedKeys.value.delete(normalizeKey(event.key))
 }
 
 onMounted(() => {
@@ -86,9 +113,7 @@ const computedClasses = computed(() => cn(kbdClasses({ filled: props.filled }), 
 watch(
   pressedKeys,
   () => {
-    const normalizedCombination = props.keys?.map(key =>
-      key.toLowerCase() === 'command' ? 'meta' : key.toLowerCase(),
-    )
+    const normalizedCombination = props.keys?.map(normalizeKey)
 
     // Check if all keys in the combination are pressed
     if (normalizedCombination && normalizedCombination.every(key => pressedKeys.value.has(key))) {
