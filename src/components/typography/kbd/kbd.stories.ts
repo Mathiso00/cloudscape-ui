@@ -15,7 +15,7 @@ export const MacOS: Story = {
     keys: ['Ctrl', 'k'],
     preventDefault: true,
     onKeyPressed: () => {
-      console.log('Command + k')
+
     },
     filled: false,
   },
