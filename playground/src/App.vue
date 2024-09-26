@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { DropdownMenuItem } from '@koopsoperator/csui'
+import { CardPlay } from '@koopsoperator/csui'
 </script>
 
 <template>
-  <DropdownMenuItem />
+  <CardPlay />
 </template>
