@@ -20,7 +20,6 @@ enum KbdVariant {
   META = 'meta',
   SHIFT = 'shift',
   OPTION = 'option',
-  CTRL = 'ctrl', // Added Ctrl to the enum for clarity
 }
 
 // Define the key variant class mapping
@@ -33,7 +32,6 @@ const kbdVariants: Record<string, string> = {
   [KbdVariant.OPTION]: 'i-material-symbols:keyboard-option-key',
   [KbdVariant.COMMAND]: 'i-material-symbols:keyboard-command-key',
   [KbdVariant.META]: 'i-material-symbols:keyboard-command-key',
-  [KbdVariant.CTRL]: 'i-material-symbols:keyboard-control-key',
 }
 
 // Define the props interface with proper types
@@ -75,7 +73,7 @@ function normalizeKey(key: string) {
   if (key.toLowerCase() === 'command')
     return 'meta'
   if (key.toLowerCase() === 'ctrl')
-    return isIOS() ? 'meta' : 'ctrl' // Replace 'ctrl' with 'meta' on iOS
+    return isIOS() ? 'meta' : 'control' // Replace 'ctrl' with 'meta' on iOS
   return key.toLowerCase()
 }
 
@@ -117,7 +115,8 @@ watch(
 
     // Check if all keys in the combination are pressed
     if (normalizedCombination && normalizedCombination.every(key => pressedKeys.value.has(key))) {
-      emit('keyPressed') // Emit the 'keyPressed' event
+      emit('keyPressed')
+      pressedKeys.value.clear()
     }
   },
   { deep: true },

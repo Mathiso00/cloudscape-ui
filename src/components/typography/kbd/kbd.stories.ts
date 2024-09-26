@@ -12,9 +12,11 @@ type Story = StoryObj<typeof meta>
 
 export const MacOS: Story = {
   args: {
-    keys: ['command', 'S'],
+    keys: ['Ctrl', 'k'],
     preventDefault: true,
-    onKeyPressed: () => {},
+    onKeyPressed: () => {
+      console.log('Command + k')
+    },
     filled: false,
   },
 }
