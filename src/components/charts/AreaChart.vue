@@ -65,7 +65,7 @@ const y = (d: DataRecord) => d.percentage
 
   --vis-tooltip-text-color: theme('colors.white');
   --vis-tooltip-border-color: rgba(255, 255, 255, 0.1);
-  --vis-tooltip-background-color: theme('colors.secondary');
+  --vis-tooltip-background-color: theme('colors.secondary.950');
   --vis-tooltip-padding: 4px 10px;
   --vis-tooltip-font-size: 5px !important;
 }

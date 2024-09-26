@@ -12,7 +12,7 @@ const preview: Preview = {
       values: [
         {
           name: 'koops',
-          value: '#222831',
+          value: '#151618',
         },
       ],
     },

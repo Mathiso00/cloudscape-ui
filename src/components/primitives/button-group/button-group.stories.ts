@@ -30,7 +30,7 @@ export const Default: Story = {
         <ButtonGroup :size="size">
             <Button variant="outline">First action</Button>
             <Button variant="outline">Second action</Button>
-            <Button variant="secondary" size="icon" icon="i-mdi:chevron-down" />
+            <Button variant="secondary-outline" size="icon" icon="i-mdi:chevron-down" />
         </ButtonGroup>
         `,
   }),

@@ -8,9 +8,10 @@ import {
 import { computed, type HTMLAttributes } from 'vue'
 
 const props = withDefaults(
-  defineProps<ProgressRootProps & { class?: HTMLAttributes['class'] }>(),
+  defineProps<ProgressRootProps & { class?: HTMLAttributes['class'], height?: number }>(),
   {
     modelValue: 40,
+    height: 10,
   },
 )
 
@@ -24,9 +25,10 @@ const delegatedProps = computed(() => {
 <template>
   <ProgressRoot
     v-bind="delegatedProps"
+    :style="`height: ${props.height}px;`"
     :class="
       cn(
-        'relative h-4 overflow-hidden rounded-md bg-white/10',
+        'relative overflow-hidden rounded-md bg-white/10',
         props.class,
       )
     "

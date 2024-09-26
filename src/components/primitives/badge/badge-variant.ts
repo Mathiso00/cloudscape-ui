@@ -23,8 +23,8 @@ export const badgeVariant = tv({
   base: 'inline-flex items-center justify-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
   variants: {
     variant: {
-      white: 'bg-white text-black border-white/10',
-      primary: 'bg-secondary text-white border-white/10',
+      white: 'bg-white text-black border-white/50',
+      primary: 'bg-secondary-950 text-white border-white/10',
       success: 'bg-green-700 text-white border-green-500/40',
       danger: 'bg-red-800 text-white border-red-600/40',
       warning: 'bg-yellow-700 text-white border-yellow-500/40',
@@ -44,7 +44,7 @@ export const badgeVariant = tv({
     {
       variant: 'primary',
       outlined: true,
-      class: 'border-secondary bg-transparent',
+      class: 'border-white/10 bg-transparent',
     },
     {
       variant: 'success',

@@ -27,7 +27,7 @@ function copyCode() {
 
 watch([() => code, () => lang], async ([code, lang]) => {
   codeToHtml(code, {
-    theme: 'material-theme-ocean',
+    theme: 'vitesse-dark',
     lang: lang || 'typescript',
   }).then(html => highlightedCode.value = html)
 }, { immediate: true })
@@ -46,7 +46,7 @@ watch([() => code, () => lang], async ([code, lang]) => {
       <div
         v-if="isMouseOver"
         title="Copy Code"
-        class="absolute right-4 top-4 h-10 w-10 flex cursor-pointer items-center justify-center overflow-hidden border border-white/10 rounded-md bg-primary text-lg text-white transition-all hover:bg-secondary"
+        class="absolute right-4 top-4 h-10 w-10 flex cursor-pointer items-center justify-center overflow-hidden border border-white/10 rounded-md bg-primary-950 text-lg text-white transition-all hover:bg-primary-950/50"
         :class="{
           'w-10': !isCopied,
           'w-24 px-2': isCopied,

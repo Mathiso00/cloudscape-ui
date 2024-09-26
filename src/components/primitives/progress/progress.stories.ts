@@ -12,6 +12,8 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
+    class: 'min-w-[200px]',
+    height: 12,
     modelValue: 50,
   },
 }

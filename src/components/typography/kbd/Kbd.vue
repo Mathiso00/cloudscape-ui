@@ -50,7 +50,7 @@ const kbdClasses = tv({
   base: 'select-none w-fit h-5 flex font-sans items-center justify-center px-1.5 py-2 text-xs rounded-md',
   variants: {
     filled: {
-      true: 'bg-secondary border border-white/10 text-white',
+      true: 'bg-secondary-950 border border-white/10 text-white',
       false: 'bg-transparent border-none text-white/50',
     },
   },
