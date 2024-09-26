@@ -16,8 +16,8 @@ const { width, height } = defineProps<KoopsSkeletonProps>()
     }"
     class="relative select-none overflow-hidden rounded-md text-transparent"
   >
-    <div class="absolute inset-0 bg-secondary" />
-    <div class="absolute inset-0 animate-pulse bg-white/15" />
+    <div class="absolute inset-0 bg-primary" />
+    <div class="absolute inset-0 animate-pulse bg-white/3" />
     <slot />
   </div>
 </template>
