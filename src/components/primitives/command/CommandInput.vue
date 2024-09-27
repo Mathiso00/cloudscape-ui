@@ -21,12 +21,12 @@ const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  <div class="flex items-center border-b px-3" cmdk-input-wrapper>
-    <slot />
+  <div class="flex items-center border-b border-white/10 px-3" cmdk-input-wrapper>
+    <div class="i-mdi-search mr-2 text-xl text-white/30" />
     <ComboboxInput
       v-bind="{ ...forwardedProps, ...$attrs }"
       auto-focus
-      :class="cn('flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50', props.class)"
+      :class="cn('text-white flex h-11 w-full rounded-md bg-transparent py-5 outline-none placeholder:text-white/40 disabled:cursor-not-allowed disabled:opacity-50', props.class)"
     />
   </div>
 </template>

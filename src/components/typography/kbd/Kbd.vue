@@ -6,9 +6,7 @@ import { computed, onBeforeUnmount, onMounted, ref, type Ref, watch } from 'vue'
 const props = defineProps<KbdProps>()
 
 // Define the emits function for handling custom events
-const emit = defineEmits<{
-  (e: 'keyPressed'): void
-}>()
+const emit = defineEmits<KbdEvents>()
 
 // Define the enum for key variants
 enum KbdVariant {
@@ -20,14 +18,16 @@ enum KbdVariant {
   META = 'meta',
   SHIFT = 'shift',
   OPTION = 'option',
+  ENTER = 'enter',
 }
 
 // Define the key variant class mapping
 const kbdVariants: Record<string, string> = {
-  [KbdVariant.ARROW_RIGHT]: 'i-material-symbols:keyboard-arrow-right',
-  [KbdVariant.ARROW_LEFT]: 'i-material-symbols:keyboard-arrow-left',
-  [KbdVariant.ARROW_UP]: 'i-material-symbols:keyboard-arrow-up',
-  [KbdVariant.ARROW_DOWN]: 'i-material-symbols:keyboard-arrow-down',
+  [KbdVariant.ARROW_RIGHT]: 'i-mdi:arrow-right-bold-outline',
+  [KbdVariant.ARROW_LEFT]: 'i-mdi:arrow-left-bold-outline',
+  [KbdVariant.ARROW_UP]: 'i-mdi:arrow-up-bold-outline',
+  [KbdVariant.ARROW_DOWN]: 'i-mdi:arrow-down-bold-outline',
+  [KbdVariant.ENTER]: 'i-material-symbols:keyboard-return',
   [KbdVariant.SHIFT]: 'i-material-symbols:shift-outline-rounded',
   [KbdVariant.OPTION]: 'i-material-symbols:keyboard-option-key',
   [KbdVariant.COMMAND]: 'i-material-symbols:keyboard-command-key',
@@ -40,6 +40,11 @@ export interface KbdProps {
   filled?: boolean
   preventDefault?: boolean
   class?: string
+  noMargin?: boolean
+}
+
+export interface KbdEvents {
+  (e: 'keyPressed'): void
 }
 
 function isIOS(): boolean {
@@ -59,7 +64,7 @@ const pressedKeys: Ref<Set<string>> = ref(new Set())
 
 // Define Tailwind class variants using tailwind-variants
 const kbdClasses = tv({
-  base: 'select-none w-fit h-5 flex font-sans items-center justify-center px-1.5 py-2 text-xs rounded-md',
+  base: 'select-none w-fit h-5 flex gap-.5 font-sans items-center justify-center px-1.5 py-2 text-xs rounded-md',
   variants: {
     filled: {
       true: 'bg-secondary-950 border border-white/10 text-white',
@@ -128,9 +133,14 @@ watch(
     <template v-for="(key, index) in keys" :key="index">
       <div
         v-if="kbdVariants[key.toLowerCase()]"
-        class="mr-0.5 h-3 w-3" :class="[kbdVariants[key.toLowerCase()]]"
+        :class="[{ 'mr-0.5': noMargin === false }, kbdVariants[key.toLowerCase()]]"
+        class="h-3 w-3"
       />
-      <span v-else class="mr-0.5 capitalize">{{ key.toLowerCase() }}</span>
+      <span
+        v-else
+        :class="{ 'mr-0.5': noMargin === false }"
+        class="capitalize"
+      >{{ key.toLowerCase() }}</span>
     </template>
     <slot />
   </kbd>

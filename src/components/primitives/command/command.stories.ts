@@ -12,6 +12,7 @@ import {
   CommandShortcut,
 } from '@/components'
 import { ref } from 'vue'
+import CommandFooter from './CommandFooter.vue'
 
 const meta = {
   title: 'Primitives/Command',
@@ -36,6 +37,7 @@ export const Default: Story = {
       CommandInput,
       CommandSeparator,
       CommandShortcut,
+      CommandFooter,
     },
     setup() {
       const open = ref<boolean>(false)
@@ -71,20 +73,23 @@ export const Default: Story = {
             <CommandItem value="Profile">
               <div class="mr-2 h-4 w-4" />
               <span>Profile</span>
-              <CommandShortcut>⌘P</CommandShortcut>
             </CommandItem>
             <CommandItem value="Mail">
               <div class="mr-2 h-4 w-4" />
               <span>Mail</span>
-              <CommandShortcut>⌘B</CommandShortcut>
             </CommandItem>
             <CommandItem value="Settings">
               <div class="mr-2 h-4 w-4" />
               <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>
           </CommandGroup>
         </CommandList>
+        <CommandFooter>
+          <template #left>
+            <CommandShortcut name="To navigate" :keys="['arrow-down', 'arrow-up']" />
+            <CommandShortcut name="To select" :keys="['enter']" />
+          </template>
+        </CommandFooter>
       </CommandDialog>
     `,
   }),
