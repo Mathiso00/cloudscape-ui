@@ -29,6 +29,11 @@ export default defineConfig({
     },
   },
   theme: {
+    animation: {
+      keyframes: {
+        shimmer: '{ 100% { transform: translateX(100%); } }',
+      },
+    },
     colors: {
       secondary: {
         50: '#f7f8f8',
