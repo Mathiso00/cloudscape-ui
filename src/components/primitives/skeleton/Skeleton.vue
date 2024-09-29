@@ -16,8 +16,8 @@ const { width, height } = defineProps<KoopsSkeletonProps>()
     }"
     class="relative select-none overflow-hidden rounded-md bg-primary-950 text-transparent"
   >
-    <div class="absolute inset-0 bg-primary-800" />
-    <div class="absolute inset-0 top-0 z-100 block h-full transform animate-[shimmer_2s_infinite] from-transparent to-primary-600 bg-gradient-to-r opacity-40 -translate-x-full -skew-x-3" />
+    <div class="absolute inset-0 bg-secondary-950" />
+    <div class="absolute inset-0 top-0 z-30 block h-full transform animate-shimmer animate-duration-1500 from-transparent to-secondary-900/10 bg-gradient-to-r -translate-x-full -skew-x-3" />
     <slot />
   </div>
 </template>

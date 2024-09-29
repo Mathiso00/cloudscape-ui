@@ -19,6 +19,8 @@ enum KbdVariant {
   SHIFT = 'shift',
   OPTION = 'option',
   ENTER = 'enter',
+  ESCAPE = 'escape',
+  BACKSPACE = 'backspace',
 }
 
 // Define the key variant class mapping
@@ -32,6 +34,8 @@ const kbdVariants: Record<string, string> = {
   [KbdVariant.OPTION]: 'i-material-symbols:keyboard-option-key',
   [KbdVariant.COMMAND]: 'i-material-symbols:keyboard-command-key',
   [KbdVariant.META]: 'i-material-symbols:keyboard-command-key',
+  [KbdVariant.ESCAPE]: 'i-mdi:keyboard-esc',
+  [KbdVariant.BACKSPACE]: 'i-material-symbols:backspace-outline',
 }
 
 // Define the props interface with proper types
@@ -48,15 +52,9 @@ export interface KbdEvents {
 }
 
 function isIOS(): boolean {
-  const iOSDevices = ['iPad', 'iPhone', 'iPod']
+  const userAgent = navigator.userAgent
 
-  // Check the user agent string for iOS devices
-  const isIOSDevice = iOSDevices.some(device => navigator.userAgent.includes(device))
-
-  // iOS 13+ detection (iPads might identify as Mac)
-  const isMacWithTouch = navigator.userAgent.includes('Mac') && 'ontouchend' in document
-
-  return isIOSDevice || isMacWithTouch
+  return /iPhone|iPad|iPod|Mac/i.test(userAgent)
 }
 
 // Reactive reference for tracking pressed keys
@@ -130,7 +128,7 @@ watch(
 
 <template>
   <kbd :class="computedClasses">
-    <template v-for="(key, index) in keys" :key="index">
+    <template v-for="(key, index) in keys?.map(k => normalizeKey(k))" :key="index">
       <div
         v-if="kbdVariants[key.toLowerCase()]"
         :class="[{ 'mr-0.5': noMargin === false }, kbdVariants[key.toLowerCase()]]"

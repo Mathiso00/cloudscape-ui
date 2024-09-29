@@ -33,6 +33,15 @@ export default defineConfig({
       keyframes: {
         shimmer: '{ 100% { transform: translateX(100%); } }',
       },
+      durations: {
+        shimmer: '2s',
+      },
+      timingFns: {
+        shimmer: 'ease-in-out',
+      },
+      counts: {
+        shimmer: 'infinite',
+      },
     },
     colors: {
       secondary: {
@@ -46,6 +55,7 @@ export default defineConfig({
         700: '#48505c',
         800: '#3e444e',
         900: '#373c43',
+        925: '#25262c',
         950: '#1b1d21',
       },
       primary: {
