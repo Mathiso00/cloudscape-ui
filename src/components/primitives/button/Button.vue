@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ButtonProps } from '@/components/primitives/button/button-variant'
+import type { ButtonEmits, ButtonProps } from '@/components/primitives/button/button-variant'
 import { buttonVariant } from '@/components/primitives/button/button-variant'
 import { cn } from '@/utils'
 
@@ -15,9 +15,7 @@ const {
   class: buttonClass,
 } = defineProps<ButtonProps>()
 
-const emit = defineEmits<{
-  (e: 'click', data: MouseEvent): void
-}>()
+const emit = defineEmits<ButtonEmits>()
 
 const LOADING_ICON: string = 'i-svg-spinners:ring-resize'
 </script>

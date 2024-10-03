@@ -40,3 +40,7 @@ export interface ButtonProps {
   icon?: string
   class?: HTMLAttributes['class']
 }
+
+export interface ButtonEmits {
+  (e: 'click', data: MouseEvent): void
+}

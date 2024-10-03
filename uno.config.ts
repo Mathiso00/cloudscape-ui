@@ -31,16 +31,20 @@ export default defineConfig({
   theme: {
     animation: {
       keyframes: {
-        shimmer: '{ 100% { transform: translateX(100%); } }',
+        'shimmer': '{ 100% { transform: translateX(100%); } }',
+        'border-spin': '{ 100% { transform: rotate(-360deg); } }',
       },
       durations: {
-        shimmer: '2s',
+        'shimmer': '2s',
+        'border-spin': '4s',
       },
       timingFns: {
-        shimmer: 'ease-in-out',
+        'shimmer': 'ease-in-out',
+        'border-spin': 'linear',
       },
       counts: {
-        shimmer: 'infinite',
+        'shimmer': 'infinite',
+        'border-spin': 'infinite',
       },
     },
     colors: {
