@@ -137,7 +137,7 @@ watch(
       <span
         v-else
         :class="{ 'mr-0.5': noMargin === false }"
-        class="capitalize"
+        class="text-xs capitalize"
       >{{ key.toLowerCase() }}</span>
     </template>
     <slot />
