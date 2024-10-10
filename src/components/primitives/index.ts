@@ -11,6 +11,7 @@ export * from './dropdown'
 export * from './popover'
 export * from './progress'
 export * from './skeleton'
+export * from './tab'
 export * from './tooltip'
 
 export { VisuallyHidden } from 'radix-vue'
