@@ -27,6 +27,15 @@ export const Default: Story = {
   },
 }
 
+export const Shape: Story = {
+  args: {
+    src: 'https://images.unsplash.com/photo-1718203694879-766b434639f2?q=80&w=2070&auto=format',
+    size: 'default',
+    alt: 'John Doe',
+    shape: 'square',
+  },
+}
+
 export const WithImage: Story = {
   args: {
     size: 'default',
