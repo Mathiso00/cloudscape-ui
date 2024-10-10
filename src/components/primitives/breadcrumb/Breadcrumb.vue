@@ -22,11 +22,17 @@ const { skip, items } = defineProps<KoopsBreadcrumbProps>()
           <BreadcrumbEllipsis />
         </BreadcrumbItem>
         <BreadcrumbItem v-else>
-          <BreadcrumbLink v-if="item.to" :href="item.to">
-            {{ item.text }}
+          <BreadcrumbLink v-if="item.to">
+            <RouterLink :to="item.to">
+              <slot :name="item.text" :item="item">
+                {{ item.text }}
+              </slot>
+            </RouterLink>
           </BreadcrumbLink>
           <BreadcrumbPage v-else>
-            {{ item.text }}
+            <slot :name="item.text" :item="item">
+              {{ item.text }}
+            </slot>
           </BreadcrumbPage>
         </BreadcrumbItem>
         <!-- if not last item, add separator -->

@@ -5,5 +5,6 @@ export interface KoopsBreadcrumbProps {
 
 export interface KoopsBreadcrumbItem {
   text: string
+  as?: any
   to?: string
 }
