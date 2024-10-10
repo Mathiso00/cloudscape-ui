@@ -48,6 +48,7 @@ export default defineConfig({
       },
     },
     colors: {
+      koops: '#1D90ED',
       secondary: {
         50: '#f7f8f8',
         100: '#edeef1',
@@ -59,7 +60,6 @@ export default defineConfig({
         700: '#48505c',
         800: '#3e444e',
         900: '#373c43',
-        925: '#25262c',
         950: '#1b1d21',
       },
       primary: {
