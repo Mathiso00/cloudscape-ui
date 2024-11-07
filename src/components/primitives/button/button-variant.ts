@@ -8,6 +8,7 @@ export const buttonVariant = tv({
       'default': 'bg-koops text-white focus-visible:ring-koops/10 focus-visible:ring-offset-transparent',
       'outline': 'border-white/10 text-white bg-transparent hover:bg-white/5 focus-visible:ring-white/5 focus-visible:ring-offset-transparent',
       'destructive': 'bg-red-800 text-white hover:bg-red-600 focus-visible:ring-red-600/20 focus-visible:ring-offset-transparent',
+      'success': 'bg-green-600 text-white hover:bg-green-500 focus-visible:ring-green-600/20 focus-visible:ring-offset-transparent',
       'secondary': 'bg-secondary-950 text-white hover:bg-secondary-950/90 focus-visible:ring-secondary/20 focus-visible:ring-offset-transparent',
       'secondary-outline': 'border-white/10 text-white bg-secondary-950 hover:bg-secondary-950/90 focus-visible:ring-secondary/20 focus-visible:ring-offset-transparent',
       'ghost': 'shadow-none hover:bg-neutral-800/10 bg-transparent hover:text-white/60 focus-visible:ring-transparent focus-visible:ring-offset-transparent',
@@ -30,7 +31,7 @@ export const buttonVariant = tv({
 })
 
 export interface ButtonProps {
-  variant?: 'default' | 'outline' | 'destructive' | 'secondary' | 'ghost' | 'link' | 'secondary-outline'
+  variant?: 'default' | 'outline' | 'destructive' | 'secondary' | 'ghost' | 'link' | 'secondary-outline' | 'success'
   size?: 'default' | 'lg' | 'icon' | 'sm'
   leftIcon?: string
   rightIcon?: string
