@@ -28,6 +28,26 @@ export const Default: Story = {
         content: 'Logs content',
         count: 5,
       },
+    ],
+  },
+}
+
+export const WithContent: Story = {
+  args: {
+    tabs: [
+      {
+        value: 'account',
+        label: 'Account',
+        icon: 'i-mdi-account',
+        content: 'Account content',
+      },
+      {
+        value: 'logs',
+        label: 'Logs',
+        icon: 'i-mdi-format-list-bulleted',
+        content: 'Logs content',
+        count: 5,
+      },
       {
         value: 'settings',
         label: 'Settings',

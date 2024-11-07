@@ -14,10 +14,6 @@ const { tabs, defaultTab } = defineProps<{
   tabs: KoopsTab[]
   defaultTab?: string
 }>()
-
-// const controlledTab = defineModel<string>({
-//   default: defaultTab || undefined,
-// })
 </script>
 
 <template>
@@ -29,12 +25,12 @@ const { tabs, defaultTab } = defineProps<{
       class="relative flex shrink-0 py-2"
       aria-label="Manage your account"
     >
-      <TabsIndicator class="transition-[translate,width] absolute inset-y-1 left-0 w-[--radix-tabs-indicator-size] translate-x-[--radix-tabs-indicator-position] rounded-md bg-white/10 shadow-sm duration-400 ease-in-out" />
+      <TabsIndicator class="absolute inset-y-1 left-0 w-[--radix-tabs-indicator-size] translate-x-[--radix-tabs-indicator-position] rounded-md bg-primary-800/25 shadow-sm" />
       <TabsTrigger
         v-for="tab in tabs"
         :key="tab.value"
         :disabled="tab.disabled"
-        class="relative flex inline-flex flex-row items-center gap-2 rounded-md bg-transparent px-4 py-1 text-sm font-medium transition-colors disabled:cursor-not-allowed data-[state=active]:text-white data-[state=inactive]:text-white/50 disabled:opacity-75 focus:outline-none hover:data-[state=inactive]:text-white"
+        class="relative flex inline-flex flex-row items-center gap-2 rounded-md bg-transparent px-4 py-.5 text-sm font-medium transition-colors disabled:cursor-not-allowed data-[state=active]:text-white data-[state=inactive]:text-white/50 disabled:opacity-75 focus:outline-none hover:data-[state=inactive]:text-white"
         :value="tab.value"
       >
         <div v-if="tab.icon" :class="tab.icon" />
@@ -44,6 +40,7 @@ const { tabs, defaultTab } = defineProps<{
         </div>
       </TabsTrigger>
     </TabsList>
+    <div class="h-0.25 w-full bg-primary-800/25" />
     <TabsContent
       v-for="(tab, i) in tabs"
       :key="i"
