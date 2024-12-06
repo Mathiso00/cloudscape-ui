@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import {
-  Tabs,
-} from '@/components'
+import { Tabs } from '@/components'
 
 const meta = {
   title: 'Primitives/Tabs',
