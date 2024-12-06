@@ -10,9 +10,7 @@ export default defineConfig({
     Vue(),
     UnoCSS(),
     dts({
-      tsconfigPath: 'tsconfig.build.json',
-      cleanVueFileName: true,
-      exclude: ['src/test/**', 'src/**/*.story.ts'],
+      tsconfigPath: path.resolve(__dirname, 'tsconfig.app.json'),
     }),
     cssInjectedByJsPlugin(),
   ],
@@ -23,26 +21,15 @@ export default defineConfig({
   },
   build: {
     lib: {
+      formats: ['es'],
       name: '@koopsoperator/csui',
-      fileName: (format, name) => {
-        return `${name}.${format === 'es' ? 'js' : 'umd.cjs'}`
-      },
+      fileName: (_, name) => `${name}.mjs`,
       entry: {
         index: path.resolve(__dirname, 'src/index.ts'),
       },
     },
     rollupOptions: {
-      external: ['vue'],
-      output: {
-        globals: {
-          vue: 'Vue',
-        },
-        assetFileNames: (chunkInfo) => {
-          if (chunkInfo.name === 'style.css')
-            return 'index.css'
-          return chunkInfo.name as string
-        },
-      },
+      external: ['vue', 'tailwind-variants'],
     },
   },
 })

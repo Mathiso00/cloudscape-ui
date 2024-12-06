@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'vue'
+import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
 
 export const buttonVariant = tv({
@@ -30,16 +30,17 @@ export const buttonVariant = tv({
   },
 })
 
+type ButtonVariantProps = VariantProps<typeof buttonVariant>
+
 export interface ButtonProps {
-  variant?: 'default' | 'outline' | 'destructive' | 'secondary' | 'ghost' | 'link' | 'secondary-outline' | 'success'
-  size?: 'default' | 'lg' | 'icon' | 'sm'
+  variant?: ButtonVariantProps['variant']
+  size?: ButtonVariantProps['size']
   leftIcon?: string
   rightIcon?: string
   isLoading?: boolean
-  block?: boolean
+  block?: ButtonVariantProps['block']
   disabled?: boolean
   icon?: string
-  class?: HTMLAttributes['class']
 }
 
 export interface ButtonEmits {

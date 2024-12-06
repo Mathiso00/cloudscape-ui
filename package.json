@@ -6,14 +6,11 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
+      "import": "./dist/index.mjs"
     }
   },
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "typings": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "./LICENSE",
     "./dist"
@@ -43,6 +40,7 @@
     "@storybook/core-events": "^8.3.3",
     "@storybook/vue3": "^8.3.3",
     "@storybook/vue3-vite": "^8.3.3",
+    "@types/node": "^22.10.1",
     "@unocss/eslint-plugin": "^0.62.4",
     "@unocss/reset": "^0.62.4",
     "@unocss/transformer-directives": "^0.62.4",
@@ -65,5 +63,10 @@
     "vite-plugin-dts": "^4.2.2",
     "vite-plugin-lib-inject-css": "^2.1.1",
     "vue-tsc": "^2.1.6"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "tailwind-variants": "patches/tailwind-variants.patch"
+    }
   }
 }

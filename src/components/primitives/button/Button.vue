@@ -3,17 +3,9 @@ import type { ButtonEmits, ButtonProps } from '@/components/primitives/button/bu
 import { buttonVariant } from '@/components/primitives/button/button-variant'
 import { cn } from '@/utils'
 
-const {
-  leftIcon,
-  rightIcon,
-  icon,
-  size,
-  variant,
-  isLoading,
-  disabled,
-  block,
-  class: buttonClass,
-} = defineProps<ButtonProps>()
+withDefaults(defineProps<ButtonProps>(), {
+  variant: 'default',
+})
 
 const emit = defineEmits<ButtonEmits>()
 
@@ -23,7 +15,7 @@ const LOADING_ICON: string = 'i-svg-spinners:ring-resize'
 <template>
   <button
     :disabled="disabled || isLoading"
-    :class="cn(buttonVariant({ variant, size, block }), buttonClass)"
+    :class="cn(buttonVariant({ variant, size, block }))"
     @click="(e) => isLoading ? e.preventDefault() : emit('click', e)"
   >
     <!-- If the button is loading, show the loading icon -->
