@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { DropdownMenuItem } from '@koopsoperator/csui'
+import { Button } from '@koopsoperator/csui'
 </script>
 
 <template>
-  <DropdownMenuItem />
+  <Button>
+    Hello
+  </Button>
 </template>

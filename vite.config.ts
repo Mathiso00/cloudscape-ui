@@ -1,4 +1,4 @@
-import * as path from 'node:path'
+import { resolve } from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
@@ -10,13 +10,13 @@ export default defineConfig({
     Vue(),
     UnoCSS(),
     dts({
-      tsconfigPath: path.resolve(__dirname, 'tsconfig.app.json'),
+      tsconfigPath: resolve(__dirname, 'tsconfig.app.json'),
     }),
     cssInjectedByJsPlugin(),
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': resolve(__dirname, 'src'),
     },
   },
   build: {
@@ -25,7 +25,7 @@ export default defineConfig({
       name: '@koopsoperator/csui',
       fileName: (_, name) => `${name}.mjs`,
       entry: {
-        index: path.resolve(__dirname, 'src/index.ts'),
+        index: resolve(__dirname, 'src/index.ts'),
       },
     },
     rollupOptions: {

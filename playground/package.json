@@ -10,7 +10,7 @@
     "vue": "^3.5.6"
   },
   "devDependencies": {
-    "@koopsoperator/csui": "workspace:^",
+    "@koopsoperator/csui": "link:../",
     "@vitejs/plugin-vue": "^5.1.4",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
