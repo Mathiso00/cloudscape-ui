@@ -9,11 +9,11 @@
       "import": "./dist/index.mjs"
     }
   },
+  "main": "./dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "main": "./dist/index.mjs",
-  "types": "dist/index.d.ts",
   "scripts": {
     "play": "vite ./playground",
     "build:watch": "vite build --watch",
