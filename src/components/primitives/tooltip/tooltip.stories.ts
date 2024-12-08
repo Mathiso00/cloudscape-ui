@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { Button, ButtonGroup, Tooltip } from '@/components'
+import { Button, Tooltip, TooltipProvider } from '@/components'
 
 const meta = {
   title: 'Primitives/Tooltip',
@@ -15,13 +15,20 @@ export const Default: Story = {
     components: {
       Tooltip,
       Button,
+      TooltipProvider,
     },
     template: `
-      <Tooltip content="Hello, here is the info!">
-         <Button variant="destructive">
-           Hover me to display the tooltip
-         </Button>
-      </Tooltip>
+          <TooltipProvider>
+            <Tooltip>
+              <Button variant="destructive">
+                Hover me to display the tooltip
+              </Button>
+              
+              <template #content>
+                Hello, here is the info
+              </template>
+            </Tooltip>
+          </TooltipProvider>
         `,
   }),
 }
@@ -31,47 +38,21 @@ export const WithSlot: Story = {
     components: {
       Tooltip,
       Button,
+      TooltipProvider,
     },
     template: `
-      <Tooltip>
-         <Button variant="destructive">
-           Hover me to display the tooltip
-         </Button>
-        
-        <template #content>
-          <div class="bg-red">Attention ! </div>
-          Content of the tooltip
-        </template>
-      </Tooltip>
-        `,
-  }),
-}
+      <TooltipProvider>
+          <Tooltip>
+            <Button variant="destructive">
+              Hover me to display the tooltip
+            </Button>
 
-export const Multiple: Story = {
-  render: _ => ({
-    components: {
-      Tooltip,
-      Button,
-      ButtonGroup,
-    },
-    template: `
-      <ButtonGroup>
-        <Tooltip content="Hello, here is the info!">
-          <Button variant="destructive">
-            First Tooltip
-          </Button>
-        </Tooltip>
-        <Tooltip content="Hello, here is the info!">
-          <Button variant="destructive">
-            Second Tooltip
-          </Button>
-        </Tooltip>
-        <Tooltip content="Hello, here is the info!">
-          <Button variant="destructive">
-            Third Tooltip
-          </Button>
-        </Tooltip>
-      </ButtonGroup>
+            <template #content>
+              <div class="bg-red">Attention !</div>
+              Content of the tooltip
+            </template>
+          </Tooltip>
+      </TooltipProvider>
         `,
   }),
 }

@@ -1,28 +1,28 @@
 <script setup lang="ts">
 import TooltipContent from '@/components/primitives/tooltip/TooltipContent.vue'
-import TooltipProvider from '@/components/primitives/tooltip/TooltipProvider.vue'
 import TooltipRoot from '@/components/primitives/tooltip/TooltipRoot.vue'
 import TooltipTrigger from '@/components/primitives/tooltip/TooltipTrigger.vue'
+import { type TooltipRootEmits, type TooltipRootProps, useForwardPropsEmits } from 'radix-vue'
 
-const props = defineProps<{
-  content?: string
-}>()
+const props = withDefaults(defineProps<TooltipRootProps>(), {
+  delayDuration: 0,
+})
+
+const emits = defineEmits<TooltipRootEmits>()
 </script>
 
 <template>
-  <TooltipProvider :delay-duration="0">
-    <TooltipRoot>
-      <TooltipTrigger v-bind="props">
-        <slot />
-      </TooltipTrigger>
-      <TooltipContent>
-        <template v-if="content && !$slots.content">
-          {{ content }}
-        </template>
-        <template v-else>
-          <slot name="content" />
-        </template>
-      </TooltipContent>
-    </TooltipRoot>
-  </TooltipProvider>
+  <TooltipRoot
+    v-bind="useForwardPropsEmits({
+      ...props,
+      ...emits,
+    })"
+  >
+    <TooltipTrigger>
+      <slot />
+    </TooltipTrigger>
+    <TooltipContent>
+      <slot name="content" />
+    </TooltipContent>
+  </TooltipRoot>
 </template>
