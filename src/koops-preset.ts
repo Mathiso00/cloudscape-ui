@@ -1,22 +1,8 @@
-import { definePreset, presetIcons, presetUno, presetWebFonts } from 'unocss'
-import { presetAnimations } from 'unocss-preset-animations'
+import { definePreset } from 'unocss'
 
 export default definePreset(() => {
   return {
     name: 'koops-preset',
-    presets: [
-      presetAnimations(),
-      presetUno(),
-      presetIcons(),
-      presetWebFonts({
-        provider: 'google',
-        fonts: {
-          inter: 'Inter:300,400,500,600,700',
-          syne: 'Syne:300,400,500,600,700',
-        },
-      }),
-      presetIcons(),
-    ],
     theme: {
       colors: {
         tertiary: {

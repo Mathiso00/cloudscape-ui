@@ -1,8 +1,20 @@
-import { defineConfig, transformerDirectives } from 'unocss'
-import { presetKoops } from './src'
+import { defineConfig, presetIcons, presetUno, presetWebFonts, transformerDirectives } from 'unocss'
+import { presetAnimations } from 'unocss-preset-animations'
 
 export default defineConfig({
-  presets: [presetKoops()],
+  presets: [
+    presetAnimations(),
+    presetUno(),
+    presetIcons(),
+    presetWebFonts({
+      provider: 'google',
+      fonts: {
+        inter: 'Inter:300,400,500,600,700',
+        syne: 'Syne:300,400,500,600,700',
+      },
+    }),
+    presetIcons(),
+  ],
   transformers: [
     transformerDirectives(),
   ],

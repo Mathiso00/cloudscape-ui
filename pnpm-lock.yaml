@@ -14,11 +14,11 @@ importers:
   .:
     dependencies:
       '@unovis/ts':
-        specifier: 1.4.3-beta.0
-        version: 1.4.3-beta.0
+        specifier: 1.4.5
+        version: 1.4.5
       '@unovis/vue':
-        specifier: 1.4.3-beta.0
-        version: 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.13(typescript@5.7.2))
+        specifier: 1.4.5
+        version: 1.4.5(@unovis/ts@1.4.5)(vue@3.5.13(typescript@5.7.2))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.2)
@@ -1826,13 +1826,13 @@ packages:
   '@unovis/graphlibrary@2.2.0-2':
     resolution: {integrity: sha512-HeEzpd/vDyWiIJt0rnh+2ICXUIuF2N0+Z9OJJiKg0DB+eFUcD+bk+9QPhYHwkFwfxdjDA9fHi1DZ/O/bbV58Nw==}
 
-  '@unovis/ts@1.4.3-beta.0':
-    resolution: {integrity: sha512-8Uyf6yHkOP1a1NoIONrUp+PxsRmgTkxA4KvqXyylqrwFXFNY5spmZndc8oMv14257iJUr7W0TJlAtEADOwiajw==}
+  '@unovis/ts@1.4.5':
+    resolution: {integrity: sha512-FyMjru5A+g7EqH30tWZraVwkZChzpKtXmlRkA+CZ6Pp1obYyyIBfapSZWO4oN/xcS6sVmLQ7o3L1qS4N8qo3/Q==}
 
-  '@unovis/vue@1.4.3-beta.0':
-    resolution: {integrity: sha512-QwaYb4I7lbEh2Ldv/cazGU05+Jrl/B9zakLnTRO4GMT6IVnD5faV07l83eK+fAurQNV9x8t5aPcHrQ/F7Lf3Gw==}
+  '@unovis/vue@1.4.5':
+    resolution: {integrity: sha512-jmLi7L5fWHouuK+MKljila6rlM5wCaRvjIWVH4rh0xtr8GTUGpoH61KjBCwq3mLwBb+u+m2LcR7FFyPi3+jdOg==}
     peerDependencies:
-      '@unovis/ts': 1.4.3-beta.0
+      '@unovis/ts': 1.4.5
       vue: ^3
 
   '@vitejs/plugin-vue@5.1.4':
@@ -6420,7 +6420,7 @@ snapshots:
     dependencies:
       lodash-es: 4.17.21
 
-  '@unovis/ts@1.4.3-beta.0':
+  '@unovis/ts@1.4.5':
     dependencies:
       '@emotion/css': 11.13.5
       '@juggle/resize-observer': 3.4.0
@@ -6457,9 +6457,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@unovis/vue@1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.13(typescript@5.7.2))':
+  '@unovis/vue@1.4.5(@unovis/ts@1.4.5)(vue@3.5.13(typescript@5.7.2))':
     dependencies:
-      '@unovis/ts': 1.4.3-beta.0
+      '@unovis/ts': 1.4.5
       vue: 3.5.13(typescript@5.7.2)
 
   '@vitejs/plugin-vue@5.1.4(vite@5.4.6(@types/node@22.10.1))(vue@3.5.6(typescript@5.6.2))':

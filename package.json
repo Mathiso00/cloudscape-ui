@@ -24,8 +24,8 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@unovis/ts": "1.4.3-beta.0",
-    "@unovis/vue": "1.4.3-beta.0",
+    "@unovis/ts": "1.4.5",
+    "@unovis/vue": "1.4.5",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
