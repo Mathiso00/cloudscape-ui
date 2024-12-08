@@ -1,13 +1,15 @@
+<script lang="ts">
+import type { KoopsAvatarRootProps } from '@/components/primitives/avatar/avatar-variant.ts'
+import { avatarVariant } from '@/components/primitives/avatar/avatar-variant.ts'
+</script>
+
 <script setup lang="ts">
-import type { AvatarProps } from '@/components/primitives/avatar/avatar-variant'
-import { avatarVariant } from '@/components/primitives/avatar/avatar-variant'
 import { AvatarRoot } from 'radix-vue'
 
-interface KoopsAvatarRoot {
-  size: AvatarProps['size']
-  shape: AvatarProps['shape']
-}
-const { size, shape } = defineProps<KoopsAvatarRoot>()
+withDefaults(defineProps<KoopsAvatarRootProps>(), {
+  shape: 'circle',
+  size: 'md',
+})
 </script>
 
 <template>

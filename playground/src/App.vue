@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Button } from '@koopsoperator/csui'
+import { Avatar } from '@koopsoperator/csui'
 </script>
 
 <template>
-  <Button>
+  <Avatar alt="Avatar">
     Hello
-  </Button>
+  </Avatar>
 </template>

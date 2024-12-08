@@ -26,6 +26,11 @@ export interface AvatarProps {
   shape?: 'circle' | 'square'
   size?: AvatarSize
 }
+export interface KoopsAvatarRootProps {
+  size?: AvatarSize
+  shape?: 'circle' | 'square'
+}
+
 export type AvatarSize = 'default' | 'sm' | 'lg' | 'xl' | 'md'
 export function getAvatarText(text: string) {
   const initials = text

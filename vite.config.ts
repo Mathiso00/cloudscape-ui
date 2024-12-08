@@ -29,7 +29,7 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      external: ['vue', 'tailwind-variants'],
+      external: ['vue', 'tailwind-variants', 'unocss'],
     },
   },
 })
