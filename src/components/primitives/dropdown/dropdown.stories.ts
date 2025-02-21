@@ -12,7 +12,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components'
-import { DropdownMenuPortal } from 'radix-vue'
+import { DropdownMenuPortal } from 'reka-ui'
 
 const meta = {
   title: 'Primitives/Dropdown Menu',

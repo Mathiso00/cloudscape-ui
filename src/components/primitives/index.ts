@@ -15,4 +15,4 @@ export * from './skeleton'
 export * from './tab'
 export * from './tooltip'
 
-export { VisuallyHidden } from 'radix-vue'
+export { VisuallyHidden } from 'reka-ui'

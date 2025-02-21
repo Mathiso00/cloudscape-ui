@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { KbdEvents, KbdProps } from '@/components/typography/kbd/Kbd.vue'
 import { Kbd } from '@/components'
-import { useForwardPropsEmits } from 'radix-vue'
+import { useForwardPropsEmits } from 'reka-ui'
 
 const props = defineProps<Omit<KbdProps, 'noMargin'> & { name: string }>()
 const emits = defineEmits<KbdEvents>()

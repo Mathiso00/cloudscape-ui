@@ -4,7 +4,7 @@ import { avatarVariant } from '@/components/primitives/avatar/avatar-variant.ts'
 </script>
 
 <script setup lang="ts">
-import { AvatarRoot } from 'radix-vue'
+import { AvatarRoot } from 'reka-ui'
 
 withDefaults(defineProps<KoopsAvatarRootProps>(), {
   shape: 'circle',

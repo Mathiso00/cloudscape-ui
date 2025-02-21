@@ -11,7 +11,7 @@ const { alt, src, size, shape = 'circle' } = defineProps<AvatarProps>()
 <template>
   <AvatarRoot :size="size" :shape="shape">
     <AvatarImage v-if="src" :src="src" />
-    <AvatarFallback>
+    <AvatarFallback v-bind="$attrs">
       {{ getAvatarText(alt) }}
     </AvatarFallback>
   </AvatarRoot>

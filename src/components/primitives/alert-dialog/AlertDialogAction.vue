@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { AlertDialogActionProps } from 'radix-vue'
+import type { AlertDialogActionProps } from 'reka-ui'
 import { cn } from '@/utils'
-import { AlertDialogAction } from 'radix-vue'
+import { AlertDialogAction } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 import { buttonVariant } from '../button/button-variant'
 

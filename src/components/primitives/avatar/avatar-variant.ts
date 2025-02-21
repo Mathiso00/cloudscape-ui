@@ -8,15 +8,19 @@ export const avatarVariant = tv({
       square: 'rounded-md',
     },
     size: {
-      default: 'h-10 w-10',
-      md: 'h-9 w-9',
-      sm: 'h-8 w-8',
-      lg: 'h-12 w-12',
-      xl: 'h-16 w-16',
+      '3xs': 'size-4 text-[8px]',
+      '2xs': 'size-5 text-[10px]',
+      'xs': 'size-6 text-xs',
+      'sm': 'size-7 text-sm',
+      'md': 'size-8 text-base',
+      'lg': 'size-9 text-lg',
+      'xl': 'size-10 text-xl',
+      '2xl': 'size-11 text-[22px]',
+      '3xl': 'size-12 text-2xl',
     },
   },
   defaultVariants: {
-    size: 'default',
+    size: 'md',
   },
 })
 
@@ -31,7 +35,7 @@ export interface KoopsAvatarRootProps {
   shape?: 'circle' | 'square'
 }
 
-export type AvatarSize = 'default' | 'sm' | 'lg' | 'xl' | 'md'
+export type AvatarSize = 'md' | '3xs' | '2xs' | 'xs' | 'sm' | 'lg' | 'xl' | '2xl' | '3xl'
 export function getAvatarText(text: string) {
   const initials = text
     .split(' ')

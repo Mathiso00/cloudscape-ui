@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ButtonEmits, ButtonProps } from '@/components/primitives/button/button-variant'
 import { Button } from '@/components'
-import { useForwardPropsEmits } from 'radix-vue'
+import { useForwardPropsEmits } from 'reka-ui'
 
 const props = defineProps<ButtonProps>()
 const emit = defineEmits<ButtonEmits>()

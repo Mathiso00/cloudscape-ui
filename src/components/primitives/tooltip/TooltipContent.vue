@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/utils'
-import { TooltipContent, type TooltipContentEmits, TooltipPortal, useForwardPropsEmits } from 'radix-vue'
+import { TooltipContent, type TooltipContentEmits, TooltipPortal, useForwardPropsEmits } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 
 const props = defineProps<{ class?: HTMLAttributes['class'] }>()

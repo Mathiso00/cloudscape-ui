@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'vue'
 import { Kbd } from '@/components'
 import { cn } from '@/utils'
-import { DropdownMenuItem, type DropdownMenuItemProps, useForwardProps } from 'radix-vue'
+import { DropdownMenuItem, type DropdownMenuItemProps, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 
 export interface KoopsDropdownMenuItemProps extends DropdownMenuItemProps {

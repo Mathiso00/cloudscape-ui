@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { DialogRootEmits, DialogRootProps } from 'radix-vue'
+import type { DialogRootEmits, DialogRootProps } from 'reka-ui'
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components'
-import { useForwardPropsEmits, VisuallyHidden } from 'radix-vue'
+import { useForwardPropsEmits, VisuallyHidden } from 'reka-ui'
 import Command from './Command.vue'
 
 const props = defineProps<DialogRootProps & { isPressed?: boolean }>()

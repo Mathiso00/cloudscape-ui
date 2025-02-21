@@ -2,7 +2,7 @@
 import TooltipContent from '@/components/primitives/tooltip/TooltipContent.vue'
 import TooltipRoot from '@/components/primitives/tooltip/TooltipRoot.vue'
 import TooltipTrigger from '@/components/primitives/tooltip/TooltipTrigger.vue'
-import { type TooltipRootEmits, type TooltipRootProps, useForwardPropsEmits } from 'radix-vue'
+import { type TooltipRootEmits, type TooltipRootProps, useForwardPropsEmits } from 'reka-ui'
 
 const props = withDefaults(defineProps<TooltipRootProps>(), {
   delayDuration: 0,
