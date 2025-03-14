@@ -64,9 +64,4 @@
     "vite-plugin-lib-inject-css": "^2.2.1",
     "vue-tsc": "^2.2.2"
   },
-  "pnpm": {
-    "patchedDependencies": {
-      "tailwind-variants": "patches/tailwind-variants.patch"
-    }
-  }
 }
