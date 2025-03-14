@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  tailwind-variants:
-    hash: yeslrgnvs2uyul5nwopgzhkeie
-    path: patches/tailwind-variants.patch
-
 importers:
 
   .:
@@ -97,7 +92,7 @@ importers:
         version: 2.6.0
       tailwind-variants:
         specifier: ^0.2.1
-        version: 0.2.1(patch_hash=yeslrgnvs2uyul5nwopgzhkeie)(tailwindcss@3.4.12)
+        version: 0.2.1(tailwindcss@3.4.12)
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -4796,6 +4791,9 @@ packages:
   vue-component-type-helpers@2.2.2:
     resolution: {integrity: sha512-6lLY+n2xz2kCYshl59mL6gy8OUUTmkscmDFMO8i7Lj+QKwgnIFUZmM1i/iTYObtrczZVdw7UakPqDTGwVSGaRg==}
 
+  vue-component-type-helpers@2.2.8:
+    resolution: {integrity: sha512-4bjIsC284coDO9om4HPA62M7wfsTvcmZyzdfR0aUlFXqq4tXxM1APyXpNVxPC8QazKw9OhmZNHBVDA6ODaZsrA==}
+
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
     engines: {node: '>=12'}
@@ -6174,7 +6172,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.5.13(typescript@5.7.3)
-      vue-component-type-helpers: 2.2.2
+      vue-component-type-helpers: 2.2.8
 
   '@stylistic/eslint-plugin@2.13.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)':
     dependencies:
@@ -9730,7 +9728,7 @@ snapshots:
 
   tailwind-merge@2.6.0: {}
 
-  tailwind-variants@0.2.1(patch_hash=yeslrgnvs2uyul5nwopgzhkeie)(tailwindcss@3.4.12):
+  tailwind-variants@0.2.1(tailwindcss@3.4.12):
     dependencies:
       tailwind-merge: 2.6.0
       tailwindcss: 3.4.12
@@ -10111,6 +10109,8 @@ snapshots:
       typescript: 5.7.3
 
   vue-component-type-helpers@2.2.2: {}
+
+  vue-component-type-helpers@2.2.8: {}
 
   vue-demi@0.14.10(vue@3.5.13(typescript@5.7.3)):
     dependencies:
