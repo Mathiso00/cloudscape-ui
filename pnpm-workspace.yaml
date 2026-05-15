@@ -1,2 +1,9 @@
 packages:
   - playground
+allowBuilds:
+  '0': esbuild
+  '1': maplibre-gl
+  '2': vue-demi
+  esbuild: true
+  maplibre-gl: true
+  vue-demi: true
